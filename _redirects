@@ -1,3 +1,0 @@
-# Netlify Redirects - Alle Seiten zu Login umleiten (außer Login selbst)
-/login.html /login.html 200
-/* /login.html 302!
