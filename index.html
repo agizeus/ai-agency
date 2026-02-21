@@ -2,10 +2,19 @@
 <html lang="de">
 <head>
 <script>
-// SOFORTIGER Login-Check
+// SOFORTIGER Login-Check v2
 (function() {
-if (localStorage.getItem('olymp_access') !== 'granted') {
-window.location.replace('login.html');
+try {
+var access = localStorage.getItem('olymp_access');
+if (access !== 'granted') {
+console.log('Kein Zugriff - Weiterleitung zu Login');
+window.location.replace('login.html?v=2');
+} else {
+console.log('Zugriff gewährt');
+}
+} catch(e) {
+console.error('Fehler:', e);
+window.location.replace('login.html?error=1');
 }
 })();
 </script>
