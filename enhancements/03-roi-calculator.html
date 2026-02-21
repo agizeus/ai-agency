@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROI-Rechner | KI-Automation</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%); min-height: 100vh; color: #e2e8f0; padding: 40px 20px; }
+        .container { max-width: 1000px; margin: 0 auto; }
+        
+        header { text-align: center; margin-bottom: 50px; }
+        header h1 { font-size: 2.8rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 12px; }
+        header p { font-size: 1.1rem; color: #94a3b8; }
+        
+        .calculator-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
+        @media (max-width: 768px) { .calculator-grid { grid-template-columns: 1fr; } }
+        
+        .input-section { background: rgba(30, 41, 59, 0.8); border-radius: 24px; padding: 32px; border: 1px solid rgba(102, 126, 234, 0.3); }
+        .input-section h2 { font-size: 1.3rem; margin-bottom: 24px; display: flex; align-items: center; gap: 10px; }
+        .input-section h2 span { font-size: 1.5rem; }
+        
+        .input-group { margin-bottom: 24px; }
+        .input-group label { display: block; margin-bottom: 8px; color: #94a3b8; font-size: 0.95rem; }
+        .input-group label .hint { font-size: 0.8rem; color: #64748b; margin-left: 8px; }
+        .input-wrapper { position: relative; }
+        .input-wrapper input[type="number"] { width: 100%; padding: 16px 20px; border: 2px solid rgba(102, 126, 234, 0.3); border-radius: 12px; background: rgba(15, 23, 42, 0.6); color: #f8fafc; font-size: 1.1rem; transition: all 0.3s; }
+        .input-wrapper input[type="number"]:focus { outline: none; border-color: #667eea; box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.2); }
+        .input-wrapper .unit { position: absolute; right: 20px; top: 50%; transform: translateY(-50%); color: #64748b; font-size: 0.95rem; pointer-events: none; }
+        
+        .slider-container { margin-top: 12px; }
+        .slider-container input[type="range"] { width: 100%; height: 8px; border-radius: 4px; background: rgba(102, 126, 234, 0.2); outline: none; -webkit-appearance: none; }
+        .slider-container input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; width: 24px; height: 24px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); cursor: pointer; box-shadow: 0 4px 12px rgba(102, 126, 234, 0.5); }
+        .slider-labels { display: flex; justify-content: space-between; margin-top: 8px; font-size: 0.8rem; color: #64748b; }
+        
+        .preset-buttons { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+        .preset-btn { background: rgba(102, 126, 234, 0.15); border: 1px solid rgba(102, 126, 234, 0.3); color: #94a3b8; padding: 8px 16px; border-radius: 8px; font-size: 0.85rem; cursor: pointer; transition: all 0.2s; }
+        .preset-btn:hover, .preset-btn.active { background: rgba(102, 126, 234, 0.4); color: #f8fafc; border-color: #667eea; }
+        
+        .results-section { display: flex; flex-direction: column; gap: 20px; }
+        
+        .result-card { background: rgba(30, 41, 59, 0.8); border-radius: 20px; padding: 28px; border: 1px solid rgba(102, 126, 234, 0.3); }
+        .result-card.highlight { background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); border: 2px solid rgba(102, 126, 234, 0.5); }
+        
+        .result-card h3 { font-size: 0.9rem; color: #94a3b8; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 12px; }
+        .result-value { font-size: 2.5rem; font-weight: 700; color: #4ade80; }
+        .result-value.large { font-size: 3.2rem; background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .result-value.negative { color: #f87171; }
+        .result-detail { margin-top: 12px; padding-top: 16px; border-top: 1px solid rgba(102, 126, 234, 0.2); font-size: 0.95rem; color: #64748b; }
+        .result-detail strong { color: #f8fafc; }
+        
+        .metrics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .metric-box { background: rgba(15, 23, 42, 0.5); padding: 20px; border-radius: 12px; text-align: center; }
+        .metric-box .value { font-size: 1.6rem; font-weight: 700; color: #f8fafc; margin-bottom: 4px; }
+        .metric-box .label { font-size: 0.8rem; color: #64748b; }
+        
+        .comparison-table { width: 100%; margin-top: 20px; border-collapse: collapse; }
+        .comparison-table th, .comparison-table td { padding: 16px; text-align: left; border-bottom: 1px solid rgba(102, 126, 234, 0.2); }
+        .comparison-table th { color: #94a3b8; font-weight: 500; font-size: 0.85rem; text-transform: uppercase; }
+        .comparison-table td { color: #f8fafc; }
+        .comparison-table .positive { color: #4ade80; font-weight: 600; }
+        .comparison-table .highlight-row { background: rgba(102, 126, 234, 0.1); }
+        
+        .cta-section { margin-top: 40px; text-align: center; padding: 40px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%); border-radius: 20px; border: 1px solid rgba(102, 126, 234, 0.3); }
+        .cta-section h2 { font-size: 1.5rem; margin-bottom: 16px; }
+        .cta-section p { color: #94a3b8; margin-bottom: 24px; }
+        .cta-button { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 16px 40px; border-radius: 12px; text-decoration: none; font-weight: 600; font-size: 1.1rem; transition: transform 0.2s, box-shadow 0.2s; border: none; cursor: pointer; }
+        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 10px 40px rgba(102, 126, 234, 0.4); }
+        
+        .assumptions { margin-top: 20px; padding: 20px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; font-size: 0.85rem; color: #64748b; }
+        .assumptions h4 { color: #94a3b8; margin-bottom: 12px; font-size: 0.9rem; }
+        .assumptions ul { margin-left: 20px; }
+        .assumptions li { margin-bottom: 6px; }
+        
+        .savings-breakdown { margin-top: 20px; }
+        .savings-item { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(102, 126, 234, 0.1); }
+        .savings-item:last-child { border-bottom: none; font-weight: 600; }
+        .savings-item .amount { color: #4ade80; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💰 ROI-Rechner</h1>
+            <p>Berechnen Sie Ihre Einsparung durch KI-gestützten Kundenservice</p>
+        </header>
+        
+        <div class="calculator-grid">
+            <div class="input-section">
+                <h2><span>📊</span> Ihre aktuellen Kosten</h2>
+                
+                <div class="input-group">
+                    <label>Anzahl Support-Mitarbeiter <span class="hint">(Vollzeitäquivalente)</span></label>
+                    <div class="input-wrapper">
+                        <input type="number" id="employees" value="5" min="1" max="500" oninput="calculateROI()">
+                        <span class="unit">Mitarbeiter</span>
+                    </div>
+                    <div class="preset-buttons">
+                        <button class="preset-btn" onclick="setEmployees(3)">Startup (3)</button>
+                        <button class="preset-btn active" onclick="setEmployees(5)">SMB (5)</button>
+                        <button class="preset-btn" onclick="setEmployees(15)">Mittelstand (15)</button>
+                        <button class="preset-btn" onclick="setEmployees(50)">Enterprise (50)</button>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Durchschnittlicher Stundensatz <span class="hint">(inkl. Lohnnebenkosten)</span></label>
+                    <div class="input-wrapper">
+                        <input type="number" id="hourlyRate" value="45" min="15" max="200" oninput="calculateROI()">
+                        <span class="unit">€/h</span>
+                    </div>
+                    <div class="slider-container">
+                        <input type="range" id="rateSlider" min="15" max="120" value="45" oninput="syncRateFromSlider()">
+                        <div class="slider-labels">
+                            <span>€15</span>
+                            <span>€67</span>
+                            <span>€120</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="input-group">
+                    <label>Automatisierungsgrad <span class="hint">(Welcher Anteil wird vom Bot übernommen?)</span></label>
+                    <div class="slider-container">
+                        <input type="range" id="automationRate" min="30" max="85" value="68" oninput="calculateROI()">
+                        <div class="slider-labels">
+                            <span>30%</span>
+                            <span>57%</span>
+                            <span>85%</span>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin-top: 12px; color: #667eea; font-weight: 600; font-size: 1.2rem;">
+                        <span id="automationDisplay">68</span>% Automation
+                    </div>
+                </div>
+                
+                <div class="assumptions">
+                    <h4>📋 Annahmen & Parameter</h4>
+                    <ul>
+                        <li>Arbeitszeit: 1.720 Stunden/Jahr pro Mitarbeiter (4 Wochen Urlaub)</li>
+                        <li>KI-Plattform: €299/Monat Basisgebühr</li>
+                        <li>Implementation: Einmalig €2.500 - €8.500 je nach Komplexität</li>
+                        <li>Break-even typischerweise nach 2-4 Monaten</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="results-section">
+                <div class="result-card highlight">
+                    <h3>💵 Jährliche Ersparnis</h3>
+                    <div class="result-value large" id="annualSavings">€104.856</div>
+                    <div class="result-detail">
+                        Nach Abzug der KI-Plattform-Kosten (<strong>€3.588/Jahr</strong>)
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>📈 ROI nach 12 Monaten</h3>
+                    <div class="metrics-grid">
+                        <div class="metric-box">
+                            <div class="value" id="roiPercent">2.834%</div>
+                            <div class="label">ROI</div>
+                        </div>
+                        <div class="metric-box">
+                            <div class="value" id="paybackMonths">2.1</div>
+                            <div class="label">Monate bis Break-even</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>📊 Kosteneinsparung im Detail</h3>
+                    <div class="savings-breakdown">
+                        <div class="savings-item">
+                            <span>Aktuelle Personalkosten/Jahr</span>
+                            <span class="amount" id="currentCosts">€387.000</span>
+                        </div>
+                        <div class="savings-item">
+                            <span>Reduzierte Personalkosten (nach Automation)</span>
+                            <span id="reducedCosts">€123.840</span>
+                        </div>
+                        <div class="savings-item">
+                            <span>KI-Plattform Kosten/Jahr</span>
+                            <span style="color: #f87171;">-€3.588</span>
+                        </div>
+                        <div class="savings-item">
+                            <span>Neue Gesamtkosten/Jahr</span>
+                            <span id="newCosts">€127.428</span>
+                        </div>
+                        <div class="savings-item" style="border-top: 2px solid rgba(102, 126, 234, 0.3); margin-top: 8px; padding-top: 16px;">
+                            <span>💰 Netto-Ersparnis pro Jahr</span>
+                            <span class="amount" id="netSavings" style="font-size: 1.3rem;">€259.572</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="result-card">
+                    <h3>👥 Personaleffizienz</h3>
+                    <table class="comparison-table">
+                        <tr>
+                            <th>Metrik</th>
+                            <th>Vor KI</th>
+                            <th>Mit KI</th>
+                        </tr>
+                        <tr>
+                            <td>Benötigte Agents</td>
+                            <td id="beforeAgents">5.0</td>
+                            <td class="positive" id="afterAgents">1.6</td>
+                        </tr>
+                        <tr>
+                            <td>Kosten pro Anfrage*</td>
+                            <td id="costPerTicketBefore">€4.20</td>
+                            <td class="positive" id="costPerTicketAfter">€1.34</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Ø Antwortzeit</strong></td>
+                            <td>4-8 Stunden</td>
+                            <td class="positive"><strong>2-3 Sekunden</strong></td>
+                        </tr>
+                    </table>
+                    <p style="margin-top: 12px; font-size: 0.8rem; color: #64748b;">* Basierend auf 92.000 Anfragen/Jahr bei 5 Mitarbeitern</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-section">
+            <h2>Bereit für Ihre Kostenanalyse?</h2>
+            <p>Erhalten Sie ein maßgeschneidertes Angebot basierend auf Ihren spezifischen Anforderungen.</p>
+            <button class="cta-button" onclick="alert('Demo-Termin wird gebucht...')">📅 Kostenlose Beratung buchen</button>
+        </div>
+    </div>
+
+    <script>
+        function formatCurrency(value) {
+            return '€' + Math.round(value).toLocaleString('de-DE');
+        }
+        
+        function setEmployees(count) {
+            document.getElementById('employees').value = count;
+            // Update active state of preset buttons
+            document.querySelectorAll('.preset-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            calculateROI();
+        }
+        
+        function syncRateFromSlider() {
+            document.getElementById('hourlyRate').value = document.getElementById('rateSlider').value;
+            calculateROI();
+        }
+        
+        function calculateROI() {
+            const employees = parseInt(document.getElementById('employees').value) || 0;
+            const hourlyRate = parseInt(document.getElementById('hourlyRate').value) || 0;
+            const automationRate = parseInt(document.getElementById('automationRate').value) || 0;
+            
+            // Update slider display
+            document.getElementById('automationDisplay').textContent = automationRate;
+            
+            // Constants
+            const hoursPerYear = 1720; // 43 weeks * 40 hours
+            const platformCostPerYear = 299 * 12; // €299/month
+            const implementationCost = 5000; // One-time
+            const annualTicketsPerAgent = 18400; // Industry average
+            
+            // Calculations
+            const currentCosts = employees * hourlyRate * hoursPerYear;
+            const remainingEmployees = employees * (1 - automationRate / 100);
+            const reducedLaborCosts = remainingEmployees * hourlyRate * hoursPerYear;
+            const newTotalCosts = reducedLaborCosts + platformCostPerYear;
+            const annualSavings = currentCosts - newTotalCosts;
+            const netSavings = annualSavings;
+            const totalInvestment = implementationCost + platformCostPerYear;
+            const roiPercent = ((netSavings - implementationCost) / implementationCost) * 100;
+            const paybackMonths = implementationCost / (netSavings / 12);
+            
+            // Ticket calculations
+            const totalTickets = employees * annualTicketsPerAgent;
+            const costPerTicketBefore = currentCosts / totalTickets;
+            const costPerTicketAfter = newTotalCosts / totalTickets;
+            
+            // Update UI
+            document.getElementById('annualSavings').textContent = formatCurrency(annualSavings);
+            document.getElementById('roiPercent').textContent = roiPercent.toFixed(0) + '%';
+            document.getElementById('paybackMonths').textContent = paybackMonths.toFixed(1);
+            
+            document.getElementById('currentCosts').textContent = formatCurrency(currentCosts);
+            document.getElementById('reducedCosts').textContent = formatCurrency(reducedLaborCosts);
+            document.getElementById('newCosts').textContent = formatCurrency(newTotalCosts);
+            document.getElementById('netSavings').textContent = formatCurrency(netSavings);
+            
+            document.getElementById('beforeAgents').textContent = employees.toFixed(1);
+            document.getElementById('afterAgents').textContent = remainingEmployees.toFixed(1);
+            document.getElementById('costPerTicketBefore').textContent = '€' + costPerTicketBefore.toFixed(2);
+            document.getElementById('costPerTicketAfter').textContent = '€' + costPerTicketAfter.toFixed(2);
+        }
+        
+        // Initial calculation
+        calculateROI();
+    </script>
+</body>
+</html>

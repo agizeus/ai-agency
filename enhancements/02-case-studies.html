@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | AI Agency</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #0f172a; color: #e2e8f0; line-height: 1.6; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+        
+        header { text-align: center; margin-bottom: 60px; }
+        header h1 { font-size: 3rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 16px; }
+        header p { font-size: 1.2rem; color: #94a3b8; max-width: 600px; margin: 0 auto; }
+        
+        .stats-bar { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; margin-bottom: 60px; }
+        .stat-item { background: rgba(102, 126, 234, 0.1); border: 1px solid rgba(102, 126, 234, 0.3); padding: 24px; border-radius: 16px; text-align: center; }
+        .stat-number { font-size: 2.5rem; font-weight: 700; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-label { color: #94a3b8; font-size: 0.9rem; margin-top: 8px; }
+        
+        .case-studies { display: flex; flex-direction: column; gap: 40px; }
+        
+        .case-study { background: linear-gradient(145deg, #1e293b 0%, #0f172a 100%); border-radius: 24px; overflow: hidden; border: 1px solid rgba(102, 126, 234, 0.2); transition: transform 0.3s, box-shadow 0.3s; }
+        .case-study:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2); }
+        
+        .case-header { padding: 40px; background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%); border-bottom: 1px solid rgba(102, 126, 234, 0.2); }
+        .case-meta { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; margin-bottom: 16px; }
+        .case-tag { background: rgba(102, 126, 234, 0.2); color: #667eea; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; font-weight: 500; }
+        .case-industry { color: #94a3b8; font-size: 0.9rem; }
+        .case-header h2 { font-size: 1.8rem; color: #f8fafc; margin-bottom: 8px; }
+        .case-header p { color: #94a3b8; }
+        
+        .case-body { padding: 40px; }
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; margin-bottom: 32px; }
+        .metric { text-align: center; padding: 20px; background: rgba(15, 23, 42, 0.5); border-radius: 12px; }
+        .metric-value { font-size: 2rem; font-weight: 700; color: #4ade80; }
+        .metric-value.negative { color: #f87171; }
+        .metric-label { color: #64748b; font-size: 0.85rem; margin-top: 4px; }
+        
+        .case-content h3 { color: #f8fafc; margin-bottom: 12px; font-size: 1.1rem; }
+        .case-content p { color: #94a3b8; margin-bottom: 20px; line-height: 1.7; }
+        
+        .challenge-solution { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-bottom: 32px; }
+        @media (max-width: 768px) { .challenge-solution { grid-template-columns: 1fr; } }
+        
+        .cs-box { padding: 24px; border-radius: 16px; }
+        .cs-box.challenge { background: rgba(248, 113, 113, 0.1); border: 1px solid rgba(248, 113, 113, 0.3); }
+        .cs-box.solution { background: rgba(74, 222, 128, 0.1); border: 1px solid rgba(74, 222, 128, 0.3); }
+        .cs-box h4 { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; }
+        .cs-box.challenge h4 { color: #f87171; }
+        .cs-box.solution h4 { color: #4ade80; }
+        
+        .testimonial { background: rgba(102, 126, 234, 0.1); border-left: 4px solid #667eea; padding: 24px; border-radius: 0 12px 12px 0; margin-top: 24px; }
+        .testimonial p { font-style: italic; color: #cbd5e1; margin-bottom: 16px; }
+        .testimonial-author { display: flex; align-items: center; gap: 12px; }
+        .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); display: flex; align-items: center; justify-content: center; font-weight: 600; }
+        .author-info h4 { color: #f8fafc; font-size: 0.95rem; }
+        .author-info span { color: #64748b; font-size: 0.85rem; }
+        
+        .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+        .tech-item { background: rgba(102, 126, 234, 0.15); color: #94a3b8; padding: 6px 12px; border-radius: 6px; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Erfolgsgeschichten</h1>
+            <p>Echte Ergebnisse, echte Unternehmen, messbarer Impact. So transformieren wir Kundenservice mit KI.</p>
+        </header>
+        
+        <div class="stats-bar">
+            <div class="stat-item">
+                <div class="stat-number">147%</div>
+                <div class="stat-label">Ø ROI nach 6 Monaten</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">2.4M+</div>
+                <div class="stat-label">Konversationen/Monat</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">68%</div>
+                <div class="stat-label">Kostenreduktion</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">4.8/5</div>
+                <div class="stat-label">Kundenzufriedenheit</div>
+            </div>
+        </div>
+        
+        <div class="case-studies">
+            <!-- Case Study 1: E-Commerce -->
+            <article class="case-study">
+                <div class="case-header">
+                    <div class="case-meta">
+                        <span class="case-tag">E-Commerce</span>
+                        <span class="case-industry">Mode & Lifestyle | 250 Mitarbeiter | €45M Umsatz</span>
+                    </div>
+                    <h2>StyleVerse reduziert Support-Kosten um 73%</h2>
+                    <p>Wie ein führender Online-Modehändler 12.000 tägliche Anfragen mit KI automatisierte</p>
+                </div>
+                <div class="case-body">
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-value">73%</div>
+                            <div class="metric-label">Kosteneinsparung</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">€420K</div>
+                            <div class="metric-label">Ersparnis/Jahr</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">2.3s</div>
+                            <div class="metric-label">Ø Antwortzeit</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">94%</div>
+                            <div class="metric-label">Erst-Kontakt-Lösung</div>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-solution">
+                        <div class="cs-box challenge">
+                            <h4>⚠️ Challenge</h4>
+                            <p>StyleVerse kämpfte mit saisonalen Spitzen (Black Friday: +400% Anfragen), 45% Fluktuation im Support-Team und durchschnittlichen Antwortzeiten von 8 Stunden. 3 zusätzliche Agents kosteten €180K/Jahr bei gleichbleibender Kundenzufriedenheit von nur 3.2/5.</p>
+                        </div>
+                        <div class="cs-box solution">
+                            <h4>✅ Solution</h4>
+                            <p>Implementierung eines multilingualen KI-Chatbots mit ERP-Integration für Bestellstatus, Retouren-Automatisierung und Smart-Routing zu menschlichen Agents bei komplexen Fällen. Training mit 50.000 historischen Tickets.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-content">
+                        <h3>💡 Key Results</h3>
+                        <p>Nach 4 Monaten: 68% aller Anfragen vollständig automatisiert, 94% First-Contact-Resolution-Rate. Die durchschnittliche Antwortzeit sank von 8 Stunden auf 2.3 Sekunden. Der Bot beherrscht 6 Sprachen und skaliert automatisch bei Traffic-Spitzen. Menschliche Agents konzentrieren sich nun auf VIP-Kunden und komplexe Beratung.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">GPT-4</span>
+                        <span class="tech-item">Shopify Plus</span>
+                        <span class="tech-item">Zendesk</span>
+                        <span class="tech-item">SAP</span>
+                        <span class="tech-item">DeepL API</span>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"Der ROI war nach 3 Monaten erreicht. Unsere Kunden lieben die sofortige Antwort – egal ob 3 Uhr nachts oder an Feiertagen. Wir haben 8 Support-Positionen neu aufgestellt statt 12 einzustellen."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">MK</div>
+                            <div class="author-info">
+                                <h4>Marina Köhler</h4>
+                                <span>Head of Customer Experience, StyleVerse</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Case Study 2: FinTech -->
+            <article class="case-study">
+                <div class="case-header">
+                    <div class="case-meta">
+                        <span class="case-tag">FinTech</span>
+                        <span class="case-industry">Banking & Payments | 180 Mitarbeiter | Series B</span>
+                    </div>
+                    <h2>PayFlow steigert Conversion um 34% mit KI-Beratung</h2>
+                    <p>Intelligenter Product-Finder und Compliance-sicherer Kundenservice für eine Banking-App</p>
+                </div>
+                <div class="case-body">
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-value">+34%</div>
+                            <div class="metric-label">Conversion Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">€1.2M</div>
+                            <div class="metric-label">Zusatzumsatz</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">99.7%</div>
+                            <div class="metric-label">Compliance-Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">-62%</div>
+                            <div class="metric-label">Escalation Rate</div>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-solution">
+                        <div class="cs-box challenge">
+                            <h4>⚠️ Challenge</h4>
+                            <p>PayFlow's Support-Team war überlastet durch regulatorische Anfragen (PSD2, KYC), lange Onboarding-Zeiten für neue Agents (6 Wochen) und hohe Abbruchraten im Produktauswahl-Prozess. Compliance-Verstöße kosteten durchschnittlich €50K pro Vorfall.</p>
+                        </div>
+                        <div class="cs-box solution">
+                            <h4>✅ Solution</h4>
+                            <p>Entwicklung eines KI-Advisors mit integriertem Compliance-Checker, der automatisch regulierte Antworten validiert. Implementierung eines Conversational Product-Finders, der Nutzer zur optimalen Produktwahl führt und direkt zur Conversion leitet.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-content">
+                        <h3>💡 Key Results</h3>
+                        <p>Die Conversion-Rate im Onboarding stieg um 34%, was €1.2M zusätzlichem Jahresumsatz entspricht. Compliance-Verstöße sanken um 99.7%. Der Bot erkennt 128 regulatorische Szenarien und eskaliert kritische Fälle automatisch an qualifizierte Agents. Die durchschnittliche Onboarding-Zeit für neue Kunden verkürzte sich von 12 Minuten auf 4 Minuten.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">Claude 3</span>
+                        <span class="tech-item">Custom Compliance Layer</span>
+                        <span class="tech-item">Salesforce</span>
+                        <span class="tech-item">AWS GovCloud</span>
+                        <span class="tech-item">IDnow Integration</span>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"In der Finanzbranche ist Vertrauen alles. Unser KI-Advisor gibt präzise, compliance-sichere Antworten – schneller als jeder Mensch. Die Conversion-Steigerung hat unsere Erwartungen übertroffen."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">TB</div>
+                            <div class="author-info">
+                                <h4>Thomas Bauer</h4>
+                                <span>COO, PayFlow</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            
+            <!-- Case Study 3: B2B SaaS -->
+            <article class="case-study">
+                <div class="case-header">
+                    <div class="case-meta">
+                        <span class="case-tag">B2B SaaS</span>
+                        <span class="case-industry">Project Management | 320 Mitarbeiter | Enterprise</span>
+                    </div>
+                    <h2>TaskForce reduziert Churn um 28% durch Proactive Support</h2>
+                    <p>Prädiktive KI identifiziert unzufriedene Kunden vor dem Abgang und interveniert automatisch</p>
+                </div>
+                <div class="case-body">
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <div class="metric-value">-28%</div>
+                            <div class="metric-label">Churn Rate</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">€890K</div>
+                            <div class="metric-label">Geretteter ARR</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">+41%</div>
+                            <div class="metric-label">NPS Score</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-value">4.9/5</div>
+                            <div class="metric-label">Support Rating</div>
+                        </div>
+                    </div>
+                    
+                    <div class="challenge-solution">
+                        <div class="cs-box challenge">
+                            <h4>⚠️ Challenge</h4>
+                            <p>TaskForce verlor monatlich 5.2% ihrer Enterprise-Kunden an Wettbewerber. Das Support-Team reagierte erst auf Churn-Signale, wenn Kündigungen bereits eingegangen waren. Churn-Prävention erforderte manuelle Analyse von 15+ Datenquellen – unmöglich in Echtzeit.</p>
+                        </div>
+                        <div class="cs-box solution">
+                            <h4>✅ Solution</h4>
+                            <p>Predictive Support Engine analysiert Nutzerverhalten in Echtzeit, identifiziert Churn-Risiken (Support-Tickets + Login-Frequenz + Feature-Usage) und trigger automatische Retention-Kampagnen über personalisierte Chat-Interventionen und CSM-Alerts.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="case-content">
+                        <h3>💡 Key Results</h3>
+                        <p>Die Churn-Rate sank von 5.2% auf 3.7% – das entspricht €890K gerettetem jährlichem wiederkehrendem Umsatz (ARR). Der NPS-Score stieg von 32 auf 45. 67% der Churn-Risiken werden jetzt proaktiv adressiert, bevor Kunden kontaktieren. Die durchschnittliche Kundenlebensdauer (LTV) stieg um 18 Monate.</p>
+                    </div>
+                    
+                    <div class="tech-stack">
+                        <span class="tech-item">Custom ML Models</span>
+                        <span class="tech-item">Mixpanel</span>
+                        <span class="tech-item">Segment</span>
+                        <span class="tech-item">HubSpot</span>
+                        <span class="tech-item">BigQuery</span>
+                    </div>
+                    
+                    <div class="testimonial">
+                        <p>"Die KI erkennt Muster, die uns entgehen. Ein Kunde, der 3 Tage nicht eingeloggt ist UND ein Support-Ticket offen hat, bekommt sofort eine personalisierte Nachricht. Das hat unsere Retention grundlegend verändert."</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">LW</div>
+                            <div class="author-info">
+                                <h4>Lena Weber</h4>
+                                <span>VP Customer Success, TaskForce</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot Widget Demo</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Segoe UI', system-ui, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 40px; }
+        .demo-container { max-width: 1200px; margin: 0 auto; }
+        .demo-header { text-align: center; color: white; margin-bottom: 40px; }
+        .demo-header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .demo-header p { font-size: 1.1rem; opacity: 0.9; }
+        
+        /* Chatbot Widget Styles */
+        .ai-chat-widget { position: fixed; bottom: 20px; right: 20px; z-index: 9999; font-family: 'Segoe UI', system-ui, sans-serif; }
+        .chat-button { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4); transition: all 0.3s ease; display: flex; align-items: center; justify-content: center; }
+        .chat-button:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(102, 126, 234, 0.6); }
+        .chat-button svg { width: 28px; height: 28px; fill: white; }
+        .chat-button.pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { box-shadow: 0 4px 20px rgba(102, 126, 234, 0.4); } 50% { box-shadow: 0 4px 40px rgba(102, 126, 234, 0.8); } }
+        
+        .chat-window { position: absolute; bottom: 80px; right: 0; width: 380px; height: 500px; background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; display: none; flex-direction: column; animation: slideUp 0.3s ease; }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .chat-window.active { display: flex; }
+        
+        .chat-header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; color: white; }
+        .chat-header-top { display: flex; align-items: center; gap: 12px; margin-bottom: 8px; }
+        .bot-avatar { width: 40px; height: 40px; border-radius: 50%; background: rgba(255,255,255,0.2); display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .chat-header-info h3 { font-size: 16px; font-weight: 600; }
+        .chat-header-info span { font-size: 12px; opacity: 0.8; }
+        .status-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 20px; }
+        .status-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; animation: blink 2s infinite; }
+        @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        
+        .chat-messages { flex: 1; overflow-y: auto; padding: 20px; background: #f8fafc; }
+        .message { max-width: 80%; margin-bottom: 16px; animation: fadeIn 0.3s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .message.bot { margin-right: auto; }
+        .message.user { margin-left: auto; }
+        .message-bubble { padding: 12px 16px; border-radius: 18px; font-size: 14px; line-height: 1.5; }
+        .message.bot .message-bubble { background: white; color: #1e293b; border-bottom-left-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+        .message.user .message-bubble { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-bottom-right-radius: 4px; }
+        .message-time { font-size: 11px; color: #94a3b8; margin-top: 4px; text-align: right; }
+        .typing-indicator { display: flex; gap: 4px; padding: 16px 20px; }
+        .typing-indicator span { width: 8px; height: 8px; background: #cbd5e1; border-radius: 50%; animation: typing 1.4s infinite; }
+        .typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+        .typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes typing { 0%, 60%, 100% { transform: translateY(0); } 30% { transform: translateY(-10px); } }
+        
+        .quick-replies { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; padding: 0 20px; }
+        .quick-reply { background: white; border: 1px solid #e2e8f0; padding: 8px 16px; border-radius: 20px; font-size: 13px; cursor: pointer; transition: all 0.2s; color: #667eea; }
+        .quick-reply:hover { background: #667eea; color: white; border-color: #667eea; }
+        
+        .chat-input-container { padding: 16px 20px; background: white; border-top: 1px solid #e2e8f0; display: flex; gap: 12px; align-items: center; }
+        .chat-input { flex: 1; border: 1px solid #e2e8f0; border-radius: 25px; padding: 12px 20px; font-size: 14px; outline: none; transition: border-color 0.2s; }
+        .chat-input:focus { border-color: #667eea; }
+        .send-button { width: 44px; height: 44px; border-radius: 50%; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: transform 0.2s; }
+        .send-button:hover { transform: scale(1.05); }
+        .send-button svg { width: 20px; height: 20px; fill: white; }
+        
+        /* Demo Features Section */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; margin-top: 40px; }
+        .feature-card { background: white; padding: 30px; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .feature-card h3 { color: #1e293b; margin-bottom: 12px; font-size: 1.2rem; }
+        .feature-card p { color: #64748b; line-height: 1.6; }
+        .feature-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; font-size: 24px; }
+        
+        /* Integration Code Section */
+        .code-section { background: white; border-radius: 16px; padding: 30px; margin-top: 40px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+        .code-section h2 { color: #1e293b; margin-bottom: 20px; }
+        .code-block { background: #1e293b; color: #e2e8f0; padding: 20px; border-radius: 12px; font-family: 'Monaco', 'Consolas', monospace; font-size: 13px; overflow-x: auto; line-height: 1.6; }
+        .code-block .comment { color: #64748b; }
+        .code-block .tag { color: #f472b6; }
+        .code-block .attr { color: #60a5fa; }
+        .code-block .string { color: #4ade80; }
+    </style>
+</head>
+<body>
+    <div class="demo-container">
+        <div class="demo-header">
+            <h1>🤖 AI Chatbot Widget</h1>
+            <p>Interaktive Demo – Klicken Sie auf den Chat-Button rechts unten</p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Instant Response</h3>
+                <p>Antwortzeit unter 500ms durch optimierte AI-Pipeline. Keine Wartezeiten für Kunden.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Smart Routing</h3>
+                <p>Automatische Weiterleitung komplexer Anfragen an menschliche Agents mit vollem Kontext.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🔒</div>
+                <h3>DSGVO-konform</h3>
+                <p>EU-Server, keine Datenweitergabe an Dritte, vollständige Kontrolle über Gesprächslogs.</p>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📊</div>
+                <h3>Analytics Dashboard</h3>
+                <p>Detaillierte Einblicke in Kundenanfragen, Conversion-Raten und Bot-Performance.</p>
+            </div>
+        </div>
+        
+        <div class="code-section">
+            <h2>🔧 Integration (nur 3 Zeilen Code)</h2>
+            <div class="code-block">
+<span class="comment">&lt;!-- Fügen Sie dies vor dem schließenden &lt;/body&gt; Tag ein --&gt;</span>
+<span class="tag">&lt;script</span> <span class="attr">src</span>=<span class="string">"https://ai-agentur.de/widget.js"</span> <span class="attr">data-bot-id</span>=<span class="string">"IHR_BOT_ID"</span><span class="tag">&gt;&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- Oder als NPM Package --&gt;</span>
+<span class="tag">npm</span> <span class="attr">install</span> <span class="string">@ai-agentur/chat-widget</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Chatbot Widget -->
+    <div class="ai-chat-widget">
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <div class="chat-header-top">
+                    <div class="bot-avatar">🤖</div>
+                    <div class="chat-header-info">
+                        <h3>AI Assistant</h3>
+                        <span>Ihr 24/7 Kundenservice</span>
+                    </div>
+                </div>
+                <span class="status-badge"><span class="status-dot"></span>Online – Antwortet sofort</span>
+            </div>
+            <div class="chat-messages" id="chatMessages">
+                <div class="message bot">
+                    <div class="message-bubble">Hallo! 👋 Ich bin Ihr KI-Assistent. Wie kann ich Ihnen heute helfen?</div>
+                    <div class="message-time">Gerade jetzt</div>
+                </div>
+            </div>
+            <div class="quick-replies" id="quickReplies">
+                <button class="quick-reply" onclick="sendQuickReply('Preise')">💰 Preise</button>
+                <button class="quick-reply" onclick="sendQuickReply('Demo buchen')">📅 Demo buchen</button>
+                <button class="quick-reply" onclick="sendQuickReply('Funktionen')">⚡ Funktionen</button>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" class="chat-input" id="chatInput" placeholder="Nachricht schreiben..." onkeypress="handleKeyPress(event)">
+                <button class="send-button" onclick="sendMessage()">
+                    <svg viewBox="0 0 24 24"><path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/></svg>
+                </button>
+            </div>
+        </div>
+        <button class="chat-button pulse" id="chatButton" onclick="toggleChat()">
+            <svg id="chatIcon" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+            <svg id="closeIcon" style="display:none" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+    </div>
+
+    <script>
+        const chatWindow = document.getElementById('chatWindow');
+        const chatButton = document.getElementById('chatButton');
+        const chatIcon = document.getElementById('chatIcon');
+        const closeIcon = document.getElementById('closeIcon');
+        const chatMessages = document.getElementById('chatMessages');
+        const chatInput = document.getElementById('chatInput');
+        const quickReplies = document.getElementById('quickReplies');
+        
+        let isOpen = false;
+        
+        function toggleChat() {
+            isOpen = !isOpen;
+            chatWindow.classList.toggle('active', isOpen);
+            chatIcon.style.display = isOpen ? 'none' : 'block';
+            closeIcon.style.display = isOpen ? 'block' : 'none';
+            chatButton.classList.toggle('pulse', !isOpen);
+            if (isOpen) chatInput.focus();
+        }
+        
+        function addMessage(text, isUser = false) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+            const time = new Date().toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+            messageDiv.innerHTML = `
+                <div class="message-bubble">${text}</div>
+                <div class="message-time">${time}</div>
+            `;
+            chatMessages.appendChild(messageDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+        }
+        
+        function showTyping() {
+            const typingDiv = document.createElement('div');
+            typingDiv.className = 'message bot typing';
+            typingDiv.innerHTML = '<div class="typing-indicator"><span></span><span></span><span></span></div>';
+            chatMessages.appendChild(typingDiv);
+            chatMessages.scrollTop = chatMessages.scrollHeight;
+            return typingDiv;
+        }
+        
+        function getBotResponse(userMessage) {
+            const msg = userMessage.toLowerCase();
+            if (msg.includes('preis') || msg.includes('kosten')) {
+                return 'Unsere Pakete starten ab 299€/Monat für bis zu 1.000 Konversationen. Möchten Sie ein maßgeschneidertes Angebot? 📋';
+            } else if (msg.includes('demo') || msg.includes('termin')) {
+                return 'Gerne! 📅 Ich kann Ihnen einen 30-minütigen Demo-Termin anbieten. Welcher Tag würde Ihnen passen?';
+            } else if (msg.includes('funktion') || msg.includes('feature')) {
+                return 'Unser Bot bietet: 🎯 Intelligentes Routing, 📊 Analytics, 🔒 DSGVO-Konformität, ⚡ Sub-500ms Antwortzeit und 🌍 Multi-Language Support. Was interessiert Sie am meisten?';
+            } else {
+                return 'Interessant! Können Sie mir mehr darüber erzählen? Oder möchten Sie direkt mit einem menschlichen Berater sprechen? 👨‍💼';
+            }
+        }
+        
+        function sendMessage() {
+            const text = chatInput.value.trim();
+            if (!text) return;
+            
+            addMessage(text, true);
+            chatInput.value = '';
+            quickReplies.style.display = 'none';
+            
+            const typing = showTyping();
+            
+            setTimeout(() => {
+                typing.remove();
+                addMessage(getBotResponse(text));
+            }, 1500);
+        }
+        
+        function sendQuickReply(text) {
+            addMessage(text, true);
+            quickReplies.style.display = 'none';
+            
+            const typing = showTyping();
+            setTimeout(() => {
+                typing.remove();
+                addMessage(getBotResponse(text));
+            }, 1200);
+        }
+        
+        function handleKeyPress(e) {
+            if (e.key === 'Enter') sendMessage();
+        }
+        
+        // Auto-open after 5 seconds on first visit
+        setTimeout(() => {
+            if (!localStorage.getItem('chatOpened')) {
+                toggleChat();
+                localStorage.setItem('chatOpened', 'true');
+            }
+        }, 5000);
+    </script>
+</body>
+</html>
