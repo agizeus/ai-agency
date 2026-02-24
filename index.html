@@ -19,10 +19,20 @@ window.location.replace('login.html?error=1');
 })();
 </script>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>OLYMP AI Agency | KI-Automation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
+/* Mobile First Optimizations */
+@media(max-width:768px){
+.nav-links{display:none}
+.hero{padding:6rem 5% 3rem;min-height:auto}
+.hero h1{font-size:clamp(1.75rem,5vw,2.5rem)}
+.job-grid,.modules-grid{grid-template-columns:1fr}
+.chat-container{width:100%;height:100%;bottom:0;right:0;border-radius:0}
+.chat-button{bottom:1rem;right:1rem}
+.btn-primary,.btn-secondary{width:100%;margin:0.5rem 0}
+}
 :root{--primary:#6366f1;--secondary:#ec4899;--accent:#06b6d4;--dark:#0f172a;--dark-light:#1e293b;--gray:#64748b;--success:#22c55e;--value:#f59e0b}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:#f8fafc;line-height:1.6}
 nav{position:fixed;top:0;width:100%;padding:1rem 5%;background:rgba(15,23,42,0.8);backdrop-filter:blur(20px);z-index:1000;display:flex;justify-content:space-between;align-items:center}
