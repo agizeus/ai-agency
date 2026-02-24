@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>
+// Login-Check (aktiviert für Pre-Launch)
+(function(){
+try{
+var access=localStorage.getItem('olymp_access');
+if(access!=='granted'){
+window.location.replace('login.html');
+}
+}catch(e){
+window.location.replace('login.html');
+}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Automator AI - Ihre KI-Agentur für intelligente Automation. Sparen Sie bis zu €50.000/Jahr durch KI-gestützte Prozesse für Sekretariat, Buchhaltung & Kundenservice.">
+<meta name="keywords" content="KI Automation, KI Agentur, Sekretariat Automation, Buchhaltung KI, Kundenservice KI, Prozessoptimierung">
+<meta name="author" content="Automator AI">
+<meta name="robots" content="index, follow">
+
+<!-- Open Graph / Social Media -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://automator-ai.de/">
+<meta property="og:title" content="Automator AI | KI-Automation für Ihr Unternehmen">
+<meta property="og:description" content="Sparen Sie bis zu €50.000/Jahr durch intelligente KI-Automation. Für Sekretariat, Buchhaltung & Kundenservice.">
+<meta property="og:image" content="https://olymp-ai.netlify.app/images/og-image.jpg">
+<meta property="og:locale" content="de_DE">
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://automator-ai.de/">
+<meta property="twitter:title" content="Automator AI | KI-Automation für Ihr Unternehmen">
+<meta property="twitter:description" content="Sparen Sie bis zu €50.000/Jahr durch intelligente KI-Automation.">
+<meta property="twitter:image" content="https://automator-ai.de/images/og-image.jpg">
+
+<!-- Favicon -->
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+<link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤖</text></svg>">
+
+<!-- Performance: Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<!-- Preload Critical CSS -->
+<link rel="preload" href="./styles.css" as="style">
+
+<!-- Schema.org Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Automator AI",
+  "description": "KI-Agentur für intelligente Prozess-Automation",
+  "url": "https://automator-ai.de/",
+  "logo": "https://automator-ai.de/images/logo.png",
+  "sameAs": [
+    "https://linkedin.com/company/automator-ai"
+  ],
+  "offers": {
+    "@type": "Service",
+    "serviceType": "KI Automation",
+    "areaServed": "DE, AT"
+  }
+}
+</script>
+
+<title>Automator AI | KI-Automation für Ihr Unternehmen</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+/* Mobile First Optimizations */
+@media(max-width:768px){
+.nav-links{display:none}
+.hero{padding:5rem 5% 2rem;min-height:auto}
+.hero h1{font-size:clamp(1.5rem,5vw,2rem)}
+section{padding:3rem 5%}
+.job-grid,.modules-grid{grid-template-columns:1fr}
+.module-card{margin:0 0.5rem}
+.chat-container{width:100%;height:100%;bottom:0;right:0;border-radius:0}
+.chat-button{bottom:1rem;right:1rem;width:48px;height:48px}
+.btn-primary,.btn-secondary{width:100%;margin:0.5rem 0;padding:0.875rem}
+.stat-number{font-size:1.75rem}
+.hero-stats{gap:1.5rem}
+.process-steps{grid-template-columns:1fr}
+}
+:root{--primary:#4F46E5;--secondary:#0EA5E9;--accent:#F97316;--dark:#0F172A;--dark-light:#F1F5F9;--gray:#64748B;--success:#22C55E;--value:#F97316;--bg:#FFFFFF;--surface:#F8FAFC}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
+nav{position:fixed;top:0;width:100%;padding:1rem 5%;background:rgba(255,255,255,0.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(0,0,0,0.05);z-index:1000;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none;cursor:pointer}
+.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:var(--dark);text-decoration:none}
+.nav-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:0.75rem 1.5rem;border-radius:50px;text-decoration:none}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:8rem 5% 4rem}
+.hero h1{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem}
+.hero h1 span{background:linear-gradient(135deg,var(--primary),var(--secondary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.btn-primary{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;border:none;cursor:pointer}
+.btn-secondary{background:transparent;color:#f8fafc;padding:1rem 2rem;border-radius:50px;text-decoration:none;font-weight:600;border:2px solid rgba(255,255,255,0.2)}
+.hero-stats{display:flex;justify-content:center;gap:4rem;flex-wrap:wrap;margin-top:4rem}
+.stat-number{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+section{padding:6rem 5%}.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:1rem}
+.job-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;max-width:1400px;margin:0 auto}
+.job-card{background:rgba(30,41,59,0.6);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem}
+.job-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin-bottom:1.5rem}
+.job-savings{display:flex;align-items:center;gap:0.5rem;background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);padding:0.75rem 1rem;border-radius:10px;margin-top:1rem}
+.job-savings-amount{margin-left:auto;font-weight:700;color:var(--value)}
+.modules-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(350px,1fr));gap:2rem;max-width:1400px;margin:0 auto}
+.module-card{background:rgba(15,23,42,0.8);border:2px solid rgba(255,255,255,0.05);border-radius:24px;overflow:hidden}
+.module-header{padding:2rem;background:linear-gradient(135deg,rgba(99,102,241,0.1),rgba(236,72,153,0.1))}
+.module-icon{width:70px;height:70px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:20px;display:flex;align-items:center;justify-content:center;font-size:2rem;margin-bottom:1rem}
+.module-content{padding:2rem}.module-features{list-style:none;margin-bottom:2rem}
+.module-features li{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem}
+.price-amount{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.module-select-btn{width:100%;padding:1rem;background:transparent;border:2px solid var(--primary);color:var(--primary);border-radius:12px;font-weight:600;cursor:pointer}
+.module-select-btn.selected{background:var(--primary);color:white}
+.configurator-container{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 400px;gap:3rem}
+@media(max-width:900px){.configurator-container{grid-template-columns:1fr}}
+.config-item{background:rgba(30,41,59,0.6);border:2px solid rgba(255,255,255,0.1);border-radius:16px;padding:1.5rem;display:flex;align-items:center;gap:1rem;cursor:pointer}
+.config-item.selected{border-color:var(--success);background:rgba(34,197,94,0.1)}
+.summary-card{background:rgba(30,41,59,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:24px;padding:2rem;position:sticky;top:100px}
+.summary-total-price{font-size:2rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.summary-cta{width:100%;padding:1rem;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border:none;border-radius:12px;font-weight:600}
+.process-steps{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;max-width:1200px;margin:0 auto}
+.process-step{flex:1;min-width:250px;max-width:300px;text-align:center;padding:2rem}
+.step-number{width:60px;height:60px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:700;margin:0 auto 1.5rem}
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding:4rem 5% 2rem}
+/* Chatbot Widget Styles */
+.chat-widget{position:fixed;bottom:2rem;right:2rem;z-index:9999;font-family:'Segoe UI',system-ui,sans-serif}
+.chat-button{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--primary),var(--secondary));border:none;cursor:pointer;box-shadow:0 8px 32px rgba(99,102,241,0.4);display:flex;align-items:center;justify-content:center;font-size:1.75rem;transition:all 0.3s ease;animation:chatPulse 2s infinite}
+.chat-button:hover{transform:scale(1.1);box-shadow:0 12px 40px rgba(99,102,241,0.6)}
+@keyframes chatPulse{0%,100%{box-shadow:0 8px 32px rgba(99,102,241,0.4)}50%{box-shadow:0 8px 40px rgba(99,102,241,0.7)}}
+.chat-container{position:absolute;bottom:80px;right:0;width:380px;height:550px;background:var(--dark-light);border:1px solid rgba(255,255,255,0.1);border-radius:24px;overflow:hidden;display:none;flex-direction:column;box-shadow:0 25px 80px rgba(0,0,0,0.5)}
+.chat-container.open{display:flex;animation:chatSlideIn 0.3s ease}
+@keyframes chatSlideIn{from{opacity:0;transform:translateY(20px) scale(0.95)}to{opacity:1;transform:translateY(0) scale(1)}}
+.chat-header{background:linear-gradient(135deg,var(--primary),var(--secondary));padding:1.25rem 1.5rem;display:flex;align-items:center;justify-content:space-between}
+.chat-header-info{display:flex;align-items:center;gap:0.75rem}
+.chat-avatar{width:44px;height:44px;background:rgba(255,255,255,0.2);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.chat-header-text h3{margin:0;font-size:1rem;font-weight:600;color:white}
+.chat-header-text p{margin:0;font-size:0.75rem;color:rgba(255,255,255,0.8)}
+.chat-close-btn{width:32px;height:32px;border:none;background:rgba(255,255,255,0.2);border-radius:50%;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background 0.2s}
+.chat-close-btn:hover{background:rgba(255,255,255,0.3)}
+.chat-messages{flex:1;overflow-y:auto;padding:1.5rem;display:flex;flex-direction:column;gap:1rem;background:linear-gradient(180deg,var(--dark) 0%,var(--dark-light) 100%)}
+.chat-messages::-webkit-scrollbar{width:6px}
+.chat-messages::-webkit-scrollbar-track{background:transparent}
+.chat-messages::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.2);border-radius:3px}
+.message{max-width:85%;padding:0.875rem 1rem;border-radius:18px;font-size:0.9375rem;line-height:1.5;word-wrap:break-word;animation:messageSlideIn 0.3s ease}
+@keyframes messageSlideIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.message.bot{align-self:flex-start;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#f8fafc;border-bottom-left-radius:4px}
+.message.user{align-self:flex-end;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-bottom-right-radius:4px}
+.typing-indicator{display:flex;gap:4px;padding:0.75rem 1rem;background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);border-radius:18px;border-bottom-left-radius:4px;align-self:flex-start}
+.typing-dot{width:8px;height:8px;background:rgba(255,255,255,0.6);border-radius:50%;animation:typingBounce 1.4s infinite}
+.typing-dot:nth-child(2){animation-delay:0.2s}
+.typing-dot:nth-child(3){animation-delay:0.4s}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0)}30%{transform:translateY(-8px)}}
+.chat-quick-replies{display:flex;flex-wrap:wrap;gap:0.5rem;padding:0 1.5rem 1rem;background:var(--dark-light);border-top:1px solid rgba(255,255,255,0.05)}
+.quick-reply-btn{padding:0.6rem 1rem;background:transparent;border:1px solid var(--primary);color:var(--primary);border-radius:20px;font-size:0.875rem;cursor:pointer;transition:all 0.2s}
+.quick-reply-btn:hover{background:var(--primary);color:white}
+.chat-input-container{padding:1rem 1.5rem;background:var(--dark-light);border-top:1px solid rgba(255,255,255,0.05);display:flex;gap:0.75rem}
+.chat-input{flex:1;padding:0.875rem 1rem;background:rgba(30,41,59,0.8);border:1px solid rgba(255,255,255,0.1);border-radius:24px;color:#f8fafc;font-size:0.9375rem;outline:none;transition:border-color 0.2s}
+.chat-input:focus{border-color:var(--primary)}
+.chat-input::placeholder{color:var(--gray)}
+.chat-send-btn{width:44px;height:44px;border:none;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:1.25rem;transition:transform 0.2s}
+.chat-send-btn:hover{transform:scale(1.05)}
+.chat-badge{position:absolute;top:-4px;right:-4px;width:22px;height:22px;background:var(--secondary);border-radius:50%;color:white;font-size:0.75rem;font-weight:700;display:flex;align-items:center;justify-content:center;animation:badgePulse 2s infinite}.chat-badge.hidden{display:none}
+@keyframes badgePulse{0%,100%{transform:scale(1)}50%{transform:scale(1.1)}}
+@media(max-width:480px){.chat-container{position:fixed;bottom:0;left:0;right:0;width:100%;height:calc(100vh - 80px);border-radius:24px 24px 0 0}.chat-widget{bottom:1rem;right:1rem}}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:3rem;max-width:1200px;margin:0 auto}
+</style>
+</head>
+<body>
+<nav><a href="#" class="logo">⚡ OLYMP AI</a><ul class="nav-links"><li><a href="#analysis">Jobs</a></li><li><a href="#modules">Module</a></li><li><a href="#configurator">Konfigurator</a></li><li><a href="analyse-tool.html">Analyse Tool</a></li><li><a href="terminbuchung.html">Termin buchen</a></li></ul><a href="#configurator" class="nav-cta">KI-Paket Konfigurieren</a></nav>
+
+<section class="hero">
+<div>
+<h1>Ersetzen Sie <span>teure Positionen</span> durch KI-Automation</h1>
+<p style="color:var(--gray);font-size:1.25rem;max-width:600px;margin:0 auto 2rem">Steigern Sie Ihre Effizienz mit modularen KI-Lösungen. Skalierbar. Sofort einsatzbereit.</p>
+<div style="display:flex;gap:1rem;justify-content:center">
+<a href="#configurator" class="btn-primary">Module konfigurieren</a>
+<a href="#analysis" class="btn-secondary">Job-Analyse</a>
+</div>
+<img src="./images/hero-office.jpg" onerror="this.src='https://via.placeholder.com/800x400/1e293b/64748b?text=Office+Team'" alt="Modern Office Team" style="width:100%;max-width:800px;height:400px;object-fit:cover;border-radius:24px;margin-top:3rem;box-shadow:0 25px 50px rgba(0,0,0,0.3)">
+<div class="hero-stats">
+<div><div class="stat-number">10x</div><div style="color:var(--gray)">Effizienzsteigerung</div></div>
+<div><div class="stat-number">24h</div><div style="color:var(--gray)">Implementierung</div></div>
+<div><div class="stat-number">7</div><div style="color:var(--gray)">KI-Module</div></div>
+</div>
+</div>
+</section>
+
+<section id="analysis">
+<div class="section-header">
+<h2 class="section-title">Job-Analyse: KI-Potenzial für Positionen</h2>
+<p style="color:var(--gray)">Welche Positionen können durch KI-Module unterstützt werden?</p>
+</div>
+<div class="job-grid">
+<a href="job-sekretariat.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-admin.jpg" alt="Sekretariat" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📋</div><h3>Sekretariat & Administration</h3><p style="color:var(--gray);font-size:0.9rem">Sekretär/in, Assistent/in</p><p>E-Mail-Management, Terminplanung, Dokumentenverwaltung</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">+85% Produktivität</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
+<a href="job-buchhaltung.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-buchhaltung.jpg" alt="Buchhaltung" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📊</div><h3>Buchhaltung & Finanzen</h3><p style="color:var(--gray);font-size:0.9rem">Buchhalter/in, Accountant</p><p>Rechnungsverarbeitung, Zahlungsabwicklung, Mahnwesen</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">Bis zu 90% Automatisierung</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
+<a href="job-kundenservice.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-service.jpg" alt="Kundenservice" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">🎧</div><h3>Kundenservice & Support</h3><p style="color:var(--gray);font-size:0.9rem">Kundenbetreuer/in, Service-Agent</p><p>24/7 Support, Ticket-Klassifizierung, FAQ</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">24/7 Erreichbarkeit</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
+<div class="job-card"><img src="./images/job-sales.jpg" alt="Sales Team" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📈</div><h3>Sales & Business Development</h3><p style="color:var(--gray);font-size:0.9rem">Sales Manager, Vertriebler</p><p>Lead-Qualifizierung, Erstansprache, Angebotserstellung</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">Bis zu 120% mehr Conversions</span></div></div>
+<a href="job-marketing.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-marketing.jpg" alt="Marketing" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📣</div><h3>Marketing & Content</h3><p style="color:var(--gray);font-size:0.9rem">Marketing Manager, Content Creator</p><p>Social Media, Blog-Artikel, Anzeigen, Marktanalyse</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">Bis zu 200% mehr Content</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
+<div class="job-card"><img src="./images/job-hr.jpg" alt="HR Team" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">👥</div><h3>Human Resources</h3><p style="color:var(--gray);font-size:0.9rem">HR Manager, Recruiter</p><p>Bewerbungsscreening, Interviews, Onboarding</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">+75% schnelleres Hiring</span></div></div>
+</div>
+</section>
+
+<section id="modules" style="background:var(--dark-light)">
+<div class="section-header">
+<h2 class="section-title">KI-Module - À-la-carte Preisgestaltung</h2>
+<p style="color:var(--gray)">Wählen Sie nur die Module, die Sie wirklich brauchen</p>
+</div>
+<div class="modules-grid">
+<div class="module-card"><div class="module-header"><div class="module-icon">🤖</div><h3 style="font-size:1.5rem;font-weight:700">AI Assistant Pro</h3><p style="color:var(--gray)">Sekretariat & Administration</p></div><div class="module-content"><ul class="module-features"><li>E-Mail Management & Terminplanung</li><li>Dokumentenorganisation</li><li>Reisebuchungen</li><li>Mehrsprachige Kommunikation</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">85% Zeitersparnis bei Admin-Aufgaben</div></div><div style="margin-bottom:1rem"><span class="price-amount">€899</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('assistant',899,'AI Assistant Pro')">Auswählen</button></div></div>
+<div class="module-card"><div class="module-header"><div class="module-icon">💼</div><h3 style="font-size:1.5rem;font-weight:700">Finance AI</h3><p style="color:var(--gray)">Buchhaltung & Finanzen</p></div><div class="module-content"><ul class="module-features"><li>Automatische Rechnungsverarbeitung</li><li>Zahlungsabwicklung & Mahnwesen</li><li>Bankabstimmung</li><li>Finanzberichte in Echtzeit</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">90% Automatisierung Buchhaltung</div></div><div style="margin-bottom:1rem"><span class="price-amount">€1.299</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('finance',1299,'Finance AI')">Auswählen</button></div></div>
+<div class="module-card"><div class="module-header"><div class="module-icon">💬</div><h3 style="font-size:1.5rem;font-weight:700">Support Bot 24/7</h3><p style="color:var(--gray)">Kundenservice & Support</p></div><div class="module-content"><ul class="module-features"><li>Rund-um-die-Uhr Kundensupport</li><li>Intelligente Ticket-Klassifizierung</li><li>Mehrsprachiger Support</li><li>Integration mit Helpdesk</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">24/7 Verfügbarkeit, 95% First-Contact-Lösung</div></div><div style="margin-bottom:1rem"><span class="price-amount">€799</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('support',799,'Support Bot 24/7')">Auswählen</button></div></div>
+<div class="module-card" style="border:2px solid var(--primary)"><div class="module-header"><div class="module-icon">🎯</div><h3 style="font-size:1.5rem;font-weight:700">Sales AI Engine</h3><p style="color:var(--gray)">Vertrieb & Lead-Generierung</p></div><div class="module-content"><ul class="module-features"><li>Lead-Qualifizierung & Scoring</li><li>Automatisierte Follow-ups</li><li>Angebotserstellung</li><li>CRM-Integration</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">+120% mehr qualifizierte Leads</div></div><div style="margin-bottom:1rem"><span class="price-amount">€1.499</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('sales',1499,'Sales AI Engine')">Auswählen</button></div></div>
+<div class="module-card"><div class="module-header"><div class="module-icon">🚀</div><h3 style="font-size:1.5rem;font-weight:700">Marketing Automation</h3><p style="color:var(--gray)">Content & Kampagnen</p></div><div class="module-content"><ul class="module-features"><li>Content-Erstellung (Text & Bild)</li><li>Social Media Management</li><li>Anzeigenoptimierung</li><li>Marktanalyse & Reporting</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">200% mehr Content in 50% weniger Zeit</div></div><div style="margin-bottom:1rem"><span class="price-amount">€1.199</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('marketing',1199,'Marketing Automation')">Auswählen</button></div></div>
+<div class="module-card"><div class="module-header"><div class="module-icon">👤</div><h3 style="font-size:1.5rem;font-weight:700">HR AI Suite</h3><p style="color:var(--gray)">Recruiting & Personal</p></div><div class="module-content"><ul class="module-features"><li>Automatisches Bewerbungsscreening</li><li>Interview-Assistenz</li><li>Onboarding-Automatisierung</li><li>Mitarbeiterbefragungen</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">75% schnelleres Hiring, bessere Matches</div></div><div style="margin-bottom:1rem"><span class="price-amount">€999</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('hr',999,'HR AI Suite')">Auswählen</button></div></div>
+<div class="module-card"><div class="module-header"><div class="module-icon">🔒</div><h3 style="font-size:1.5rem;font-weight:700">Legal & Compliance AI</h3><p style="color:var(--gray)">Verträge & Datenschutz</p></div><div class="module-content"><ul class="module-features"><li>Vertragsprüfung & Analyse</li><li>Compliance-Überwachung</li><li>Datenschutz-Automatisierung</li><li>Rechtliche Dokumentation</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">80% weniger Zeit bei Vertragsprüfung</div></div><div style="margin-bottom:1rem"><span class="price-amount">€1.599</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('legal',1599,'Legal & Compliance AI')">Auswählen</button></div></div>
+</div>
+</section>
+
+<section id="pricing" style="text-align:center;background:var(--dark-light)">
+<div style="max-width:800px;margin:0 auto;padding:4rem 2rem">
+<h2 class="section-title">Transparente Preise</h2>
+<p style="color:var(--gray);margin-bottom:2rem">Wählen Sie das passende Paket für Ihr Unternehmen</p>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:2rem;margin-top:3rem">
+<div style="background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.1);border-radius:20px;padding:2rem">
+<div style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem">Starter</div>
+<div style="font-size:2.5rem;font-weight:800;color:var(--primary);margin-bottom:1rem">€899<span style="font-size:1rem;color:var(--gray)">/Monat</span></div>
+<ul style="list-style:none;text-align:left;margin:1.5rem 0">
+<li style="padding:0.5rem 0">✓ E-Mail Management</li>
+<li style="padding:0.5rem 0">✓ Terminplanung</li>
+<li style="padding:0.5rem 0">✓ Basis-Chatbot</li>
+</ul>
+<button class="btn-primary" style="width:100%">Auswählen</button>
+</div>
+<div style="background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:20px;padding:2rem;color:white;transform:scale(1.05)">
+<div style="font-size:0.875rem;font-weight:600;opacity:0.9;margin-bottom:0.5rem">BELIEBT</div>
+<div style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem">Professional</div>
+<div style="font-size:2.5rem;font-weight:800;margin-bottom:1rem">€1.299<span style="font-size:1rem;opacity:0.9">/Monat</span></div>
+<ul style="list-style:none;text-align:left;margin:1.5rem 0">
+<li style="padding:0.5rem 0">✓ Alle Starter Features</li>
+<li style="padding:0.5rem 0">✓ Dokumentenverwaltung</li>
+<li style="padding:0.5rem 0">✓ Erweiterter Chatbot</li>
+<li style="padding:0.5rem 0">✓ Prioritäts-Support</li>
+</ul>
+<button style="width:100%;padding:1rem;background:white;color:var(--primary);border:none;border-radius:50px;font-weight:600;cursor:pointer">Auswählen</button>
+</div>
+<div style="background:rgba(255,255,255,0.5);border:1px solid rgba(0,0,0,0.1);border-radius:20px;padding:2rem">
+<div style="font-size:1.5rem;font-weight:700;margin-bottom:0.5rem">Enterprise</div>
+<div style="font-size:2.5rem;font-weight:800;color:var(--primary);margin-bottom:1rem">€1.999<span style="font-size:1rem;color:var(--gray)">/Monat</span></div>
+<ul style="list-style:none;text-align:left;margin:1.5rem 0">
+<li style="padding:0.5rem 0">✓ Alle Professional Features</li>
+<li style="padding:0.5rem 0">✓ Custom Integrationen</li>
+<li style="padding:0.5rem 0">✓ Dedizierter Account Manager</li>
+</ul>
+<button class="btn-primary" style="width:100%">Kontaktieren</button>
+</div>
+</div>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div style="grid-column:span 2">
+<a href="#" class="logo" style="font-size:1.5rem;margin-bottom:1rem;display:inline-block">⚡ OLYMP AI</a>
+<p style="color:var(--gray)">Die führende KI-Agentur für Unternehmensautomation. Wir optimieren Ihre Prozesse mit intelligenten KI-Lösungen.</p>
+</div>
+<div><h4 style="margin-bottom:1rem">Module</h4><ul style="list-style:none"><li><a href="#modules" style="color:var(--gray);text-decoration:none">AI Assistant</a></li><li><a href="#modules" style="color:var(--gray);text-decoration:none">Finance AI</a></li><li><a href="#modules" style="color:var(--gray);text-decoration:none">Support Bot</a></li><li><a href="#modules" style="color:var(--gray);text-decoration:none">Sales AI</a></li></ul></div>
+<div><h4 style="margin-bottom:1rem">Kontakt</h4><ul style="list-style:none;color:var(--gray)"><li><a href="mailto:info@olymp-ai.de" style="color:var(--gray);text-decoration:none">info@olymp-ai.de</a></li><li>+43 660 4055688</li><li>9500 Villach, Österreich</li></ul></div>
+</div>
+<div style="display:flex;justify-content:center;gap:2rem;margin-top:2rem;padding-top:2rem;border-top:1px solid rgba(255,255,255,0.05)">
+<a href="impressum.html" style="color:var(--gray);font-size:0.875rem;text-decoration:none">Impressum</a>
+<a href="agb.html" style="color:var(--gray);font-size:0.875rem;text-decoration:none">AGB</a>
+<a href="datenschutz.html" style="color:var(--gray);font-size:0.875rem;text-decoration:none">Datenschutz</a>
+</div>
+<!-- Testimonials Section -->
+<section id="testimonials" style="background:linear-gradient(135deg,rgba(99,102,241,0.05),rgba(236,72,153,0.05))">
+<div class="section-header">
+<h2 class="section-title">Was unsere Kunden sagen</h2>
+<p style="color:var(--gray)">Erfolgsgeschichten aus der Praxis</p>
+</div>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1200px;margin:0 auto">
+<div style="background:rgba(30,41,59,0.6);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem">
+<div style="color:var(--value);font-size:1.25rem;margin-bottom:1rem">★★★★★</div>
+<p style="font-style:italic;margin-bottom:1.5rem">"Automator AI hat unsere Sekretariatskosten um 60% reduziert. Die KI arbeitet 24/7 und macht keine Fehler."</p>
+<div style="display:flex;align-items:center;gap:1rem">
+<div style="width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center">👤</div>
+<div>
+<div style="font-weight:600">Maria Schmidt</div>
+<div style="font-size:0.875rem;color:var(--gray)">Geschäftsführerin, Schmidt GmbH</div>
+</div>
+</div>
+</div>
+<div style="background:rgba(30,41,59,0.6);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem">
+<div style="color:var(--value);font-size:1.25rem;margin-bottom:1rem">★★★★★</div>
+<p style="font-style:italic;margin-bottom:1.5rem">"Endlich können wir uns auf das Wesentliche konzentrieren. Der Kundenservice läuft rund um die Uhr."</p>
+<div style="display:flex;align-items:center;gap:1rem">
+<div style="width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center">👤</div>
+<div>
+<div style="font-weight:600">Thomas Weber</div>
+<div style="font-size:0.875rem;color:var(--gray)">CEO, Weber & Partner</div>
+</div>
+</div>
+</div>
+<div style="background:rgba(30,41,59,0.6);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem">
+<div style="color:var(--value);font-size:1.25rem;margin-bottom:1rem">★★★★★</div>
+<p style="font-style:italic;margin-bottom:1.5rem">"ROI erreicht nach nur 3 Monaten. Die Buchhaltung läuft jetzt vollautomatisch."</p>
+<div style="display:flex;align-items:center;gap:1rem">
+<div style="width:48px;height:48px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:50%;display:flex;align-items:center;justify-content:center">👤</div>
+<div>
+<div style="font-weight:600">Sarah Müller</div>
+<div style="font-size:0.875rem;color:var(--gray)">CFO, Müller Consulting</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<footer style="background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding:4rem 5% 2rem">
+<div style="text-align:center;padding-top:2rem;color:var(--gray);font-size:0.875rem">© 2026 Automator AI. Alle Rechte vorbehalten.</div>
+</footer>
+
+<script>
+const selectedModules=new Map();
+const valueMap={
+  assistant:{roi:"Bis zu 85% mehr Produktivität",desc:"bei Admin-Aufgaben"},
+  finance:{roi:"Bis zu 90% Automatisierung",desc:"in der Buchhaltung"},
+  support:{roi:"24/7 Erreichbarkeit",desc:"ohne Personal-Mehrkosten"},
+  sales:{roi:"Bis zu 120% mehr Conversions",desc:"potenzielle Steigerung"},
+  marketing:{roi:"Bis zu 200% mehr Content",desc:"bei gleichem Zeitaufwand"},
+  hr:{roi:"Bis zu 75% schnelleres Hiring",desc:"durch KI-Optimierung"},
+  legal:{roi:"Bis zu 80% Zeitersparnis",desc:"bei Vertragsprüfung"}
+};
+function toggleModule(id,price,name){const btn=event.target;if(selectedModules.has(id)){selectedModules.delete(id);btn.classList.remove('selected');btn.textContent='Auswählen'}else{selectedModules.set(id,{price,name});btn.classList.add('selected');btn.textContent='Ausgewählt ✓'}updateConfigFromModules()}
+function toggleConfig(id,price,name){const item=document.getElementById('config-'+id);if(selectedModules.has(id)){selectedModules.delete(id);item.classList.remove('selected')}else{selectedModules.set(id,{price,name});item.classList.add('selected')}updateSummary()}
+function updateConfigFromModules(){document.querySelectorAll('.config-item').forEach(item=>{const id=item.id.replace('config-','');if(selectedModules.has(id)){item.classList.add('selected')}else{item.classList.remove('selected')}});updateSummary()}
+function updateSummary(){const list=document.getElementById('summary-list');const totalEl=document.getElementById('total-price');const valueEl=document.getElementById('value-amount');if(selectedModules.size===0){list.innerHTML='<li style="color:var(--gray);text-align:center;font-style:italic;padding:2rem 0">Noch keine Module ausgewählt</li>';totalEl.textContent='€0';valueEl.textContent='Wählen Sie Module';return}let total=0;let html='';let valueTexts=[];selectedModules.forEach((mod,id)=>{total+=mod.price;html+=`<li style="display:flex;justify-content:space-between;padding:0.75rem 0;border-bottom:1px solid rgba(255,255,255,0.05)"><span>${mod.name}</span><span>€${mod.price.toLocaleString()}</span></li>`;if(valueMap[id]){valueTexts.push(valueMap[id].roi)}});list.innerHTML=html;totalEl.textContent='€'+total.toLocaleString();valueEl.textContent=valueTexts.length>0?valueTexts.join(', '):'Individueller Mehrwert'}
+function submitConfiguration(){
+  if(selectedModules.size===0){
+    alert('Bitte wählen Sie mindestens ein Modul aus.');
+    return;
+  }
+  
+  const modules = Array.from(selectedModules.values()).map(m => m.name).join(', ');
+  const total = Array.from(selectedModules.values()).reduce((sum, m) => sum + m.price, 0);
+  
+  // Speichere Auswahl im localStorage für Terminbuchung
+  localStorage.setItem('olymp_selectedModules', modules);
+  localStorage.setItem('olymp_totalPrice', total);
+  
+  // Weiterleitung zur Terminbuchung mit Angebots-Parameter
+  window.location.href = 'terminbuchung.html?type=angebot&modules=' + encodeURIComponent(modules);
+}
+</script>
+
+<!-- Chatbot Widget -->
+<div class="chat-widget">
+  <button class="chat-button" id="chatToggle" onclick="toggleChat()" aria-label="Chat öffnen">
+    💬
+    <span class="chat-badge">1</span>
+  </button>
+  <div class="chat-container" id="chatContainer">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <div class="chat-avatar">🤖</div>
+        <div class="chat-header-text">
+          <h3>OLYMP AI Assistant</h3>
+          <p>🟢 Antwortet sofort</p>
+        </div>
+      </div>
+      <button class="chat-close-btn" onclick="toggleChat()" aria-label="Chat schließen">✕</button>
+    </div>
+    <div class="chat-messages" id="chatMessages">
+      <!-- Messages will be added here -->
+    </div>
+    <div class="chat-quick-replies" id="quickReplies">
+      <button class="quick-reply-btn" onclick="sendQuickReply('preise')">💰 Preise anzeigen</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('module')">🧩 Module erklären</button>
+      <button class="quick-reply-btn" onclick="sendQuickReply('termin')">📅 Termin buchen</button>
+    </div>
+    <div class="chat-input-container">
+      <input type="text" class="chat-input" id="chatInput" placeholder="Schreiben Sie eine Nachricht..." onkeypress="handleKeyPress(event)">
+      <button class="chat-send-btn" onclick="sendMessage()" aria-label="Senden">➤</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// Chatbot Widget Logic
+let chatOpen = false;
+let firstOpen = true;
+
+const botResponses = {
+  greeting: "👋 Hallo! Ich bin Ihr OLYMP AI Assistant. Wie kann ich Ihnen heute helfen?",
+  preise: `💰 **Unsere Preisgestaltung:**
+
+• 🤖 AI Assistant Pro — €899/Monat
+• 💼 Finance AI — €1.299/Monat  
+• 💬 Support Bot 24/7 — €799/Monat
+• 🎯 Sales AI Engine — €1.499/Monat
+• 🚀 Marketing Automation — €1.199/Monat
+• 👤 HR AI Suite — €999/Monat
+• 🔒 Legal AI — €1.599/Monat
+
+Alle Module sind kombinierbar. Je mehr Module, desto höher Ihr Rabatt!`,
+  module: `🧩 **Unsere KI-Module im Überblick:**
+
+**🤖 AI Assistant Pro**
+Sekretariat & Administration — E-Mail Management, Terminplanung, Dokumentenorganisation
+
+**💼 Finance AI**  
+Buchhaltung & Finanzen — Rechnungsverarbeitung, Mahnwesen, Bankabstimmung
+
+**💬 Support Bot 24/7**
+Kundenservice — Rund-um-die-Uhr Support, Ticket-Klassifizierung
+
+**🎯 Sales AI Engine**
+Vertrieb — Lead-Qualifizierung, automatisierte Follow-ups
+
+Welches Modul interessiert Sie am meisten?`,
+  termin: `📅 **Gerne vereinbaren wir einen Termin!**
+
+Unser Team ist verfügbar:
+🕐 Mo–Fr: 09:00 – 18:00 Uhr
+
+Sie können uns erreichen unter:
+📧 info@olymp-ai.de
+📞 +43 660 4055688
+
+Oder hinterlassen Sie Ihre E-Mail, wir melden uns innerhalb von 2 Stunden!`,
+  default: `Das ist eine spannende Frage! 🎯
+
+Ich kann Ihnen helfen bei:
+• Preisen und Paketen 💰
+• Erklärung der Module 🧩
+• Terminvereinbarung 📅
+
+Was möchten Sie genau wissen?`,
+  danke: "Sehr gerne! 😊 Bei weiteren Fragen stehe ich Ihnen jederzeit zur Verfügung. Haben Sie einen erfolgreichen Tag!",
+  hallo: "👋 Hallo! Schön, dass Sie da sind. Wie kann ich Ihnen bei der KI-Transformation Ihres Unternehmens helfen?",
+  hilfe: "Ich helfe Ihnen gerne! Wählen Sie eine der Quick-Buttons oben oder stellen Sie mir eine direkte Frage zu unseren KI-Modulen."
+};
+
+function toggleChat() {
+  const container = document.getElementById('chatContainer');
+  const badge = document.querySelector('.chat-badge');
+  chatOpen = !chatOpen;
+  
+  if (chatOpen) {
+    container.classList.add('open');
+    document.getElementById('chatToggle').innerHTML = '✕';
+    badge.style.display = 'none';
+    
+    if (firstOpen) {
+      setTimeout(() => {
+        addBotMessage(botResponses.greeting);
+      }, 500);
+      firstOpen = false;
+    }
+    
+    setTimeout(() => document.getElementById('chatInput').focus(), 300);
+  } else {
+    container.classList.remove('open');
+    document.getElementById('chatToggle').innerHTML = '💬<span class="chat-badge">1</span>';
+  }
+}
+
+function addBotMessage(text) {
+  const messages = document.getElementById('chatMessages');
+  
+  // Show typing indicator
+  const typingDiv = document.createElement('div');
+  typingDiv.className = 'typing-indicator';
+  typingDiv.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+  messages.appendChild(typingDiv);
+  messages.scrollTop = messages.scrollHeight;
+  
+  // Remove typing and show message after delay
+  setTimeout(() => {
+    typingDiv.remove();
+    const msgDiv = document.createElement('div');
+    msgDiv.className = 'message bot';
+    msgDiv.innerHTML = text.replace(/\n/g, '<br>');
+    messages.appendChild(msgDiv);
+    messages.scrollTop = messages.scrollHeight;
+  }, 1200 + Math.random() * 800);
+}
+
+function addUserMessage(text) {
+  const messages = document.getElementById('chatMessages');
+  const msgDiv = document.createElement('div');
+  msgDiv.className = 'message user';
+  msgDiv.textContent = text;
+  messages.appendChild(msgDiv);
+  messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
+  const input = document.getElementById('chatInput');
+  const text = input.value.trim();
+  
+  if (!text) return;
+  
+  addUserMessage(text);
+  input.value = '';
+  
+  // Simulate bot response
+  setTimeout(() => generateBotResponse(text), 500);
+}
+
+function sendQuickReply(type) {
+  const userTexts = {
+    preise: 'Zeige mir die Preise',
+    module: 'Welche Module gibt es?',
+    termin: 'Ich möchte einen Termin buchen'
+  };
+  
+  addUserMessage(userTexts[type]);
+  setTimeout(() => addBotMessage(botResponses[type]), 600);
+}
+
+function generateBotResponse(userText) {
+  const lower = userText.toLowerCase();
+  
+  if (lower.includes('preis') || lower.includes('kosten') || lower.includes('€') || lower.includes('euro')) {
+    addBotMessage(botResponses.preise);
+  } else if (lower.includes('modul') || lower.includes('paket') || lower.includes('angebot')) {
+    addBotMessage(botResponses.module);
+  } else if (lower.includes('termin') || lower.includes('gespräch') || lower.includes('anruf')) {
+    addBotMessage(botResponses.termin);
+  } else if (lower.includes('danke') || lower.includes('super') || lower.includes('perfekt')) {
+    addBotMessage(botResponses.danke);
+  } else if (lower.includes('hallo') || lower.includes('hi') || lower.includes('hey') || lower.includes('guten')) {
+    addBotMessage(botResponses.hallo);
+  } else if (lower.includes('hilfe') || lower.includes('help') || lower.includes('?')) {
+    addBotMessage(botResponses.hilfe);
+  } else {
+    addBotMessage(botResponses.default);
+  }
+}
+
+function handleKeyPress(event) {
+  if (event.key === 'Enter') {
+    sendMessage();
+  }
+}
+
+// Auto-open chat after 8 seconds
+setTimeout(() => {
+  if (!chatOpen && firstOpen) {
+    const badge = document.querySelector('.chat-badge');
+    if (badge) badge.style.animation = 'badgePulse 0.5s infinite';
+  }
+}, 8000);
+
+// Badge entfernen wenn Chat geöffnet oder Nachricht gelesen
+document.addEventListener('DOMContentLoaded', function() {
+  const chatContainer = document.getElementById('chatContainer');
+  const badge = document.querySelector('.chat-badge');
+  const chatMessages = document.getElementById('chatMessages');
+  
+  if (chatContainer && badge) {
+    // Observer für Chat-Öffnung
+    const observer = new MutationObserver(function(mutations) {
+      mutations.forEach(function(mutation) {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          if (chatContainer.classList.contains('open')) {
+            badge.style.display = 'none';
+          }
+        }
+      });
+    });
+    
+    observer.observe(chatContainer, { attributes: true });
+    
+    // Badge auch entfernen wenn auf Chat geklickt wird
+    chatContainer.addEventListener('click', function() {
+      badge.style.display = 'none';
+    });
+  }
+  
+  // Angebot-Button Funktionalität
+  const angebotBtn = document.getElementById('angebotButton');
+  if (angebotBtn) {
+    angebotBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      // Zeige Modal oder leite zu Terminbuchung
+      window.location.href = 'terminbuchung.html?type=angebot';
+    });
+  }
+});
+</script>
+<!-- Cookie Banner DSGVO -->
+<div id="cookieBanner" style="position:fixed;bottom:0;left:0;right:0;background:rgba(15,23,42,0.95);border-top:1px solid rgba(255,255,255,0.1);padding:1.5rem;z-index:10000;display:flex;justify-content:center;align-items:center;gap:2rem;flex-wrap:wrap">
+<div style="max-width:600px">
+<strong style="color:white">🍪 Wir verwenden Cookies</strong>
+<p style="color:var(--gray);font-size:0.875rem;margin-top:0.5rem">Für die beste Nutzung unserer Website. Sie können Ihre Einstellungen jederzeit ändern.</p>
+</div>
+<div style="display:flex;gap:1rem">
+<button onclick="acceptCookies()" style="padding:0.75rem 1.5rem;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border:none;border-radius:50px;cursor:pointer;font-weight:600">Akzeptieren</button>
+<button onclick="declineCookies()" style="padding:0.75rem 1.5rem;background:transparent;border:1px solid var(--gray);color:var(--gray);border-radius:50px;cursor:pointer">Ablehnen</button>
+</div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('cookiesAccepted','true');document.getElementById('cookieBanner').style.display='none'}
+function declineCookies(){localStorage.setItem('cookiesAccepted','false');document.getElementById('cookieBanner').style.display='none'}
+if(localStorage.getItem('cookiesAccepted')){document.getElementById('cookieBanner').style.display='none'}
+</script>
+</body>
+</html><!-- Deploy: 2026-02-24-14:15 UTC -->
+<!-- Trigger: Di 24. Feb 17:30:16 UTC 2026 -->

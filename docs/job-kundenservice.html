@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>if(localStorage.getItem("olymp_access")!=="granted"){window.location.href="login.html";}</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI für Kundenservice | OLYMP AI Agency</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#6366f1;--secondary:#ec4899;--accent:#06b6d4;--dark:#0f172a;--dark-light:#1e293b;--gray:#64748b;--success:#22c55e;--value:#f59e0b}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:#f8fafc;line-height:1.6}
+nav{position:fixed;top:0;width:100%;padding:1rem 5%;background:rgba(15,23,42,0.9);backdrop-filter:blur(20px);z-index:1000;display:flex;justify-content:space-between;align-items:center}
+.logo{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent;text-decoration:none}
+.nav-links{display:flex;gap:2rem;list-style:none}.nav-links a{color:#f8fafc;text-decoration:none}
+.nav-cta{background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;padding:0.75rem 1.5rem;border-radius:50px;text-decoration:none}
+.hero{min-height:70vh;display:flex;align-items:center;padding:8rem 5% 4rem;background:linear-gradient(135deg,rgba(236,72,153,0.15),rgba(99,102,241,0.1))}
+.hero-content{max-width:1400px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center}
+@media(max-width:900px){.hero-content{grid-template-columns:1fr}}
+.hero h1{font-size:clamp(2.5rem,5vw,4rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem}
+.hero h1 span{background:linear-gradient(135deg,var(--secondary),var(--primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-stats{display:flex;gap:3rem;margin-top:2rem}
+.stat{display:text-align:center}
+.stat-value{font-size:2.5rem;font-weight:800;background:linear-gradient(135deg,var(--secondary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.stat-label{color:var(--gray);font-size:.9rem}
+section{padding:5rem 5%}
+.section-header{text-align:center;max-width:700px;margin:0 auto 4rem}
+.section-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:1rem}
+.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:2rem;max-width:1200px;margin:0 auto}
+.problem-card{background:rgba(30,41,59,0.6);border-left:4px solid var(--secondary);padding:2rem;border-radius:0 16px 16px 0}
+.problem-title{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;color:#ec4899}
+.solution-section{background:linear-gradient(135deg,rgba(236,72,153,0.1),rgba(34,197,94,0.1))}
+.solution-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:2rem;max-width:1400px;margin:0 auto}
+.solution-card{background:rgba(30,41,59,0.8);border:1px solid rgba(236,72,153,0.3);border-radius:20px;padding:2rem}
+.solution-icon{width:60px;height:60px;background:linear-gradient(135deg,var(--secondary),var(--primary));border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:1.75rem;margin-bottom:1.5rem}
+.solution-title{font-size:1.2rem;font-weight:700;margin-bottom:1rem}
+.solution-benefit{display:flex;align-items:center;gap:.5rem;color:var(--success);font-size:.9rem;font-weight:600;margin-top:1rem}
+.roi-calculator{background:rgba(30,41,59,0.9);border:2px solid rgba(236,72,153,0.3);border-radius:24px;padding:3rem;max-width:800px;margin:0 auto}
+.calculator-title{font-size:1.5rem;font-weight:700;text-align:center;margin-bottom:2rem}
+.input-group{margin-bottom:1.5rem}
+.input-label{display:block;margin-bottom:.5rem;font-weight:500}
+.input-range{width:100%;margin-bottom:.5rem}
+.range-value{text-align:center;font-size:1.25rem;font-weight:700;color:var(--secondary)}
+.result-box{background:linear-gradient(135deg,rgba(236,72,153,0.2),rgba(34,197,94,0.2));border-radius:16px;padding:2rem;margin-top:2rem;text-align:center}
+.result-value{font-size:3rem;font-weight:800;background:linear-gradient(135deg,var(--secondary),var(--success));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.result-label{color:var(--gray);margin-top:.5rem}
+.cta-section{text-align:center;padding:6rem 5%;background:linear-gradient(135deg,rgba(236,72,153,0.2),rgba(99,102,241,0.2))}
+.cta-title{font-size:clamp(2rem,4vw,3rem);font-weight:700;margin-bottom:1.5rem}
+.btn-primary{background:linear-gradient(135deg,var(--secondary),var(--primary));color:white;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;display:inline-block;border:none;cursor:pointer}
+.btn-secondary{background:transparent;color:#f8fafc;padding:1rem 2.5rem;border-radius:50px;text-decoration:none;font-weight:600;border:2px solid rgba(255,255,255,0.3);display:inline-block;margin-left:1rem}
+footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding:4rem 5% 2rem}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:3rem;max-width:1200px;margin:0 auto}
+.footer-col h4{margin-bottom:1rem;color:#f8fafc}
+.footer-col a{display:block;color:var(--gray);text-decoration:none;margin-bottom:.5rem}
+.footer-col a:hover{color:var(--secondary)}
+</style>
+</head>
+<body>
+<nav>
+<a href="index.html" class="logo">⚡ OLYMP AI</a>
+<ul class="nav-links">
+<li><a href="index.html#analysis">Jobs</a></li>
+<li><a href="index.html#modules">Module</a></li>
+<li><a href="index.html#configurator">Konfigurator</a></li>
+<li><a href="analyse-tool.html">Analyse Tool</a></li>
+<li><a href="terminbuchung.html">Termin buchen</a></li>
+</ul>
+<a href="terminbuchung.html" class="nav-cta">Termin buchen</a>
+</nav>
+
+<section class="hero">
+<div class="hero-content">
+<div>
+<h1>KI für <span>Kundenservice</span></h1>
+<p style="color:var(--gray);font-size:1.25rem;margin-bottom:2rem">Beantworten Sie 80% der Kundenanfragen automatisch - 24/7 verfügbar. Steigern Sie die Zufriedenheit bei weniger Aufwand.</p>
+<a href="#rechner" class="btn-primary">Einsparung berechnen</a>
+<a href="analyse-tool.html" class="btn-secondary">Alle Aufgaben ansehen</a>
+</div>
+<div class="hero-stats">
+<div class="stat">
+<div class="stat-value">80%</div>
+<div class="stat-label">Automatisiert</div>
+</div>
+<div class="stat">
+<div class="stat-value">24/7</div>
+<div class="stat-label">Verfügbar</div>
+</div>
+<div class="stat">
+<div class="stat-value">1-2</div>
+<div class="stat-label">Monate ROI</div>
+</div>
+</div>
+</div>
+</section>
+
+<section>
+<div class="section-header">
+<h2 class="section-title">Die Herausforderungen</h2>
+<p style="color:var(--gray)">Was Kundenservice-Teams täglich belastet</p>
+</div>
+<div class="problem-grid">
+<div class="problem-card">
+<div class="problem-title">😰 Überlastung: Zu viele Anfragen</div>
+<p>Die Tickets häufen sich, E-Mails bleiben unbeantwortet, Kunden warten zu lange. Das Team ist am Limit.</p>
+</div>
+<div class="problem-card">
+<div class="problem-title">⏰ Begrenzte Erreichbarkeit</div>
+<p>Kunden erwarten Antworten außerhalb der Geschäftszeiten. Aber Personal für 24/7-Support ist zu teuer.</p>
+</div>
+<div class="problem-card">
+<div class="problem-title">😤 Frustrierte Kunden</div>
+<p>Lange Wartezeiten, standardisierte Antworten, keine persönliche Betreuung. Die Kundenzufriedenheit sinkt.</p>
+</div>
+<div class="problem-card">
+<div class="problem-title">💸 Hohe Personalkosten</div>
+<p>Qualifizierte Service-Mitarbeiter sind teuer und schwer zu finden. Die Fluktuation ist hoch.</p>
+</div>
+</div>
+</section>
+
+<section class="solution-section">
+<div class="section-header">
+<h2 class="section-title">So hilft KI</h2>
+<p style="color:var(--gray)">Konkrete Automatisierungsmöglichkeiten</p>
+</div>
+<div class="solution-grid">
+<div class="solution-card">
+<div class="solution-icon">📧</div>
+<div class="solution-title">KI-E-Mail-Management</div>
+<p>Die KI liest eingehende E-Mails, versteht den Kontext und erstellt passende Antwortentwürfe - oder beantwortet Standardanfragen direkt.</p>
+<div class="solution-benefit">✓ 80% der E-Mails automatisch</div>
+</div>
+<div class="solution-card">
+<div class="solution-icon">📞</div>
+<div class="solution-title">KI-Telefonist</div>
+<p>KI nimmt Anrufe entgegen, qualifiziert Anliegen, gibt Informationen und leitet nur komplexe Fälle an Menschen weiter.</p>
+<div class="solution-benefit">✓ 24/7 Verfügbar ohne Personal</div>
+</div>
+<div class="solution-card">
+<div class="solution-icon">💬</div>
+<div class="solution-title">KI-Chatbot</div>
+<p>Intelligenter Chatbot auf Ihrer Website beantwortet Fragen, führt Dialoge und sammelt Lead-Informationen.</p>
+<div class="solution-benefit">✓ 90% der Chats automatisch</div>
+</div>
+<div class="solution-card">
+<div class="solution-icon">🎫</div>
+<div class="solution-title">Smarte Ticket-Verarbeitung</div>
+<p>Automatische Kategorisierung, Priorisierung und Weiterleitung an die richtige Abteilung basierend auf Inhalt.</p>
+<div class="solution-benefit">✓ 100% automatisiert</div>
+</div>
+<div class="solution-card">
+<div class="solution-icon">🔄</div>
+<div class="solution-title">Automatische Follow-ups</div>
+<p>Die KI versendet personalisierte Nachfass-E-Mails, Dankesnachrichten und Zufriedenheitsumfragen.</p>
+<div class="solution-benefit">✓ Kundenbindung ohne Aufwand</div>
+</div>
+<div class="solution-card">
+<div class="solution-icon">📚</div>
+<div class="solution-title">Selbstlernende Wissensdatenbank</div>
+<p>Die KI erstellt FAQ-Einträge aus Support-Tickets und aktualisiert Antworten basierend auf neuen Informationen.</p>
+<div class="solution-benefit">✓ Wissen wächst automatisch</div>
+</div>
+</div>
+</section>
+
+<section id="rechner">
+<div class="roi-calculator">
+<h3 class="calculator-title">💰 Einsparung berechnen</h3>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem">
+<div>
+<div class="input-group">
+<label class="input-label">Service-Stunden pro Monat</label>
+<input type="range" class="input-range" id="hoursRange" min="40" max="400" value="160" oninput="updateCalculation()">
+<div class="range-value" id="hoursValue">160 Stunden</div>
+</div>
+<div class="input-group">
+<label class="input-label">Stundensatz Service-Mitarbeiter</label>
+<input type="range" class="input-range" id="rateRange" min="25" max="60" value="30" oninput="updateCalculation()">
+<div class="range-value" id="rateValue">€30/Stunde</div>
+</div>
+</div>
+<div class="result-box">
+<div class="result-value" id="monthlySavings">€3,840</div>
+<div class="result-label">Geschätzte monatliche Einsparung</div>
+<div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.1)">
+<div style="font-size:1.5rem;font-weight:700;color:var(--success)">€46,080</div>
+<div style="color:var(--gray);font-size:.9rem">Jährliche Einsparung</div>
+</div>
+</div>
+</div>
+<p style="text-align:center;color:var(--gray);margin-top:2rem;font-size:.9rem">* Berechnung basiert auf durchschnittlich 80% Automatisierungsrate durch KI</p>
+</div>
+</section>
+
+<section class="cta-section">
+<h2 class="cta-title">Bereit für den Kundenservice der Zukunft?</h2>
+<p style="color:var(--gray);max-width:600px;margin:0 auto 2rem">Ihre Kunden erwarten schnelle Antworten - rund um die Uhr. Wir zeigen Ihnen, wie das ohne Mehrpersonal geht.</p>
+<a href="terminbuchung.html" class="btn-primary">Kostenlosen Termin buchen</a>
+<a href="index.html#configurator" class="btn-secondary">Paket konfigurieren</a>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div class="footer-col">
+<h4>OLYMP AI</h4>
+<a href="index.html">Startseite</a>
+<a href="index.html#modules">Module</a>
+<a href="index.html#configurator">Konfigurator</a>
+</div>
+<div class="footer-col">
+<h4>Jobs im Detail</h4>
+<a href="job-buchhaltung.html">Buchhaltung</a>
+<a href="job-kundenservice.html">Kundenservice</a>
+<a href="job-marketing.html">Marketing</a>
+</div>
+<div class="footer-col">
+<h4>Rechtliches</h4>
+<a href="impressum.html">Impressum</a>
+<a href="agb.html">AGB</a>
+<a href="datenschutz.html">Datenschutz</a>
+</div>
+<div class="footer-col">
+<h4>Kontakt</h4>
+<a href="terminbuchung.html">Termin buchen</a>
+<a href="mailto:info@olymp-ai.at">info@olymp-ai.at</a>
+</div>
+</div>
+</footer>
+
+<script>
+function updateCalculation() {
+const hours = document.getElementById('hoursRange').value;
+const rate = document.getElementById('rateRange').value;
+const automationRate = 0.8; // 80% Automatisierung
+
+const monthlyHoursSaved = Math.round(hours * automationRate);
+const monthlySavings = monthlyHoursSaved * rate;
+const yearlySavings = monthlySavings * 12;
+
+document.getElementById('hoursValue').textContent = hours + ' Stunden';
+document.getElementById('rateValue').textContent = '€' + rate + '/Stunde';
+document.getElementById('monthlySavings').textContent = '€' + monthlySavings.toLocaleString();
+}
+
+updateCalculation();
+</script>
+</body>
+</html>

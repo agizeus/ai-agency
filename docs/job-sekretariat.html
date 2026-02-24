@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>
+(function(){
+try{
+var access=localStorage.getItem('olymp_access');
+if(access!=='granted'){window.location.replace('login.html');}
+}catch(e){window.location.replace('login.html');}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KI für Sekretariat - Automatisieren Sie E-Mails, Termine & Dokumente. Sparen Sie 35.000€/Jahr.">
+<title>Sekretariat Automation | Automator AI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#4F46E5;--secondary:#0EA5E9;--accent:#F97316;--dark:#0F172A;--gray:#64748B;--success:#22C55E;--value:#F97316;--bg:#FFFFFF;--surface:#F8FAFC}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6;padding:2rem 5%}
+.container{max-width:900px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gray);text-decoration:none;margin-bottom:2rem;font-size:0.9rem}
+.back-link:hover{color:var(--primary)}
+h1{font-size:2.5rem;margin-bottom:1rem;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--gray);font-size:1.25rem;margin-bottom:3rem}
+.section{background:var(--surface);border:1px solid rgba(0,0,0,0.05);border-radius:20px;padding:2rem;margin-bottom:2rem;box-shadow:0 1px 3px rgba(0,0,0,0.05)}
+.section h2{color:var(--primary);margin-bottom:1rem;font-size:1.5rem}
+.feature-list{list-style:none}
+.feature-list li{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;padding:0.75rem;background:white;border-radius:8px;border:1px solid rgba(0,0,0,0.05)}
+.feature-list li::before{content:"✓";color:var(--success);font-weight:bold;font-size:1.1rem}
+.cta-button{display:inline-block;padding:1rem 2rem;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-radius:50px;text-decoration:none;font-weight:600;margin-top:1rem;box-shadow:0 4px 6px rgba(79,70,229,0.2)}
+.cta-button:hover{transform:translateY(-2px);box-shadow:0 6px 12px rgba(79,70,229,0.3)}
+.roi-box{background:linear-gradient(135deg,rgba(249,115,22,0.1),rgba(249,115,22,0.05));border:1px solid rgba(249,115,22,0.2);border-radius:16px;padding:2rem;margin-top:2rem;text-align:center}
+.roi-value{font-size:2.5rem;font-weight:800;color:var(--value)}
+.testimonial{background:white;border-left:4px solid var(--primary);padding:1.5rem;margin:2rem 0;border-radius:0 12px 12px 0;box-shadow:0 2px 8px rgba(0,0,0,0.05)}
+.testimonial-text{font-style:italic;margin-bottom:1rem;color:var(--dark)}
+.testimonial-author{font-weight:600;color:var(--primary)}
+.faq-item{margin-bottom:1rem;border-bottom:1px solid rgba(0,0,0,0.1);padding-bottom:1rem}
+.faq-question{font-weight:600;color:var(--primary);cursor:pointer}
+.calculator{background:white;border-radius:12px;padding:1.5rem;margin-top:1rem;border:2px solid var(--primary)}
+.calculator-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1rem}
+.calculator-result{font-size:1.5rem;font-weight:800;color:var(--primary);text-align:center;margin-top:1rem;padding:1rem;background:var(--surface);border-radius:8px}
+input[type="number"]{padding:0.5rem;border:1px solid #ddd;border-radius:6px;width:100px;text-align:center}
+@media(max-width:768px){h1{font-size:1.75rem}.section{padding:1.5rem}}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+
+<h1>Sekretariat & Administration</h1>
+<p class="subtitle">KI-gestützte Automation für Ihr Büromanagement. Sparen Sie <strong>35.000€ pro Jahr</strong>.</p>
+
+<div class="section">
+<h2>💰 ROI-Rechner</h2>
+<p style="margin-bottom:1rem">Berechnen Sie Ihre Einsparung:</p>
+<div class="calculator">
+<div class="calculator-row">
+<span>Stundensatz Sekretär/in:</span>
+<input type="number" id="hourlyRate" value="45" onchange="calculateROI()"> €/h
+</div>
+<div class="calculator-row">
+<span>Stunden/Woche für Admin-Aufgaben:</span>
+<input type="number" id="hoursPerWeek" value="25" onchange="calculateROI()"> h
+</div>
+<div class="calculator-row">
+<span>Automatisierungsgrad:</span>
+<span style="color:var(--primary);font-weight:600">85%</span>
+</div>
+<div class="calculator-result" id="roiResult">
+Jährliche Einsparung: <strong>€49.725</strong>
+</div>
+<p style="text-align:center;margin-top:0.5rem;font-size:0.875rem;color:var(--gray)">Abzgl. KI-Service (€899/Monat) = <strong>Netto: €38.937/Jahr</strong></p>
+</div>
+</div>
+
+<div class="section">
+<h2>🎯 Ihre Herausforderungen</h2>
+<ul class="feature-list">
+<li><strong>Überfüllter E-Mail-Posteingang</strong> – 50+ E-Mails täglich</li>
+<li><strong>Zeitaufwändige Terminplanung</strong> – Hin-und-Her mit Terminvorschlägen</li>
+<li><strong>Dokumenten-Chaos</strong> – Wichtige Unterlagen nicht auffindbar</li>
+<li><strong>Wiederkehrende Aufgaben</strong> – Stunden für Copy-Paste Arbeit</li>
+<li><strong>Reisebuchungen</strong> – Vergleichen, Buchen, Stornieren</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🤖 Unsere KI-Lösungen</h2>
+<ul class="feature-list">
+<li><strong>📧 E-Mail Management</strong> – Automatische Kategorisierung, Priorisierung & Entwürfe</li>
+<li><strong>📅 Terminplanung</strong> – Automatische Meeting-Buchung & Erinnerungen</li>
+<li><strong>📄 Dokumentenverwaltung</strong> – OCR, intelligente Archivierung & blitzschnelle Suche</li>
+<li><strong>✈️ Reisebuchungen</strong> – Automatische Flug- & Hotel-Suche nach Budget</li>
+<li><strong>🌐 Korrespondenz</strong> – Standardbriefe & mehrsprachige Übersetzungen</li>
+</ul>
+<div class="roi-box">
+<div class="roi-value">85%</div>
+<p>Automatisierungspotenzial bei typischen Sekretariatsaufgaben</p>
+</div>
+</div>
+
+<div class="testimonial">
+<p class="testimonial-text">"Die KI übernimmt jetzt 80% meiner E-Mails und Terminplanung. Ich kann mich endlich auf wichtige Projekte konzentrieren statt im Tagesgeschäft zu versinken."</p>
+<p class="testimonial-author">Maria Schmidt</p>
+<p style="font-size:0.875rem;color:var(--gray)">Office Managerin, Schmidt GmbH</p>
+</div>
+
+<div class="section">
+<h2>❓ Häufige Fragen</h2>
+<div class="faq-item">
+<p class="faq-question">Wie lange dauert die Einrichtung?</p>
+<p style="margin-top:0.5rem">In der Regel 24-48 Stunden. Die KI lernt Ihre spezifischen Abläufe innerhalb einer Woche kennen.</p>
+</div>
+<div class="faq-item">
+<p class="faq-question">Ist meine Daten sicher?</p>
+<p style="margin-top:0.5rem">Ja. Alle Daten werden DSGVO-konform in Deutschland verarbeitet. Wir verwenden keine Daten zum Training.</p>
+</div>
+<div class="faq-item">
+<p class="faq-question">Was passiert bei komplexen Anfragen?</p>
+<p style="margin-top:0.5rem">Die KI erkennt ihre Grenzen und leitet komplexe Fälle automatisch an menschliche Kollegen weiter.</p>
+</div>
+</div>
+
+<div class="section" style="text-align:center">
+<h2>Bereit für die Automation?</h2>
+<p style="color:var(--gray);margin:1rem 0">Starten Sie mit einem kostenlosen Beratungsgespräch</p>
+<a href="terminbuchung.html" class="cta-button">Beratungstermin buchen</a>
+<a href="index.html#pricing" class="cta-button" style="margin-left:1rem;background:white;color:var(--primary);border:2px solid var(--primary)">Preise ansehen</a>
+</div>
+
+</div>
+
+<script>
+function calculateROI() {
+  const hourlyRate = document.getElementById('hourlyRate').value || 45;
+  const hoursPerWeek = document.getElementById('hoursPerWeek').value || 25;
+  const automationRate = 0.85;
+  const kiCost = 899 * 12;
+  
+  const yearlyHours = hoursPerWeek * 52;
+  const automatedHours = yearlyHours * automationRate;
+  const savings = automatedHours * hourlyRate;
+  const netSavings = savings - kiCost;
+  
+  document.getElementById('roiResult').innerHTML = 
+    'Jährliche Einsparung: <strong>€' + Math.round(savings).toLocaleString() + '</strong><br>' +
+    '<span style="font-size:0.875rem;color:var(--gray)">Netto nach KI-Kosten: €' + Math.round(netSavings).toLocaleString() + '/Jahr</span>';
+}
+</script>
+
+</body>
+</html>
