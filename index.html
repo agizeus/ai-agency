@@ -1,6 +1,19 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
+<script>
+// Login-Check (aktiviert für Pre-Launch)
+(function(){
+try{
+var access=localStorage.getItem('olymp_access');
+if(access!=='granted'){
+window.location.replace('login.html');
+}
+}catch(e){
+window.location.replace('login.html');
+}
+})();
+</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Automator AI - Ihre KI-Agentur für intelligente Automation. Sparen Sie bis zu €50.000/Jahr durch KI-gestützte Prozesse für Sekretariat, Buchhaltung & Kundenservice.">
@@ -60,12 +73,17 @@
 /* Mobile First Optimizations */
 @media(max-width:768px){
 .nav-links{display:none}
-.hero{padding:6rem 5% 3rem;min-height:auto}
-.hero h1{font-size:clamp(1.75rem,5vw,2.5rem)}
+.hero{padding:5rem 5% 2rem;min-height:auto}
+.hero h1{font-size:clamp(1.5rem,5vw,2rem)}
+section{padding:3rem 5%}
 .job-grid,.modules-grid{grid-template-columns:1fr}
+.module-card{margin:0 0.5rem}
 .chat-container{width:100%;height:100%;bottom:0;right:0;border-radius:0}
-.chat-button{bottom:1rem;right:1rem}
-.btn-primary,.btn-secondary{width:100%;margin:0.5rem 0}
+.chat-button{bottom:1rem;right:1rem;width:48px;height:48px}
+.btn-primary,.btn-secondary{width:100%;margin:0.5rem 0;padding:0.875rem}
+.stat-number{font-size:1.75rem}
+.hero-stats{gap:1.5rem}
+.process-steps{grid-template-columns:1fr}
 }
 :root{--primary:#4F46E5;--secondary:#0EA5E9;--accent:#F97316;--dark:#0F172A;--dark-light:#F1F5F9;--gray:#64748B;--success:#22C55E;--value:#F97316;--bg:#FFFFFF;--surface:#F8FAFC}
 body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--bg);color:var(--dark);line-height:1.6}
