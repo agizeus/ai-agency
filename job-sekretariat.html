@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<script>
+(function(){
+try{
+var access=localStorage.getItem('olymp_access');
+if(access!=='granted'){window.location.replace('login.html?v=2');}
+}catch(e){window.location.replace('login.html?error=1');}
+})();
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="KI für Sekretariat und Administration - Automator AI">
+<title>Sekretariat Automation | Automator AI</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--primary:#6366f1;--secondary:#ec4899;--accent:#06b6d4;--dark:#0f172a;--dark-light:#1e293b;--gray:#64748b;--success:#22c55e;--value:#f59e0b}
+body{font-family:'Segoe UI',system-ui,sans-serif;background:var(--dark);color:#f8fafc;line-height:1.6;padding:2rem 5%}
+.container{max-width:800px;margin:0 auto}
+.back-link{display:inline-flex;align-items:center;gap:0.5rem;color:var(--gray);text-decoration:none;margin-bottom:2rem}
+.back-link:hover{color:var(--primary)}
+h1{font-size:2.5rem;margin-bottom:1rem;background:linear-gradient(135deg,var(--primary),var(--secondary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.subtitle{color:var(--gray);font-size:1.125rem;margin-bottom:3rem}
+.section{background:rgba(30,41,59,0.6);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:2rem;margin-bottom:2rem}
+.section h2{color:var(--primary);margin-bottom:1rem;font-size:1.5rem}
+.feature-list{list-style:none}
+.feature-list li{display:flex;align-items:center;gap:0.75rem;margin-bottom:0.75rem;padding:0.5rem;background:rgba(255,255,255,0.05);border-radius:8px}
+.feature-list li::before{content:"✓";color:var(--success);font-weight:bold}
+.cta-button{display:inline-block;padding:1rem 2rem;background:linear-gradient(135deg,var(--primary),var(--secondary));color:white;border-radius:50px;text-decoration:none;font-weight:600;margin-top:2rem}
+.roi-box{background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:16px;padding:1.5rem;margin-top:2rem;text-align:center}
+.roi-value{font-size:2rem;font-weight:800;color:var(--value)}
+</style>
+</head>
+<body>
+<div class="container">
+<a href="index.html" class="back-link">← Zurück zur Übersicht</a>
+
+<h1>Sekretariat & Administration</h1>
+<p class="subtitle">KI-gestützte Automation für Ihr Büromanagement</p>
+
+<div class="section">
+<h2>🎯 Ihre Herausforderungen</h2>
+<ul class="feature-list">
+<li>Überfüllter E-Mail-Posteingang</li>
+<li>Zeitaufwändige Terminplanung</li>
+<li>Dokumenten-Chaos</li>
+<li>Wiederkehrende administrative Aufgaben</li>
+<li>Reisebuchungen und -management</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>🤖 Unsere KI-Lösungen</h2>
+<ul class="feature-list">
+<li><strong>E-Mail Management:</strong> Automatische Kategorisierung, Priorisierung & Antwort-Vorschläge</li>
+<li><strong>Terminplanung:</strong> Automatische Meeting-Buchung & Erinnerungen</li>
+<li><strong>Dokumentenverwaltung:</strong> OCR, intelligente Archivierung & blitzschnelle Suche</li>
+<li><strong>Reisebuchungen:</strong> Automatische Flug- & Hotel-Suche nach Budget</li>
+<li><strong>Korrespondenz:</strong> Standardbriefe & mehrsprachige Übersetzungen</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>📊 Ergebnisse</h2>
+<ul class="feature-list">
+<li>85% Zeitersparnis bei Admin-Aufgaben</li>
+<li>24/7 Verfügbarkeit - keine Pausen, keine Fehler</li>
+<li>Konsequent professionelle Kommunikation</li>
+<li>Mehrsprachiger Support (DE, EN, FR, IT)</li>
+</ul>
+
+<div class="roi-box">
+<div class="roi-value">€35.000 - €55.000</div>
+<p>Jährliche Einsparung pro Vollzeitstelle</p>
+</div>
+</div>
+
+<div class="section">
+<h2>🚀 Preisgestaltung</h2>
+<p><strong>AI Assistant Pro:</strong> €899/Monat</p>
+<p style="color:var(--gray);font-size:0.9rem;margin-top:0.5rem">Unbegrenzte E-Mails, Termine & Dokumente. Inkl. Einrichtung & Support.</p>
+</div>
+
+<a href="index.html#configurator" class="cta-button">Jetzt Konfigurieren →</a>
+<a href="terminbuchung.html" class="cta-button" style="margin-left:1rem;background:transparent;border:2px solid var(--primary)">Beratungstermin</a>
+
+</div>
+</body>
+</html>
