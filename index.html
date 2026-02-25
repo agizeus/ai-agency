@@ -171,21 +171,21 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 </style>
 </head>
 <body>
-<nav><a href="#" class="logo">⚡ OLYMP AI</a><ul class="nav-links" style="display:flex;align-items:center;gap:2.5rem;list-style:none;margin:0;padding:0"><li><a href="#analysis">Jobs</a></li><li><a href="#modules">Module</a></li><li><a href="#configurator">Konfigurator</a></li><li><a href="analyse-tool.html">Analyse Tool</a></li><li><a href="terminbuchung.html">Termin buchen</a></li></ul><a href="#configurator" class="nav-cta">KI-Paket Konfigurieren</a></nav>
+<nav><a href="#" class="logo">⚡ OLYMP AI</a><ul class="nav-links nav-links-inline"><li><a href="#analysis">Jobs</a></li><li><a href="#modules">Module</a></li><li><a href="#configurator">Konfigurator</a></li><li><a href="analyse-tool.html">Analyse Tool</a></li><li><a href="terminbuchung.html">Termin buchen</a></li></ul><a href="#configurator" class="nav-cta">KI-Paket Konfigurieren</a></nav>
 
 <section class="hero">
 <div>
 <h1>Entlasten Sie Ihr <span>Sekretariat, Buchhaltung & Support</span> mit KI</h1>
-<p style="color:var(--gray);font-size:1.25rem;max-width:640px;margin:0 auto 2rem">Wir automatisieren bis zu 70–90% wiederkehrender Aufgaben – ohne Kündigungen, mit klaren Prozessen und persönlichem Ansprechpartner.</p>
-<div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+<p class="hero-subtitle-inline">Wir automatisieren bis zu 70–90% wiederkehrender Aufgaben – ohne Kündigungen, mit klaren Prozessen und persönlichem Ansprechpartner.</p>
+<div class="hero-cta-row">
 <a href="#configurator" class="btn-primary">In 60 Sekunden Paket berechnen</a>
 <a href="#analysis" class="btn-secondary">Job in 30 Sek. prüfen</a>
 </div>
-<img src="./images/hero-office.jpg" onerror="this.src='https://via.placeholder.com/800x400/1e293b/64748b?text=Office+Team'" alt="Modern Office Team" style="width:100%;max-width:800px;height:400px;object-fit:cover;border-radius:24px;margin-top:3rem;box-shadow:0 25px 50px rgba(0,0,0,0.3)">
+<img src="./images/hero-office.jpg" onerror="this.src='https://via.placeholder.com/800x400/1e293b/64748b?text=Office+Team'" alt="Modern Office Team" class="hero-image-inline">
 <div class="hero-stats">
-<div><div class="stat-number">10x</div><div style="color:var(--gray)">Effizienzsteigerung</div></div>
-<div><div class="stat-number">24h</div><div style="color:var(--gray)">Implementierung</div></div>
-<div><div class="stat-number">7</div><div style="color:var(--gray)">KI-Module</div></div>
+<div><div class="stat-number">10x</div><div class="text-muted">Effizienzsteigerung</div></div>
+<div><div class="stat-number">24h</div><div class="text-muted">Implementierung</div></div>
+<div><div class="stat-number">7</div><div class="text-muted">KI-Module</div></div>
 </div>
 </div>
 </section>
@@ -193,10 +193,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 <section id="analysis">
 <div class="section-header">
 <h2 class="section-title">Job-Check: Wo lohnt sich KI für Sie zuerst?</h2>
-<p style="color:var(--gray)">Wählen Sie eine Position – wir zeigen, welche Aufgaben wir konkret automatisieren und welches Einsparpotenzial realistisch ist.</p>
+<p class="section-note">Wählen Sie eine Position – wir zeigen, welche Aufgaben wir konkret automatisieren und welches Einsparpotenzial realistisch ist.</p>
 </div>
 <div class="job-grid">
-<a href="job-sekretariat.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-admin.jpg" alt="Sekretariat" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📋</div><h3>Sekretariat & Administration</h3><p style="color:var(--gray);font-size:0.9rem">Sekretär/in, Assistent/in</p><p>E-Mail-Management, Terminplanung, Dokumentenverwaltung</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">+85% Produktivität</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
+<a href="job-sekretariat.html" class="job-link"><div class="job-card job-card-inline"><img src="./images/job-admin.jpg" alt="Sekretariat" class="card-image"><div class="job-icon">📋</div><h3>Sekretariat & Administration</h3><p class="text-muted" style="font-size:0.9rem">Sekretär/in, Assistent/in</p><p>E-Mail-Management, Terminplanung, Dokumentenverwaltung</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">+85% Produktivität</span></div><div class="job-card-cta">→ Details ansehen</div></div></a>
 <a href="job-buchhaltung.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-buchhaltung.jpg" alt="Buchhaltung" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📊</div><h3>Buchhaltung & Finanzen</h3><p style="color:var(--gray);font-size:0.9rem">Buchhalter/in, Accountant</p><p>Rechnungsverarbeitung, Zahlungsabwicklung, Mahnwesen</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">Bis zu 90% Automatisierung</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
 <a href="job-kundenservice.html" style="text-decoration:none;color:inherit"><div class="job-card" style="cursor:pointer;transition:transform .3s"><img src="./images/job-service.jpg" alt="Kundenservice" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">🎧</div><h3>Kundenservice & Support</h3><p style="color:var(--gray);font-size:0.9rem">Kundenbetreuer/in, Service-Agent</p><p>24/7 Support, Ticket-Klassifizierung, FAQ</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">24/7 Erreichbarkeit</span></div><div style="margin-top:1rem;color:var(--primary);font-size:.9rem;font-weight:600">→ Details ansehen</div></div></a>
 <div class="job-card"><img src="./images/job-sales.jpg" alt="Sales Team" style="width:100%;height:180px;object-fit:cover;border-radius:12px;margin-bottom:1.5rem"><div class="job-icon">📈</div><h3>Sales & Business Development</h3><p style="color:var(--gray);font-size:0.9rem">Sales Manager, Vertriebler</p><p>Lead-Qualifizierung, Erstansprache, Angebotserstellung</p><div class="job-savings"><span>⚡ Wert:</span><span class="job-savings-amount">Bis zu 120% mehr Conversions</span></div></div>
@@ -205,10 +205,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 </div>
 </section>
 
-<section id="modules" style="background:var(--dark-light)">
+<section id="modules" class="modules-section-bg">
 <div class="section-header">
 <h2 class="section-title">Unsere KI-Module – was Sie konkret bekommen</h2>
-<p style="color:var(--gray)">Jedes Modul ersetzt keine Menschen, sondern nimmt wiederkehrende Aufgaben ab und arbeitet eng mit Ihrem Team zusammen.</p>
+<p class="section-note">Jedes Modul ersetzt keine Menschen, sondern nimmt wiederkehrende Aufgaben ab und arbeitet eng mit Ihrem Team zusammen.</p>
 </div>
 <div class="modules-grid">
 <div class="module-card"><div class="module-header"><div class="module-icon">🤖</div><h3 style="font-size:1.5rem;font-weight:700">AI Assistant Pro</h3><p style="color:var(--gray)">Sekretariat & Administration</p></div><div class="module-content"><ul class="module-features"><li>E-Mail Management & Terminplanung</li><li>Dokumentenorganisation</li><li>Reisebuchungen</li><li>Mehrsprachige Kommunikation</li></ul><div style="background:rgba(245,158,11,0.1);border:1px solid rgba(245,158,11,0.2);border-radius:10px;padding:0.75rem;margin-bottom:1rem;text-align:center"><div style="font-size:0.75rem;color:var(--gray);text-transform:uppercase;letter-spacing:0.5px">Geschätzter Wert</div><div style="font-size:1rem;font-weight:700;color:var(--value)">85% Zeitersparnis bei Admin-Aufgaben</div></div><div style="margin-bottom:1rem"><span class="price-amount">€899</span><span style="color:var(--gray)">/Monat</span></div><button class="module-select-btn" onclick="toggleModule('assistant',899,'AI Assistant Pro')">Auswählen</button></div></div>
@@ -221,14 +221,14 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 </div>
 </section>
 
-<section id="pricing" style="text-align:center;background:var(--dark-light);padding:6rem 5%">
-<div style="max-width:1200px;margin:0 auto">
+<section id="pricing" class="pricing-section-bg">
+<div class="pricing-inner">
 <h2 class="section-title">Preismodelle für Ihren Start mit Automator AI</h2>
-<p style="color:var(--gray);margin-bottom:3rem">Alle Pakete sind monatlich kündbar und können mit einzelnen Modulen ausgebaut werden.</p>
-<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;margin-top:3rem;align-items:start">
+<p class="section-note" style="margin-bottom:3rem">Alle Pakete sind monatlich kündbar und können mit einzelnen Modulen ausgebaut werden.</p>
+<div class="pricing-grid-inline">
 
 <!-- Starter -->
-<div style="background:white;border:1px solid rgba(0,0,0,0.08);border-radius:20px;padding:2rem;box-shadow:0 2px 10px rgba(0,0,0,0.03);transition:transform 0.3s">
+<div class="pricing-card-inline">
 <div style="font-size:1.25rem;font-weight:700;margin-bottom:0.5rem;color:var(--dark)">Starter</div>
 <div style="font-size:2rem;font-weight:800;color:var(--primary);margin-bottom:0.5rem">€899<span style="font-size:0.875rem;color:var(--gray);font-weight:400">/Monat</span></div>
 <p style="font-size:0.875rem;color:var(--gray);margin-bottom:1.5rem">Für kleine Teams, die mit 1–2 Rollen starten wollen.</p>

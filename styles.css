@@ -219,6 +219,135 @@ section {
     margin: 0 auto;
 }
 
+/* Utility classes for index.html (no inline styles) */
+.nav-links-inline {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-subtitle-inline {
+    color: var(--gray);
+    font-size: 1.25rem;
+    max-width: 640px;
+    margin: 0 auto 2rem;
+}
+
+.hero-cta-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.hero-image-inline {
+    width: 100%;
+    max-width: 800px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 24px;
+    margin-top: 3rem;
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.text-muted {
+    color: var(--gray);
+}
+
+.job-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.job-card-inline {
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.job-card-inline:hover {
+    transform: translateY(-4px);
+}
+
+.job-card-cta {
+    margin-top: 1rem;
+    color: var(--primary);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.section-note {
+    color: var(--gray);
+}
+
+.modules-section-bg {
+    background: var(--light);
+}
+
+.pricing-section-bg {
+    text-align: center;
+    background: var(--light);
+    padding: 6rem 5%;
+}
+
+.pricing-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.pricing-grid-inline {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    align-items: start;
+}
+
+.pricing-card-inline {
+    background: var(--surface);
+    border: 1px solid rgba(15,23,42,0.06);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(15,23,42,0.04);
+    transition: transform 0.3s;
+}
+
+.btn-full {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.footer-top {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 3rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-links-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(15,23,42,0.06);
+}
+
+.footer-link-muted {
+    color: var(--gray);
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.testimonials-section-bg {
+    background: linear-gradient(180deg, var(--light) 0%, #f3f4f6 50%, var(--light) 100%);
+    padding: 5rem 5%;
+    position: relative;
+}
+
 .section-header {
     text-align: center;
     margin-bottom: 4rem;
