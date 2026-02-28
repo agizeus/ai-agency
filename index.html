@@ -3,259 +3,316 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Automator AI | KI-Automation für Ihr Unternehmen</title>
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>A</text></svg>">
-<link rel="stylesheet" href="styles.css">
+<title>Automator AI | KI-Automation für KMU in Österreich & Deutschland</title>
+<meta name="description" content="KI-Automation für Unternehmen: Sekretariat, Marketing & Kundenservice automatisieren. 10x Effizienz, 24/7 Verfügbarkeit. Kostenfreies Erstgespräch.">
+<link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
 
+<!-- Navigation -->
 <nav class="navbar">
   <a href="#" class="logo">⚡ Automator AI</a>
   <ul class="nav-links">
-    <li><a href="#analysis">Jobs</a></li>
+    <li class="dropdown">
+      <a href="#jobs">Jobs ▼</a>
+      <div class="dropdown-content">
+        <a href="job-sekretariat.html">📋 Sekretariat</a>
+        <a href="job-buchhaltung.html">📊 Buchhaltung</a>
+        <a href="job-kundenservice.html">🎧 Kundenservice</a>
+        <a href="job-marketing.html">📢 Marketing</a>
+      </div>
+    </li>
     <li><a href="#modules">Module</a></li>
     <li><a href="#pricing">Preise</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#faq">FAQ</a></li>
   </ul>
-  <a href="#pricing" class="nav-cta">KI-Paket Konfigurieren</a>
+  <a href="#contact" class="nav-cta">Erstgespräch buchen</a>
 </nav>
 
+<!-- Hero -->
 <section class="hero">
   <div class="hero-content">
-    <h1>Entlasten Sie Ihr <span class="highlight">Sekretariat, Buchhaltung & Support</span> mit KI</h1>
-    <p class="hero-subtitle">Wir automatisieren bis zu 70–90% wiederkehrender Aufgaben – ohne Kündigungen, mit klaren Prozessen und persönlichem Ansprechpartner.</p>
+    <h1>Entlasten Sie Ihr <span class="highlight">Sekretariat, Marketing & Support</span> mit KI</h1>
+    <p class="hero-subtitle">Wir automatisieren bis zu 70–90% wiederkehrender Aufgaben – ohne Kündigungen, mit klaren Prozessen.</p>
+    <div class="hero-trust">
+      <span>🏆 50+ Unternehmen</span>
+      <span>🇦🇹 Österreich & 🇩🇪 Deutschland</span>
+    </div>
     <div class="hero-buttons">
-      <a href="#pricing" class="btn btn-primary">In 60 Sekunden Paket berechnen</a>
-      <a href="#analysis" class="btn btn-secondary">Job in 30 Sek. prüfen</a>
+      <a href="#contact" class="btn btn-primary">Kostenfreies Erstgespräch buchen</a>
+      <a href="#jobs" class="btn btn-secondary">Jetzt Erstberatung sichern</a>
     </div>
-    <img src="./images/hero-office.jpg" alt="Modern Office Team" class="hero-image">
     <div class="hero-stats">
-      <div class="stat">
-        <div class="stat-number">10x</div>
-        <div class="stat-label">Effizienzsteigerung</div>
+      <div class="stat"><div class="stat-number">10x</div><div class="stat-label">Effizienz</div></div>
+      <div class="stat"><div class="stat-number">24h</div><div class="stat-label">Setup</div></div>
+      <div class="stat"><div class="stat-number">3</div><div class="stat-label">Module</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Problem-Lösung -->
+<section class="section section-alt" id="problems">
+  <div class="container">
+    <h2 class="section-title">Wiederholende Aufgaben fressen Ihre Zeit?</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">😫</div>
+        <h3>Überlastetes Sekretariat</h3>
+        <div class="arrow">↓</div>
+        <div class="solution"><strong>AI Assistant Pro</strong><br><span>+85% Produktivität</span></div>
       </div>
-      <div class="stat">
-        <div class="stat-number">24h</div>
-        <div class="stat-label">Implementierung</div>
+      <div class="problem-card">
+        <div class="problem-icon">📉</div>
+        <h3>Keine Zeit für Marketing</h3>
+        <div class="arrow">↓</div>
+        <div class="solution"><strong>Marketing AI</strong><br><span>10x Content-Output</span></div>
       </div>
-      <div class="stat">
-        <div class="stat-number">7</div>
-        <div class="stat-label">KI-Module</div>
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Support nur zu Bürozeiten</h3>
+        <div class="arrow">↓</div>
+        <div class="solution"><strong>Support Bot 24/7</strong><br><span>Rund-um-Uhr-Service</span></div>
       </div>
     </div>
   </div>
 </section>
 
-<section id="analysis" class="section section-light">
+<!-- Jobs -->
+<section id="jobs" class="section section-alter">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Job-Check: Wo lohnt sich KI für Sie zuerst?</h2>
-      <p class="section-subtitle">Wählen Sie eine Position – wir zeigen, welche Aufgaben wir konkret automatisieren.</p>
-    </div>
+    <h2 class="section-title">Job-Check: Wo lohnt sich KI für Sie?</h2>
     <div class="job-grid">
-      <a href="job-sekretariat.html" class="job-card">
-        <div class="job-icon">📋</div>
-        <h3>Sekretariat & Administration</h3>
-        <p class="job-role">Sekretär/in, Assistent/in</p>
-        <p>E-Mail-Management, Terminplanung, Dokumentenverwaltung</p>
-        <div class="job-value">
-          <span>⚡ Wert: +85% Produktivität</span>
-        </div>
-        <span class="job-link-text">→ Details ansehen</span>
-      </a>
-      <a href="job-buchhaltung.html" class="job-card">
-        <div class="job-icon">📊</div>
-        <h3>Buchhaltung & Finanzen</h3>
-        <p class="job-role">Buchhalter/in, Accountant</p>
-        <p>Rechnungsverarbeitung, Zahlungsabwicklung, Mahnwesen</p>
-        <div class="job-value">
-          <span>⚡ Wert: Bis zu 90% Automatisierung</span>
-        </div>
-        <span class="job-link-text">→ Details ansehen</span>
-      </a>
-      <a href="job-kundenservice.html" class="job-card">
-        <div class="job-icon">🎧</div>
-        <h3>Kundenservice & Support</h3>
-        <p class="job-role">Kundenbetreuer/in, Service-Agent</p>
-        <p>24/7 Support, Ticket-Klassifizierung, FAQ</p>
-        <div class="job-value">
-          <span>⚡ Wert: 24/7 Erreichbarkeit</span>
-        </div>
-        <span class="job-link-text">→ Details ansehen</span>
-      </a>
+      <a href="job-sekretariat.html" class="job-card"><div class="job-icon">📋</div><h3>Sekretariat</h3><p>E-Mail, Termine, Dokumente</p><span>→ Details</span></a>
+      <a href="job-buchhaltung.html" class="job-card"><div class="job-icon">📊</div><h3>Buchhaltung</h3><p>Rechnungen, Zahlungen, Mahnen</p><span>→ Details</span></a>
+      <a href="job-kundenservice.html" class="job-card"><div class="job-icon">🎧</div><h3>Kundenservice</h3><p>24/7 Support, Tickets, FAQ</p><span>→ Details</span></a>
+      <a href="job-marketing.html" class="job-card"><div class="job-icon">📢</div><h3>Marketing</h3><p>Social Media, Content, SEO</p><span>→ Details</span></a>
     </div>
   </div>
 </section>
 
-<section id="modules" class="section section-light">
+<!-- Prozess -->
+<section class="section section-alt" id="process">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Unsere KI-Module</h2>
-      <p class="section-subtitle">Jedes Modul ersetzt keine Menschen, sondern nimmt wiederkehrende Aufgaben ab.</p>
+    <h2 class="section-title">So funktioniert die Automatisierung</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-number">1</div><h3>Analyse</h3><p>30 Min – Wir identifizieren Potenziale</p></div>
+      <div class="process-step"><div class="step-number">2</div><h3>Setup</h3><p>24-48h – Module konfigurieren</p></div>
+      <div class="process-step"><div class="step-number">3</div><h3>Integration</h3><p>Nahtlos – Anbindung an Ihre Systeme</p></div>
+      <div class="process-step"><div class="step-number">4</div><h3>Go-Live</h3><p>Sofort – Ihr Team ist produktiver</p></div>
     </div>
+  </div>
+</section>
+
+<!-- Module -->
+<section id="modules" class="section section-alter">
+  <div class="container">
+    <h2 class="section-title">Unsere 3 KI-Module</h2>
     <div class="modules-grid">
       <div class="module-card">
-        <div class="module-header">
-          <div class="module-icon">🤖</div>
-          <h3>AI Assistant Pro</h3>
-          <p>Sekretariat & Administration</p>
-        </div>
-        <div class="module-content">
-          <ul class="module-features">
-            <li>E-Mail Management & Terminplanung</li>
-            <li>Dokumentenorganisation</li>
-            <li>Reisebuchungen</li>
-            <li>Mehrsprachige Kommunikation</li>
-          </ul>
-          <div class="module-value">
-            <span>85% Zeitersparnis bei Admin-Aufgaben</span>
-          </div>
-          <div class="module-price">
-            <span class="price">€899</span><span class="period">/Monat</span>
-          </div>
-          <button class="btn btn-outline" onclick="alert('Ausgewählt: AI Assistant Pro')">Auswählen</button>
-        </div>
-      </div>
-      <div class="module-card">
-        <div class="module-header">
-          <div class="module-icon">💼</div>
-          <h3>Finance AI</h3>
-          <p>Buchhaltung & Finanzen</p>
-        </div>
-        <div class="module-content">
-          <ul class="module-features">
-            <li>Automatische Rechnungsverarbeitung</li>
-            <li>Zahlungsabwicklung & Mahnwesen</li>
-            <li>Bankabstimmung</li>
-            <li>Finanzberichte in Echtzeit</li>
-          </ul>
-          <div class="module-value">
-            <span>90% Automatisierung Buchhaltung</span>
-          </div>
-          <div class="module-price">
-            <span class="price">€1.299</span><span class="period">/Monat</span>
-          </div>
-          <button class="btn btn-outline" onclick="alert('Ausgewählt: Finance AI')">Auswählen</button>
-        </div>
+        <div class="module-icon">🤖</div>
+        <h3>AI Assistant Pro</h3>
+        <p>Sekretariat & Administration</p>
+        <ul><li>✓ E-Mail & Termine</li><li>✓ Dokumente</li><li>✓ Reisebuchungen</li></ul>
+        <div class="module-price"><span class="price">€899</span>/Monat</div>
+        <button class="btn btn-outline">Auswählen</button>
       </div>
       <div class="module-card featured">
-        <div class="module-badge">★ BEST PICK ★</div>
-        <div class="module-header">
-          <div class="module-icon">💬</div>
-          <h3>Support Bot 24/7</h3>
-          <p>Kundenservice & Support</p>
-        </div>
-        <div class="module-content">
-          <ul class="module-features">
-            <li>Rund-um-die-Uhr Kundensupport</li>
-            <li>Intelligente Ticket-Klassifizierung</li>
-            <li>Mehrsprachiger Support</li>
-            <li>Integration mit Helpdesk</li>
-          </ul>
-          <div class="module-value">
-            <span>24/7 Verfügbarkeit, 95% First-Contact-Lösung</span>
-          </div>
-          <div class="module-price">
-            <span class="price">€799</span><span class="period">/Monat</span>
-          </div>
-          <button class="btn btn-primary" onclick="alert('Ausgewählt: Support Bot 24/7')">Auswählen</button>
-        </div>
+        <div class="module-badge">★ EMPFOHLEN ★</div>
+        <div class="module-icon">📈</div>
+        <h3>Marketing AI</h3>
+        <p>Marketing & Content</p>
+        <ul><li>✓ Social Media Posts</li><li>✓ Blog & Newsletter</li><li>✓ SEO & Keywords</li></ul>
+        <div class="module-price"><span class="price">€1.099</span>/Monat</div>
+        <button class="btn btn-primary">Auswählen</button>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">💬</div>
+        <h3>Support Bot 24/7</h3>
+        <p>Kundenservice & Support</p>
+        <ul><li>✓ 24/7 Erreichbarkeit</li><li>✓ Ticket-Klassifizierung</li><li>✓ Mehrsprachig</li></ul>
+        <div class="module-price"><span class="price">€799</span>/Monat</div>
+        <button class="btn btn-outline">Auswählen</button>
       </div>
     </div>
   </div>
 </section>
 
-<section id="pricing" class="section section-light">
+<!-- Preise -->
+<section id="pricing" class="section section-alt">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Preismodelle für Ihren Start</h2>
-      <p class="section-subtitle">Alle Pakete sind monatlich kündbar und können mit einzelnen Modulen ausgebaut werden.</p>
-    </div>
+    <h2 class="section-title">Preismodelle</h2>
     <div class="pricing-grid">
       <div class="pricing-card">
-        <div class="pricing-header">
-          <h3>Starter</h3>
-          <div class="pricing-price">
-            <span class="price">€899</span><span class="period">/Monat</span>
-          </div>
-          <p>Für kleine Teams, die mit 1–2 Rollen starten wollen.</p>
-        </div>
-        <ul class="pricing-features">
-          <li>✓ E-Mail Management</li>
-          <li>✓ Terminplanung</li>
-          <li>✓ Basis-Chatbot</li>
-          <li class="disabled">— Dokumentenverwaltung</li>
-          <li class="disabled">— Prioritäts-Support</li>
-        </ul>
+        <h3>Einzelmodul</h3>
+        <div class="pricing-price"><span class="price">€899</span>/Monat</div>
+        <p>Ein Modul nach Wahl</p>
         <button class="btn btn-outline btn-full">Auswählen</button>
       </div>
       <div class="pricing-card popular">
-        <div class="pricing-badge">★ BEST PICK ★</div>
-        <div class="pricing-header">
-          <h3>Business</h3>
-          <div class="pricing-price">
-            <span class="price">€1.299</span><span class="period">/Monat</span>
-          </div>
-          <p>Der Standard für KMU mit Sekretariat, Buchhaltung & Support.</p>
-        </div>
-        <ul class="pricing-features">
-          <li>✓ Alle Starter Features</li>
-          <li>✓ Dokumentenverwaltung</li>
-          <li>✓ Erweiterter Chatbot</li>
-          <li>✓ Prioritäts-Support</li>
-        </ul>
+        <div class="pricing-badge">★ BELIEBT ★</div>
+        <h3>Kombi 2</h3>
+        <div class="pricing-price"><span class="price">€1.499</span>/Monat</div>
+        <p>2 Module kombiniert<br><small>Sparen Sie €299</small></p>
         <button class="btn btn-primary btn-full">Auswählen</button>
       </div>
       <div class="pricing-card">
-        <div class="pricing-header">
-          <h3>Professional</h3>
-          <div class="pricing-price">
-            <span class="price">€1.699</span><span class="period">/Monat</span>
-          </div>
-          <p>Für Unternehmen, die mehrere Standorte oder Teams anbinden wollen.</p>
-        </div>
-        <ul class="pricing-features">
-          <li>✓ Alle Business Features</li>
-          <li>✓ Multi-User (bis 10)</li>
-          <li>✓ API-Zugriff</li>
-          <li>✓ Custom Integrationen</li>
-        </ul>
+        <h3>All-in-One</h3>
+        <div class="pricing-price"><span class="price">€1.999</span>/Monat</div>
+        <p>Alle 3 Module<br><small>Sparen Sie €698</small></p>
         <button class="btn btn-outline btn-full">Auswählen</button>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Testimonials -->
+<section class="section section-alter" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Kundenstimmen</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"20 Stunden pro Woche gespart im Sekretariat."</p>
+        <strong>Maria K., Graz</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>"Endlich Zeit für strategische Arbeit dank Marketing AI."</p>
+        <strong>Thomas B., Wien</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>"Der Bot antwortet schneller als wir – 24/7."</p>
+        <strong>Sarah M., München</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section id="roadmap" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Modul-Roadmap</h2>
+    <div class="roadmap-grid">
+      <div class="roadmap-phase phase-complete">
+        <div class="phase-badge">✅ AKTIV</div>
+        <h3>Phase 1: KI Assistenz</h3>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+        <p>AI Assistant Pro – Bereits verfügbar</p>
+      </div>
+      <div class="roadmap-phase phase-active">
+        <div class="phase-badge">📍 ENTWICKLUNG</div>
+        <h3>Phase 2: Marketing</h3>
+        <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+        <p>Marketing AI – Launch Q2 2026</p>
+      </div>
+      <div class="roadmap-phase phase-planned">
+        <div class="phase-badge">🎯 GEPLANT</div>
+        <h3>Phase 3: Support</h3>
+        <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+        <p>Support Bot 24/7 – Start Q2 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section section-alter">
+  <div class="container">
+    <h2 class="section-title">Häufige Fragen</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Wie lange dauert die Implementierung? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>24-48 Stunden Standard. Komplexe Integrationen bis zu 1 Woche.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Kann ich einzelne Module buchen? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>Ja! Jedes Modul ab €899/Monat – monatlich kündbar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Sind meine Daten sicher? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>DSGVO-konform, EU-Server (Frankfurt), TLS 1.3 Verschlüsselung.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Kann ich kündigen? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>Jederzeit monatlich kündbar. Keine versteckten Kosten.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
 <footer class="footer">
   <div class="container">
     <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="#" class="logo">⚡ Automator AI</a>
-        <p>Die führende KI-Agentur für Unternehmensautomation.</p>
-      </div>
-      <div class="footer-links">
-        <h4>Module</h4>
-        <ul>
-          <li><a href="#modules">AI Assistant</a></li>
-          <li><a href="#modules">Finance AI</a></li>
-          <li><a href="#modules">Support Bot</a></li>
-        </ul>
-      </div>
-      <div class="footer-links">
-        <h4>Kontakt</h4>
-        <ul>
-          <li><a href="mailto:info@automator-ai.de">info@automator-ai.de</a></li>
-          <li>+43 660 4055688</li>
-          <li>9500 Villach, Österreich</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <a href="impressum.html">Impressum</a>
-      <a href="agb.html">AGB</a>
-      <a href="datenschutz.html">Datenschutz</a>
+      <div><a href="#" class="logo">⚡ Automator AI</a><p>KI-Automation für KMU</p></div>
+      <div><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="agb.html">AGB</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>info@automator-ai.de</li><li>+43 660 4055688</li><li>9500 Villach</li></ul></div>
     </div>
   </div>
 </footer>
+
+<!-- KI Chat Widget -->
+<div id="chat-widget" class="chat-widget">
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <h4>KI-Assistent</h4>
+      <button onclick="toggleChat()">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="message bot">Hallo! Ich beantworte Fragen zu unseren Produkten. Wie kann ich helfen?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Ihre Frage..." onkeypress="if(event.key==='Enter')sendMessage()">
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  document.getElementById('chat-window').classList.toggle('active');
+}
+
+function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  const messages = document.getElementById('chat-messages');
+  messages.innerHTML += '<div class="message user">' + msg + '</div>';
+  
+  // Simple product-only response logic
+  const productKeywords = ['preis', 'kosten', 'modul', 'paket', 'marketing', 'support', 'assistant', 'sekretariat', 'termin', 'implementierung', 'dsgvo', 'daten', 'sicherheit'];
+  const isProductQuestion = productKeywords.some(k => msg.toLowerCase().includes(k));
+  
+  setTimeout(() => {
+    let response;
+    if (isProductQuestion) {
+      if (msg.toLowerCase().includes('preis') || msg.toLowerCase().includes('kosten')) {
+        response = 'Unsere Module starten ab €899/Monat. Das Kombi-2 Paket kostet €1.499/Monat. Möchten Sie mehr zu einem bestimmten Modul erfahren?';
+      } else if (msg.toLowerCase().includes('marketing')) {
+        response = 'Marketing AI (€1.099/Monat) automatisiert Social Media, Content-Erstellung und SEO. Interesse an einer Demo?';
+      } else {
+        response = 'Danke für Ihre Frage! Für detaillierte Informationen empfehle ich ein kostenfreies Erstgespräch. Soll ich einen Termin für Sie reservieren?';
+      }
+    } else {
+      response = 'Diese Frage darf ich leider nicht beantworten. Ich kann Ihnen aber gerne bei Fragen zu unseren Produkten helfen oder Sie mit einem Menschen verbinden. Möchten Sie das?';
+    }
+    messages.innerHTML += '<div class="message bot">' + response + '</div>';
+    messages.scrollTop = messages.scrollHeight;
+  }, 500);
+  
+  input.value = '';
+}
+</script>
 
 </body>
 </html>
