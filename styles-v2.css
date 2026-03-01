@@ -146,20 +146,43 @@ body {
   background: linear-gradient(180deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
 }
 
-/* Baum-Hero oben (reines Bild) */
+/* Baum-Hero oben mit Layer-Struktur */
 .hero.hero-tree {
+  position: relative;
   padding: 120px 0 40px;
   min-height: 60vh;
+  overflow: hidden;
+  /* Fallback, bis die neuen Layer-Bilder vorliegen */
   background: url("images/hero-header.jpg") center/cover no-repeat;
-  animation: heroSkyDrift 24s ease-in-out infinite alternate;
 }
 
-/* Wolken/Baum leicht bewegen */
-@keyframes heroSkyDrift {
-  0%   { background-position: center 0; }
-  50%  { background-position: center -20px; }
-  100% { background-position: center 0; }
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  pointer-events: none;
 }
+
+/* Himmel/Wolken – neues Asset: images/hero-sky.jpg */
+.hero-sky {
+  background-image: url("images/hero-sky.jpg");
+}
+
+/* Baum + Boden ohne Pixel – neues Asset: images/hero-tree-ground.png */
+.hero-tree-ground {
+  background-image: url("images/hero-tree-ground.png");
+}
+
+/* Avatare – freigestellte Wald-Varianten: Ava, Sol, Lumo */
+.hero-agent {
+  background-size: contain;
+  background-position: bottom center;
+}
+.hero-ava { background-image: url("images/hero-ava.png"); }
+.hero-sol { background-image: url("images/hero-sol.png"); }
+.hero-lumo { background-image: url("images/hero-lumo.png"); }
 
 /* Textbereich direkt unter dem Bild */
 .hero-intro {
