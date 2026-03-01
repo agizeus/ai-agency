@@ -125,6 +125,14 @@ body {
   padding: 120px 0 40px;
   min-height: 60vh;
   background: url("images/hero-header.jpg") center/cover no-repeat;
+  animation: heroSkyDrift 24s ease-in-out infinite alternate;
+}
+
+/* Wolken/Baum leicht bewegen */
+@keyframes heroSkyDrift {
+  0%   { background-position: center 0; }
+  50%  { background-position: center -20px; }
+  100% { background-position: center 0; }
 }
 
 /* Textbereich direkt unter dem Bild */
@@ -186,5 +194,53 @@ body {
   border: 1px solid var(--border);
 }
 .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+
+/* Mobile Navigation */
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 16px;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    background: rgba(248,247,245,0.98);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 16px 16px;
+    gap: 12px;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    transform: translateY(-10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, transform 0.2s ease;
+  }
+
+  .navbar.open .nav-links {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  .nav-cta {
+    display: none;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+}
+
+.navbar.open .nav-toggle span:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+.navbar.open .nav-toggle span:nth-child(2) {
+  opacity: 0;
+}
+.navbar.open .nav-toggle span:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
 
 /* ... Rest der bestehenden CSS-Regeln bleibt unverändert ... */

@@ -57,6 +57,18 @@
 </section>
 
 <!-- Problem-Lösung -->
+
+<script>
+  (function() {
+    const nav = document.querySelector('.navbar');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  })();
+</script>
+
 <section class="section section-alt" id="problems">
   <div class="container">
     <h2 class="section-title">Wiederholende Aufgaben fressen Ihre Zeit?</h2>
