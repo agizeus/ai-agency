@@ -170,19 +170,19 @@ body {
   background-image: url("images/hero-sky.jpg");
 }
 
-/* Baum + Boden ohne Pixel – neues Asset: images/hero-tree-ground.png */
+/* Baum + Boden – verwendetes Asset: images/hero-tree-ground.jpg */
 .hero-tree-ground {
-  background-image: url("images/hero-tree-ground.png");
+  background-image: url("images/hero-tree-ground.jpg");
 }
 
-/* Avatare – freigestellte Wald-Varianten: Ava, Sol, Lumo */
+/* Avatare – aktuelle Varianten aus gelieferten Bildern */
 .hero-agent {
-  background-size: contain;
+  background-size: auto 100%;
   background-position: bottom center;
 }
-.hero-ava { background-image: url("images/hero-ava.png"); }
-.hero-sol { background-image: url("images/hero-sol.png"); }
-.hero-lumo { background-image: url("images/hero-lumo.png"); }
+.hero-ava  { background-image: url("images/hero-ava.jpg"); }
+.hero-sol  { background-image: url("images/hero-sol.jpg"); }
+.hero-lumo { background-image: url("images/hero-lumo.jpg"); }
 
 /* Textbereich direkt unter dem Bild */
 .hero-intro {
