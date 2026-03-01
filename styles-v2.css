@@ -177,12 +177,39 @@ body {
 
 /* Avatare – freigestellte PNG-Varianten */
 .hero-agent {
-  background-size: auto 100%;
+  background-size: auto 90%;
   background-position: bottom center;
 }
-.hero-ava  { background-image: url("images/hero-ava.png"); }
-.hero-sol  { background-image: url("images/hero-sol.png"); }
-.hero-lumo { background-image: url("images/hero-lumo.png"); }
+
+/* Grundaufstellung Desktop: drei Figuren leicht versetzt vor dem Baum */
+.hero-ava {
+  background-image: url("images/hero-ava.png");
+  transform: translateX(-26%);
+}
+.hero-sol {
+  background-image: url("images/hero-sol.png");
+  transform: translateX(0%);
+}
+.hero-lumo {
+  background-image: url("images/hero-lumo.png");
+  transform: translateX(26%);
+}
+
+/* Mobile: Figuren kleiner und dichter beieinander */
+@media (max-width: 768px) {
+  .hero.hero-tree {
+    padding: 120px 0 24px;
+    min-height: 70vh;
+  }
+
+  .hero-agent {
+    background-size: auto 80%;
+  }
+
+  .hero-ava  { transform: translateX(-18%); }
+  .hero-sol  { transform: translateX(0%); }
+  .hero-lumo { transform: translateX(18%); }
+}
 
 /* Textbereich direkt unter dem Bild */
 .hero-intro {
