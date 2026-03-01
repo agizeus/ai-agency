@@ -11,6 +11,10 @@
   --accent: #f97316;
   --accent-hover: #ea580c;
   --accent-light: #ffedd5;
+  --brand-green: #1d7f4b;
+  --brand-green-soft: #e3f5ec;
+  --brand-turquoise: #1fb6aa;
+  --brand-turquoise-soft: #e0f7f5;
   --success: #22c55e;
   --warning: #eab308;
 }
@@ -22,6 +26,28 @@ body {
   background: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
+}
+
+/* roothouse.ai Farbwelt */
+.hero,
+.section {
+  background-color: var(--bg-primary);
+}
+
+.nav-cta,
+.btn-primary {
+  background: var(--brand-green);
+}
+
+.nav-cta:hover,
+.btn-primary:hover {
+  background: #16613a;
+}
+
+.badge,
+.tag {
+  background: var(--brand-turquoise-soft);
+  color: var(--brand-turquoise);
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }

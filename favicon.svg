@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="treeGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#1d7f4b"/>
+      <stop offset="100%" stop-color="#1fb6aa"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="48" height="48" rx="14" fill="#f8f7f5"/>
+  <rect x="30" y="24" width="4" height="20" rx="2" fill="#1d3b2a"/>
+  <circle cx="32" cy="24" r="14" fill="url(#treeGrad)"/>
+  <circle cx="22" cy="26" r="4" fill="#f97316"/>
+  <circle cx="42" cy="20" r="3" fill="#1fb6aa"/>
+</svg>
