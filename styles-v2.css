@@ -170,19 +170,19 @@ body {
   background-image: url("images/hero-sky.jpg");
 }
 
-/* Baum + Boden – verwendetes Asset: images/hero-tree-ground.jpg */
+/* Baum + Boden – PNG mit Transparenz/sauberem Rand */
 .hero-tree-ground {
-  background-image: url("images/hero-tree-ground.jpg");
+  background-image: url("images/hero-tree-ground.png");
 }
 
-/* Avatare – aktuelle Varianten aus gelieferten Bildern */
+/* Avatare – freigestellte PNG-Varianten */
 .hero-agent {
   background-size: auto 100%;
   background-position: bottom center;
 }
-.hero-ava  { background-image: url("images/hero-ava.jpg"); }
-.hero-sol  { background-image: url("images/hero-sol.jpg"); }
-.hero-lumo { background-image: url("images/hero-lumo.jpg"); }
+.hero-ava  { background-image: url("images/hero-ava.png"); }
+.hero-sol  { background-image: url("images/hero-sol.png"); }
+.hero-lumo { background-image: url("images/hero-lumo.png"); }
 
 /* Textbereich direkt unter dem Bild */
 .hero-intro {
