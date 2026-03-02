@@ -34,6 +34,7 @@ body {
   background-color: var(--bg-primary);
 }
 
+/* Buttons in roothouse-Farben, basierend auf Basisschema aus styles.css */
 .nav-cta,
 .btn-primary {
   background: var(--brand-green);
