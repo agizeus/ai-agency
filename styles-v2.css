@@ -183,15 +183,15 @@ body {
 /* Grundaufstellung Desktop: drei Figuren leicht versetzt vor dem Baum */
 .hero-ava {
   background-image: url("images/hero-ava.png");
-  transform: translateX(-26%);
+  transform: translateX(-26%) translateY(8%);
 }
 .hero-sol {
   background-image: url("images/hero-sol.png");
-  transform: translateX(0%);
+  transform: translateX(0%) translateY(8%);
 }
 .hero-lumo {
   background-image: url("images/hero-lumo.png");
-  transform: translateX(26%);
+  transform: translateX(26%) translateY(8%);
 }
 
 /* Mobile: Figuren kleiner und dichter beieinander */
@@ -205,9 +205,9 @@ body {
     background-size: auto 80%;
   }
 
-  .hero-ava  { transform: translateX(-18%); }
-  .hero-sol  { transform: translateX(0%); }
-  .hero-lumo { transform: translateX(18%); }
+  .hero-ava  { transform: translateX(-18%) translateY(6%); }
+  .hero-sol  { transform: translateX(0%) translateY(6%); }
+  .hero-lumo { transform: translateX(18%) translateY(6%); }
 }
 
 /* Textbereich direkt unter dem Bild */
