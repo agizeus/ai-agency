@@ -150,8 +150,8 @@ body {
 .hero.hero-tree {
   position: relative;
   padding: 0;
-  min-height: 70vh;
-  height: min(70vh, 700px);
+  min-height: 90vh;
+  height: min(90vh, 820px);
   overflow: hidden;
 }
 
