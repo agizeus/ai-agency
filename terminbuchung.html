@@ -4,7 +4,8 @@
 <script>if(localStorage.getItem("olymp_access")!=="granted"){window.location.href="login.html";}</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Termin buchen | OLYMP AI Agency</title>
+<link rel="stylesheet" href="styles-v2.css">
+<title>Termin buchen | roothouse.ai</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--primary:#6366f1;--secondary:#ec4899;--accent:#06b6d4;--dark:#0f172a;--dark-light:#1e293b;--gray:#64748b;--success:#22c55e}
@@ -59,22 +60,22 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 </style>
 </head>
 <body>
-<nav>
-<a href="index.html" class="logo">⚡ OLYMP AI</a>
+<nav class="navbar">
+<a href="index-v2.html" class="logo">roothouse.ai</a>
 <ul class="nav-links">
-<li><a href="index.html#analysis">Jobs</a></li>
-<li><a href="index.html#modules">Module</a></li>
-<li><a href="index.html#configurator">Konfigurator</a></li>
-<li><a href="analyse-tool.html">Analyse Tool</a></li>
+<li><a href="index-v2.html#jobs">Jobs</a></li>
+<li><a href="index-v2.html#modules">Module</a></li>
+<li><a href="index-v2.html#pricing">Preise</a></li>
+<li><a href="analyse-tool.html">Analyse-Tool</a></li>
 <li><a href="terminbuchung.html">Termin buchen</a></li>
 </ul>
-<a href="index.html#configurator" class="nav-cta">KI-Paket Konfigurieren</a>
+<a href="index-v2.html#contact" class="nav-cta">Kostenfreies Erstgespräch</a>
 </nav>
 
 <section class="hero">
 <div>
-<h1><span>Termin</span> vereinbaren</h1>
-<p style="color:var(--gray);font-size:1.1rem;max-width:500px;margin:0 auto">Wählen Sie den passenden Termintyp und buchen Sie direkt online.</p>
+<h1><span>Erstgespräch</span> vereinbaren</h1>
+<p style="color:var(--text-secondary);font-size:1.1rem;max-width:640px;margin:0 auto">Wählen Sie den passenden Termintyp und buchen Sie Ihr Erstgespräch zu unseren 3 KI-Modulen (AI Assistant Pro, Marketing AI, Support Bot 24/7) direkt online.</p>
 </div>
 </section>
 
@@ -85,22 +86,22 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 
 <div class="booking-card" onclick="selectType('kurz')">
 <div class="booking-icon">⚡</div>
-<div class="booking-title">Sofort-Gespräch (15 Min)</div>
-<div class="booking-desc">Schnelle Erstberatung für konkrete Fragen. Ideal wenn Sie sich kurz informieren möchten.</div>
-<div class="booking-time">📅 Innerhalb 24h verfügbar</div>
+<div class="booking-title">Kennenlern-Call (15 Min)</div>
+<div class="booking-desc">Kurzer Überblick über roothouse.ai und die drei Automatisierungs-Module. Ideal, wenn Sie sich unverbindlich orientieren möchten.</div>
+<div class="booking-time">📅 In der Regel innerhalb von 1–2 Werktagen verfügbar</div>
 </div>
 
 <div class="booking-card" onclick="selectType('analyse')">
 <div class="booking-icon">📊</div>
 <div class="booking-title">Bedarfsanalyse (30 Min)</div>
-<div class="booking-desc">Wir analysieren Ihre aktuellen Prozesse und zeigen Einsparpotenziale auf.</div>
-<div class="booking-time">📅 Wochentags 9-17 Uhr</div>
+<div class="booking-desc">Wir analysieren Ihre aktuellen Prozesse und ordnen sie einem oder mehreren der drei Module zu.</div>
+<div class="booking-time">📅 Wochentags 9–17 Uhr (nach Verfügbarkeit)</div>
 </div>
 
 <div class="booking-card" onclick="selectType('strategie')">
 <div class="booking-icon">🎯</div>
 <div class="booking-title">Strategie-Workshop (60 Min)</div>
-<div class="booking-desc">Gemeinsame Erarbeitung Ihrer KI-Roadmap mit konkretem Umsetzungsplan.</div>
+<div class="booking-desc">Gemeinsame Erarbeitung einer realistischen Roadmap: Welche Module starten wir zuerst, welche Prozesse bleiben bewusst manuell.</div>
 <div class="booking-time">📅 Nach Vereinbarung</div>
 </div>
 </div>
@@ -164,8 +165,8 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 </div>
 
 <div class="ical-info">
-<h4>💡 iCal-Integration kommt bald</h4>
-<p>In Kürze: Automatische Kalender-Synchronisation mit Outlook, Google Calendar und Apple Kalender.</p>
+<h4>💡 Hinweis</h4>
+<p>Aktuell erfolgt die Eintragung noch manuell per .ics-Datei. Eine direkte Kalender-Integration (Outlook, Google Calendar, Apple Kalender) ist in Planung.</p>
 </div>
 </div>
 </div>
@@ -174,10 +175,10 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 <footer>
 <div class="footer-grid">
 <div class="footer-col">
-<h4>OLYMP AI</h4>
-<a href="index.html">Startseite</a>
-<a href="index.html#modules">Module</a>
-<a href="index.html#configurator">Konfigurator</a>
+<h4>roothouse.ai</h4>
+<a href="index-v2.html">Startseite</a>
+<a href="index-v2.html#modules">Module</a>
+<a href="index-v2.html#pricing">Preise</a>
 </div>
 <div class="footer-col">
 <h4>Rechtliches</h4>
@@ -187,7 +188,7 @@ footer{background:var(--dark);border-top:1px solid rgba(255,255,255,0.1);padding
 </div>
 <div class="footer-col">
 <h4>Kontakt</h4>
-<a href="mailto:info@olymp-ai.at">info@olymp-ai.at</a>
+<a href="mailto:hello@roothouse.ai">hello@roothouse.ai</a>
 </div>
 </div>
 </footer>
