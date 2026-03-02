@@ -164,9 +164,9 @@ body {
   pointer-events: none;
 }
 
-/* Himmel/Wolken – neues Asset: images/hero-sky.jpg */
+/* Himmel/Wolken – neues Asset: images/hero-sky.png */
 .hero-sky {
-  background-image: url("images/hero-sky.jpg");
+  background-image: url("images/hero-sky.png");
 }
 
 /* Baum + Boden – PNG mit Transparenz/sauberem Rand */
