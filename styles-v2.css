@@ -184,15 +184,15 @@ body {
 /* Grundaufstellung Desktop: drei Figuren leicht versetzt vor dem Baum */
 .hero-ava {
   background-image: url("images/hero-ava.png");
-  transform: translateX(-20%) translateY(12%);
+  transform: translateX(-25%) translateY(20%);
 }
 .hero-sol {
   background-image: url("images/hero-sol.png");
-  transform: translateX(0%) translateY(12%);
+  transform: translateX(0%) translateY(20%);
 }
 .hero-lumo {
   background-image: url("images/hero-lumo.png");
-  transform: translateX(20%) translateY(12%);
+  transform: translateX(25%) translateY(20%);
 }
 
 /* Textbereich direkt unter dem Bild */
@@ -505,9 +505,12 @@ body {
     background-size: auto 80%;
   }
 
-  .hero-ava  { transform: translateX(-16%) translateY(10%); }
-  .hero-sol  { transform: translateX(0%)  translateY(10%); }
-  .hero-lumo { transform: translateX(16%) translateY(10%); }
+  /* Mobile: Standard-Positionierung, nur Größe angepasst */
+  .hero-ava,
+  .hero-sol,
+  .hero-lumo {
+    transform: none;
+  }
 
   .section {
     padding: 3rem 5%;
