@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Job-Check: Sekretariat | roothouse.ai</title>
+  <meta name="description" content="Sekretariat: Wo lohnt sich KI-Automation zuerst? (Preview)" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="nav">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="roothouse.ai">
+        <span class="logo-mark">⚡</span>
+        <span>roothouse.ai<small>KI-Automation für KMU</small></span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+
+      <ul class="nav-links" aria-label="Navigation">
+        <li><a href="index.html#modules">Module</a></li>
+        <li class="dropdown" id="jobsDropdown">
+          <a href="#" id="jobsTrigger">Jobs ▾</a>
+          <div class="dropdown-content" role="menu" aria-label="Jobs">
+            <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-kundenservice.html">🎧 Kundenservice</a>
+            <a href="job-marketing.html">📢 Marketing</a>
+          </div>
+        </li>
+        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
+        <li><a href="terminbuchung.html">Termin</a></li>
+        <li><a href="preise.html">Preise</a></li>
+      </ul>
+
+      <a href="terminbuchung.html" class="nav-cta">Erstgespräch buchen</a>
+    </div>
+  </nav>
+
+  <main class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Job-Check: Sekretariat</h1>
+        <p class="section-subtitle">Wenn E-Mails, Termine und Dokumente den Tag zerreißen, lohnt sich KI meist sehr früh – aber nur mit klaren Regeln.</p>
+      </div>
+
+      <div class="card">
+        <h2 style="font-weight:950; font-size:18px;">Typische Aufgaben</h2>
+        <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
+          <li>• Standard-E-Mails beantworten / Entwürfe erstellen</li>
+          <li>• Terminabstimmung inkl. Rückfragen</li>
+          <li>• Vorlagen, Wiedervorlagen, Weiterleitungen</li>
+          <li>• Dokumente strukturieren & vorbereiten</li>
+        </ul>
+
+        <div class="card-soft" style="margin-top:14px;">
+          <div style="font-weight:950;">Wichtig (für gute Ergebnisse):</div>
+          <div style="color:var(--muted); margin-top:6px;">Freigaben, Eskalationen, klare „No-Go“-Regeln, Logging (wer hat was wann getan).</div>
+        </div>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
+          <a class="btn btn-primary" href="terminbuchung.html">Erstgespräch buchen</a>
+          <a class="btn btn-secondary" href="index.html#modules">Zurück zu den Modulen</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>roothouse.ai</h4>
+          <p>KI-Automation für KMU – verständlich, integriert, kontrollierbar.</p>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="terminbuchung.html">Termin</a></li>
+            <li><a href="index.html#contact">Erstgespräch</a></li>
+            <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span id="y"></span> roothouse.ai — Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      const jobs = document.getElementById('jobsDropdown');
+      const jobsTrigger = document.getElementById('jobsTrigger');
+      if(toggle && nav){ toggle.addEventListener('click', ()=> nav.classList.toggle('open')); }
+      if(jobs && jobsTrigger){
+        jobsTrigger.addEventListener('click', (e)=>{
+          if(!nav.classList.contains('open')) return;
+          e.preventDefault();
+          jobs.classList.toggle('open');
+        });
+      }
+    })();
+  </script>
+
+</body>
+</html>

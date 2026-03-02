@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Impressum | roothouse.ai</title>
+  <meta name="description" content="Impressum (Preview) – roothouse.ai" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <nav class="navbar" id="nav">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="roothouse.ai">
+        <span class="logo-mark">⚡</span>
+        <span>roothouse.ai<small>KI-Automation für KMU</small></span>
+      </a>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+      <ul class="nav-links" aria-label="Navigation">
+        <li><a href="index.html">Start</a></li>
+        <li><a href="preise.html">Preise</a></li>
+        <li><a href="terminbuchung.html">Termin</a></li>
+      </ul>
+      <a href="terminbuchung.html" class="nav-cta">Erstgespräch buchen</a>
+    </div>
+  </nav>
+
+  <main class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <h1 class="section-title">Impressum (Platzhalter)</h1>
+        <p class="section-subtitle">Vor Go-Live bitte mit echten Firmendaten befüllen (Rechtsform, Anschrift, UID, Kontakt, ggf. Aufsichtsbehörde).</p>
+      </div>
+
+      <div class="card">
+        <h2 style="font-weight:950; font-size:18px;">Angaben gem. § 5 ECG / § 14 UGB</h2>
+        <p style="color:var(--muted); margin-top:10px;">Firmenname, Anschrift, Kontakt (Telefon/E-Mail), UID (falls vorhanden), Firmenbuchnummer (falls vorhanden).</p>
+
+        <h2 style="font-weight:950; font-size:18px; margin-top:18px;">Haftung / Links</h2>
+        <p style="color:var(--muted); margin-top:10px;">Platzhalter-Text.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h4>roothouse.ai</h4>
+          <p>KI-Automation für KMU – verständlich, integriert, kontrollierbar.</p>
+        </div>
+        <div>
+          <h4>Rechtliches</h4>
+          <ul>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Kontakt</h4>
+          <ul>
+            <li><a href="terminbuchung.html">Termin</a></li>
+            <li><a href="index.html#contact">Erstgespräch</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">© <span id="y"></span> roothouse.ai — Alle Rechte vorbehalten.</div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+    (function(){
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      if(toggle && nav){ toggle.addEventListener('click', ()=> nav.classList.toggle('open')); }
+    })();
+  </script>
+
+</body>
+</html>

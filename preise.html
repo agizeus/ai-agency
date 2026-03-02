@@ -4,13 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preise | roothouse.ai</title>
-  <meta name="description" content="Preise für roothouse.ai – Module einzeln oder kombiniert. Monatlich kündbar. (Layout im roothouse-Design)" />
+  <meta name="description" content="Preise für roothouse.ai – Module einzeln oder kombiniert. Monatlich kündbar." />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <nav class="navbar">
+  <!-- Navigation -->
+  <nav class="navbar" id="nav">
     <div class="container">
       <a href="index.html" class="logo" aria-label="roothouse.ai">
         <span class="logo-mark">⚡</span>
@@ -20,13 +21,27 @@
         </span>
       </a>
 
-      <ul class="nav-links" aria-label="Navigation">
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+
+      <ul class="nav-links" aria-label="Navigation" id="navLinks">
         <li><a href="index.html#modules">Module</a></li>
+
+        <li class="dropdown" id="jobsDropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false" id="jobsTrigger">Jobs ▾</a>
+          <div class="dropdown-content" role="menu" aria-label="Jobs">
+            <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-kundenservice.html">🎧 Kundenservice</a>
+            <a href="job-marketing.html">📢 Marketing</a>
+          </div>
+        </li>
+
+        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
+        <li><a href="terminbuchung.html">Termin</a></li>
         <li><a href="preise.html">Preise</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
       </ul>
 
-      <a href="index.html#contact" class="nav-cta">Erstgespräch buchen</a>
+      <a href="terminbuchung.html" class="nav-cta">Erstgespräch buchen</a>
     </div>
   </nav>
 
@@ -34,69 +49,69 @@
     <div class="container">
       <div class="section-header">
         <h1 class="section-title">Preise</h1>
-        <p class="section-subtitle">Die Pakete orientieren sich an den bisherigen Cards. Details (Leistungsumfang, SLA, Integrationen) klären wir im Erstgespräch. Monatlich kündbar (Platzhalter-Text, falls ihr später juristisch feinjustiert).</p>
+        <p class="section-subtitle">Module einzeln oder kombiniert. Details (Leistungsumfang, Integrationen, Grenzen) klären wir im Erstgespräch. Monatlich kündbar (Platzhalter – vor Go-Live juristisch prüfen).</p>
       </div>
 
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:stretch;">
 
-        <section style="border:1px solid rgba(233,247,240,.12); background:rgba(233,247,240,.03); border-radius:22px; padding:16px;">
+        <section class="card">
           <h2 style="font-weight:950; font-size:18px;">Einzelmodul</h2>
           <p style="color:var(--muted); margin-top:8px;">Perfekt zum Start: ein Modul nach Ihrem größten Engpass.</p>
-          <div style="margin-top:12px; border-top:1px solid rgba(233,247,240,.10); padding-top:12px;">
-            <div style="font-weight:950; color:var(--orange2); font-size:26px;">€899 <span style="color:var(--muted2); font-size:12px; font-weight:800;">/ Monat</span></div>
-            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(233,247,240,.82); font-size:13px;">
+          <div style="margin-top:12px; border-top:1px solid var(--border); padding-top:12px;">
+            <div style="font-weight:950; color:var(--accent); font-size:26px;">€899 <span style="color:var(--muted2); font-size:12px; font-weight:850;">/ Monat</span></div>
+            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
               <li>• 1 Modul: Assistant / Marketing / Support</li>
               <li>• Setup & Konfiguration</li>
               <li>• Persönlicher Ansprechpartner</li>
               <li>• Monatlich kündbar</li>
             </ul>
             <div style="margin-top:14px;">
-              <a class="btn btn-outline btn-full" href="index.html#contact">Auswählen</a>
+              <a class="btn btn-outline btn-full" href="terminbuchung.html">Auswählen</a>
             </div>
           </div>
         </section>
 
-        <section style="border:1px solid rgba(249,115,22,.25); background:linear-gradient(180deg, rgba(249,115,22,.12), rgba(233,247,240,.03)); border-radius:22px; padding:16px;">
-          <div style="display:inline-flex; align-items:center; gap:8px; padding:8px 10px; border-radius:999px; border:1px solid rgba(249,115,22,.22); background:rgba(5,14,11,.35); color:var(--orange2); font-weight:950; font-size:12px;">BELIEBTESTE Wahl</div>
+        <section class="card card-accent">
+          <div class="badge-accent">BELIEBTESTE Wahl</div>
           <h2 style="font-weight:950; font-size:18px; margin-top:10px;">Kombi 2</h2>
           <p style="color:var(--muted); margin-top:8px;">Ideal für KMU: zwei Module kombinieren (z.B. Assistant + Support).</p>
-          <div style="margin-top:12px; border-top:1px solid rgba(233,247,240,.10); padding-top:12px;">
-            <div style="font-weight:950; color:var(--orange2); font-size:26px;">€1.499 <span style="color:var(--muted2); font-size:12px; font-weight:800;">/ Monat</span></div>
-            <div style="color:rgba(233,247,240,.65); font-size:12px; font-weight:800; margin-top:4px;">Sparen Sie €299 (Hinweis: Preislogik wie bisher)</div>
-            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(233,247,240,.82); font-size:13px;">
+          <div style="margin-top:12px; border-top:1px solid rgba(29,27,22,.08); padding-top:12px;">
+            <div style="font-weight:950; color:var(--accent); font-size:26px;">€1.499 <span style="color:var(--muted2); font-size:12px; font-weight:850;">/ Monat</span></div>
+            <div style="color:rgba(29,27,22,.56); font-size:12px; font-weight:850; margin-top:4px;">Sparen Sie €299 (Hinweis: Preislogik wie bisher)</div>
+            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
               <li>• 2 Module nach Wahl</li>
               <li>• Prioritäts-Support (Platzhalter)</li>
               <li>• Erweiterte Integrationen (Platzhalter)</li>
               <li>• Monatlich kündbar</li>
             </ul>
             <div style="margin-top:14px;">
-              <a class="btn btn-primary btn-full" href="index.html#contact">Auswählen</a>
+              <a class="btn btn-primary btn-full" href="terminbuchung.html">Auswählen</a>
             </div>
           </div>
         </section>
 
-        <section style="border:1px solid rgba(233,247,240,.12); background:rgba(233,247,240,.03); border-radius:22px; padding:16px;">
+        <section class="card">
           <h2 style="font-weight:950; font-size:18px;">All-in-One</h2>
           <p style="color:var(--muted); margin-top:8px;">Maximale Entlastung: alle 3 Module im Zusammenspiel.</p>
-          <div style="margin-top:12px; border-top:1px solid rgba(233,247,240,.10); padding-top:12px;">
-            <div style="font-weight:950; color:var(--orange2); font-size:26px;">€1.999 <span style="color:var(--muted2); font-size:12px; font-weight:800;">/ Monat</span></div>
-            <div style="color:rgba(233,247,240,.65); font-size:12px; font-weight:800; margin-top:4px;">Sparen Sie €698 (Hinweis: Preislogik wie bisher)</div>
-            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(233,247,240,.82); font-size:13px;">
+          <div style="margin-top:12px; border-top:1px solid var(--border); padding-top:12px;">
+            <div style="font-weight:950; color:var(--accent); font-size:26px;">€1.999 <span style="color:var(--muted2); font-size:12px; font-weight:850;">/ Monat</span></div>
+            <div style="color:rgba(29,27,22,.56); font-size:12px; font-weight:850; margin-top:4px;">Sparen Sie €698 (Hinweis: Preislogik wie bisher)</div>
+            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
               <li>• Assistant + Marketing + Support</li>
               <li>• Dedizierter Ansprechpartner (Platzhalter)</li>
               <li>• Custom Integrationen (Platzhalter)</li>
               <li>• Monatlich kündbar</li>
             </ul>
             <div style="margin-top:14px;">
-              <a class="btn btn-outline btn-full" href="index.html#contact">Auswählen</a>
+              <a class="btn btn-outline btn-full" href="terminbuchung.html">Auswählen</a>
             </div>
           </div>
         </section>
 
       </div>
 
-      <div style="margin-top:16px; color:rgba(233,247,240,.65); font-size:12px;">
-        Hinweis: Diese Preisseite ist ein Layout-Transfer der bisherigen Cards. Finale Texte/Legal & genaue Feature-Definitionen sollten vor Go-Live geprüft werden.
+      <div style="margin-top:16px; color:rgba(29,27,22,.56); font-size:12px;">
+        Hinweis: Diese Preisseite ist ein Layout-Transfer. Finale Texte/Legal & genaue Feature-Definitionen bitte vor Go-Live prüfen.
       </div>
 
     </div>
@@ -112,14 +127,15 @@
         <div>
           <h4>Rechtliches</h4>
           <ul>
-            <li><a href="#">Impressum (Platzhalter)</a></li>
-            <li><a href="#">Datenschutz (Platzhalter)</a></li>
-            <li><a href="#">AGB (Platzhalter)</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
           </ul>
         </div>
         <div>
           <h4>Kontakt</h4>
           <ul>
+            <li><a href="terminbuchung.html">Termin</a></li>
             <li><a href="index.html#contact">Erstgespräch</a></li>
             <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
           </ul>
@@ -132,6 +148,28 @@
 
   <script>
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    (function(){
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      const jobs = document.getElementById('jobsDropdown');
+      const jobsTrigger = document.getElementById('jobsTrigger');
+
+      if(toggle && nav){
+        toggle.addEventListener('click', ()=>{
+          nav.classList.toggle('open');
+        });
+      }
+
+      if(jobs && jobsTrigger){
+        jobsTrigger.addEventListener('click', (e)=>{
+          if(!nav.classList.contains('open')) return;
+          e.preventDefault();
+          jobs.classList.toggle('open');
+        });
+      }
+    })();
   </script>
 
 </body>
