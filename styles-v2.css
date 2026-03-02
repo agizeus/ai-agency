@@ -505,12 +505,10 @@ body {
     background-size: auto 80%;
   }
 
-  /* Mobile: Standard-Positionierung, nur Größe angepasst */
-  .hero-ava,
-  .hero-sol,
-  .hero-lumo {
-    transform: none;
-  }
+  /* Mobile: Figuren etwas auseinanderziehen, leicht nach unten */
+  .hero-ava  { transform: translateX(-18%) translateY(8%); }
+  .hero-sol  { transform: translateX(0%)   translateY(8%); }
+  .hero-lumo { transform: translateX(18%)  translateY(8%); }
 
   .section {
     padding: 3rem 5%;
