@@ -34,15 +34,26 @@ body {
   background-color: var(--bg-primary);
 }
 
-/* Buttons in roothouse-Farben, basierend auf Basisschema */
+/* Buttons: Orange als Primärfarbe, Grün nur für Highlights im Text */
 .nav-cta,
 .btn-primary {
-  background: var(--brand-green);
+  background: var(--accent);
 }
 
 .nav-cta:hover,
 .btn-primary:hover {
-  background: #16613a;
+  background: var(--accent-hover);
+}
+
+/* Sekundäre CTAs als Ghost-Buttons in Orange */
+.btn-secondary {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+}
+.btn-secondary:hover {
+  background: var(--accent-light);
+  border-color: var(--accent-hover);
 }
 
 .badge,
