@@ -1,529 +1,340 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>roothouse.ai | KI-Automation für KMU in Österreich & Deutschland</title>
-  <meta name="description" content="KI-Automation für Unternehmen: Sekretariat, Marketing & Kundenservice entlasten – mit klaren Prozessen, persönlichem Ansprechpartner und sauberen Integrationen." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
-  <link rel="stylesheet" href="styles.css" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>roothouse.ai | KI-Automation für KMU in Österreich & Deutschland</title>
+<meta name="description" content="roothouse.ai – KI-Automation für KMU: Sekretariat, Marketing & Kundenservice entlasten, ohne leere 10x-Versprechen. Fokus auf realistische, nachhaltige Entlastung.">
+<link rel="stylesheet" href="styles-v2.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="nav">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="roothouse.ai">
-        <span class="logo-mark">🌳</span>
-        <span>
-          roothouse.ai
-          <small>KI-Automation für KMU</small>
-        </span>
-      </a>
+<!-- Navigation -->
+<nav class="navbar">
+  <a href="#" class="logo">🌳 roothouse.ai</a>
 
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+  <button class="nav-toggle" aria-label="Menü umschalten">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
-      <ul class="nav-links" aria-label="Navigation" id="navLinks">
-        <li><a href="index.html#problems">Problem</a></li>
-        <li><a href="index.html#process">Prozess</a></li>
-        <li><a href="index.html#modules">Module</a></li>
+  <ul class="nav-links">
+    <li class="dropdown">
+      <a href="#jobs">Jobs ▼</a>
+      <div class="dropdown-content">
+        <a href="job-sekretariat.html">📋 Sekretariat</a>
+        <a href="job-buchhaltung.html">📊 Buchhaltung</a>
+        <a href="job-kundenservice.html">🎧 Kundenservice</a>
+        <a href="job-marketing.html">📢 Marketing</a>
+      </div>
+    </li>
+    <li><a href="#modules">Module</a></li>
+    <li><a href="#pricing">Preise</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Erstgespräch buchen</a>
+</nav>
 
-        <li class="dropdown" id="jobsDropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false" id="jobsTrigger">Jobs ▾</a>
-          <div class="dropdown-content" role="menu" aria-label="Jobs">
-            <a href="job-sekretariat.html">📋 Sekretariat</a>
-            <a href="job-kundenservice.html">🎧 Kundenservice</a>
-            <a href="job-marketing.html">📢 Marketing</a>
-          </div>
-        </li>
+<!-- Hero -->
+<section class="hero hero-tree">
+  <div class="hero-layer hero-sky"></div>
+  <div class="hero-layer hero-tree-ground"></div>
+  <div class="hero-layer hero-agent hero-ava"></div>
+  <div class="hero-layer hero-agent hero-sol"></div>
+  <div class="hero-layer hero-agent hero-lumo"></div>
+</section>
 
-        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
-        <li><a href="terminbuchung.html">Termin</a></li>
-        <li><a href="preise.html">Preise</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-      </ul>
-
-      <a href="index.html#contact" class="nav-cta">Erstgespräch buchen</a>
+<section class="hero-intro">
+  <div class="container hero-intro-content">
+    <h1>Dein KI‑Team für Sekretariat, Marketing & Support</h1>
+    <p class="hero-subtitle">
+      Ava, Lumo und Sol entlasten dein Büro, erstellen Marketing‑Inhalte
+      und beantworten Kundenanfragen – damit du mehr Zeit für das Wesentliche hast.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Kostenfreies Erstgespräch buchen</a>
+      <a href="#modules" class="btn btn-secondary">Einsatzmöglichkeiten ansehen</a>
     </div>
-  </nav>
-
-  <!-- Hero / Above the fold -->
-  <header class="hero" id="top">
-    <div class="container">
-      <div class="hero-grid">
-        <div>
-          <h1>
-            Weniger Routine. <span class="highlight">Mehr Fokus.</span><br />
-            KI, die Ihr Team spürbar entlastet.
-          </h1>
-          <p class="hero-subtitle">
-            Wir bauen Automatisierungen für Sekretariat, Marketing und Support – so, dass sie verstanden werden, messbar helfen und sauber in Ihre Tools integriert sind.
-          </p>
-
-          <div class="hero-trust">
-            <span class="trust-badge">DSGVO / EU-Hosting möglich</span>
-            <span class="trust-badge">Integration statt Tool-Wechsel</span>
-            <span class="trust-badge">Persönlicher Ansprechpartner</span>
-          </div>
-
-          <div class="hero-buttons">
-            <a href="index.html#contact" class="btn btn-primary">Kostenfreies Erstgespräch</a>
-            <a href="index.html#modules" class="btn btn-secondary">Module ansehen</a>
-          </div>
-
-          <div class="hero-intro">
-            <div class="hero-stats">
-              <div class="stat">
-                <div class="stat-number">klar</div>
-                <div class="stat-label">Prozess in 4 Schritten</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">sauber</div>
-                <div class="stat-label">Integration in bestehende Systeme</div>
-              </div>
-              <div class="stat">
-                <div class="stat-number">flexibel</div>
-                <div class="stat-label">Module einzeln oder kombiniert</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <aside class="hero-figures" aria-label="Hero-Figuren">
-          <div class="hero-figures-title">Ihre digitalen Teamkollegen</div>
-          <div class="figure-row">
-            <div class="figure-card">
-              <img class="figure-img" src="bot-avatars-ava-final/001-halbportrait-einer-jungen-frau-im-modern.png" alt="Assistant" />
-              <div class="figure-label">Assistant</div>
-            </div>
-            <div class="figure-card">
-              <img class="figure-img" src="bot-avatars-lumo-final/001-halbportrait-einer-jungen-frau-im-modern.png" alt="Marketing" />
-              <div class="figure-label">Marketing</div>
-            </div>
-            <div class="figure-card">
-              <img class="figure-img" src="bot-avatars-sol-final/001-halbportrait-einer-freundlichen-ruhigen-.png" alt="Support" />
-              <div class="figure-label">Support</div>
-            </div>
-          </div>
-          <div class="groundline" aria-hidden="true"></div>
-        </aside>
-      </div>
-    </div>
-  </header>
-
-  <!-- Problem -->
-  <section class="section section-darker" id="problems">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Wiederholende Aufgaben fressen Zeit – und Motivation.</h2>
-        <p class="section-subtitle">Wir nehmen Druck aus dem Alltag, indem wir die häufigsten Routinen automatisieren – ohne „Magie“, sondern mit klaren Abläufen und sauberer Kontrolle.</p>
-      </div>
-
-      <div class="problem-two-col">
-        <div class="problem-media" role="img" aria-label="Referenzbild: gestresster Mensch am Schreibtisch"></div>
-
-        <div>
-          <p style="color: var(--muted);">
-            Typische Symptome in KMU: zu viele Anfragen, zu viele Tabs, zu wenig Fokus. Das lässt sich lösen – mit den richtigen Modulen an den richtigen Stellen.
-          </p>
-
-          <div class="problem-points">
-            <div class="point">
-              <strong>Problem: Sekretariat am Limit</strong>
-              <span>Lösung: Assistant übernimmt wiederkehrende E-Mails, Termin-Logik, Vorlagen & Weiterleitungen – mit Review und klaren Regeln.</span>
-            </div>
-            <div class="point">
-              <strong>Problem: Marketing passiert „wenn Zeit ist“</strong>
-              <span>Lösung: Marketing-Modul erstellt Content-Entwürfe, plant Themen, sammelt Ideen – Sie geben frei, statt bei null zu starten.</span>
-            </div>
-            <div class="point">
-              <strong>Problem: Support-Anfragen stapeln sich</strong>
-              <span>Lösung: Support-Modul beantwortet Standardfragen, sammelt Infos vor, erstellt Tickets – Ihr Team behandelt nur noch die echten Fälle.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Prozess -->
-  <section class="section section-dark" id="process">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">So funktioniert die Automatisierung</h2>
-        <p class="section-subtitle">Vier Schritte – vom ersten Überblick bis zum Start. Optional mit Hover-Details pro Schritt.</p>
-      </div>
-
-      <div class="process-grid">
-        <div class="process-step">
-          <div class="step-number">1</div>
-          <div class="step-title">Analyse</div>
-          <div class="step-meta">Wir finden die 3 größten Zeitfresser.</div>
-          <div class="step-text">Kurzaufnahme Ihrer Prozesse + Ziele (z.B. Antwortzeiten, Durchlaufzeiten, weniger Kontext-Switching).</div>
-          <div class="step-more">Output: priorisierte Use Cases + minimaler Implementierungsplan.</div>
-        </div>
-        <div class="process-step">
-          <div class="step-number">2</div>
-          <div class="step-title">Setup</div>
-          <div class="step-meta">Module & Regeln konfigurieren.</div>
-          <div class="step-text">Prompts, Vorlagen, Freigaben, Eskalationen – passend zu Ihrem Ton und Ihren Grenzen.</div>
-          <div class="step-more">Output: reproduzierbarer Workflow (kein „One-Off“).</div>
-        </div>
-        <div class="process-step">
-          <div class="step-number">3</div>
-          <div class="step-title">Integration</div>
-          <div class="step-meta">An Ihre Tools anbinden.</div>
-          <div class="step-text">E-Mail, Kalender, CRM, Website/Chat, Helpdesk – ohne Rip&Replace.</div>
-          <div class="step-more">Output: saubere Übergaben + Logging für Kontrolle.</div>
-        </div>
-        <div class="process-step">
-          <div class="step-number">4</div>
-          <div class="step-title">Start</div>
-          <div class="step-meta">Live gehen & nachschärfen.</div>
-          <div class="step-text">Ihr Team bekommt eine kurze Einweisung – danach laufen die Routinen im Hintergrund.</div>
-          <div class="step-more">Output: kontinuierliche Optimierung (1–2 kleine Iterationen reichen oft).</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Module -->
-  <section class="section section-darker" id="modules">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Module, die Rollen übernehmen (nicht Menschen ersetzen)</h2>
-        <p class="section-subtitle">Jedes Modul hat einen klaren Job: Entwürfe erstellen, Antworten vorbereiten, Informationen sammeln, sauber übergeben. Ohne harte Zahlen-Versprechen.</p>
-      </div>
-
-      <div class="module-stack">
-        <div class="module-row" id="module-assistant">
-          <div class="module-visual" aria-hidden="true">
-            <span class="module-chip">🤖 Assistant</span>
-            <span class="module-chip">E-Mail · Termine · Doku</span>
-          </div>
-          <div class="module-copy">
-            <h3>Assistant</h3>
-            <p>Für Sekretariat & Administration: reduziert Routine, hält Ordnung, sorgt für schnelle, konsistente Kommunikation.</p>
-            <ul>
-              <li>• Nutzen: beantwortet/entwirft wiederkehrende E-Mails mit Review-Option</li>
-              <li>• Use Case: Terminabstimmung inkl. Rückfragen & Kalenderlogik</li>
-            </ul>
-            <div class="module-cta">
-              <a class="btn btn-outline" href="job-sekretariat.html">Mehr Infos</a>
-              <a class="btn btn-secondary" href="index.html#contact" data-module="Assistant">Im Erstgespräch ansehen</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="module-row" id="module-marketing">
-          <div class="module-visual" aria-hidden="true">
-            <span class="module-chip">📈 Marketing</span>
-            <span class="module-chip">Content · Planung · Ideen</span>
-          </div>
-          <div class="module-copy">
-            <h3>Marketing</h3>
-            <p>Für Marketing & Content: hilft beim Starten, Strukturieren und Wiederverwenden – damit Marketing regelmäßig statt sporadisch passiert.</p>
-            <ul>
-              <li>• Nutzen: erstellt Content-Entwürfe in Ihrem Stil (mit Freigabe)</li>
-              <li>• Use Case: Monatsplan für Social Posts + Newsletter-Themen</li>
-            </ul>
-            <div class="module-cta">
-              <a class="btn btn-outline" href="job-marketing.html">Mehr Infos</a>
-              <a class="btn btn-secondary" href="index.html#contact" data-module="Marketing">Im Erstgespräch ansehen</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="module-row" id="module-support">
-          <div class="module-visual" aria-hidden="true">
-            <span class="module-chip">💬 Support</span>
-            <span class="module-chip">FAQ · Tickets · Vorqualifikation</span>
-          </div>
-          <div class="module-copy">
-            <h3>Support</h3>
-            <p>Für Kundenservice: entlastet bei Standardfragen, sammelt Informationen, erstellt Tickets – damit Ihr Team mehr Zeit für echte Fälle hat.</p>
-            <ul>
-              <li>• Nutzen: beantwortet häufige Anfragen konsistent und freundlich</li>
-              <li>• Use Case: Vorqualifikation + Ticket-Erstellung im Helpdesk</li>
-            </ul>
-            <div class="module-cta">
-              <a class="btn btn-outline" href="job-kundenservice.html">Mehr Infos</a>
-              <a class="btn btn-secondary" href="index.html#contact" data-module="Support">Im Erstgespräch ansehen</a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Roadmap / Timeline -->
-  <section class="section section-dark" id="roadmap">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Von Computer bis KI – und jetzt: Bots als Unterstützung</h2>
-        <p class="section-subtitle">Die Idee ist nicht neu: Technologie nimmt Routine ab. Neu ist, wie „verständlich“ Software heute sein kann.</p>
-      </div>
-
-      <div class="timeline" aria-label="Timeline">
-        <div class="tl-item">
-          <div class="tl-year">Erfindung</div>
-          <div>
-            <div class="tl-title">Computer</div>
-            <div class="tl-text">Rechnen, Automatisieren, Standardisieren – die Basis für moderne Prozesse.</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-year">Durchbruch</div>
-          <div>
-            <div class="tl-title">Internet</div>
-            <div class="tl-text">Wissen & Kommunikation werden skalierbar – Prozesse werden vernetzt.</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-year">Produktivität</div>
-          <div>
-            <div class="tl-title">Google</div>
-            <div class="tl-text">Suchen statt fragen – Information wird sofort zugänglich.</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-year">Jetzt</div>
-          <div>
-            <div class="tl-title">Moderne KI</div>
-            <div class="tl-text">Text, Sprache, Struktur: KI kann „mitarbeiten“ – wenn Regeln, Grenzen und Integrationen stimmen.</div>
-          </div>
-        </div>
-        <div class="tl-item tl-now">
-          <div class="tl-year">Jetzt</div>
-          <div>
-            <div class="tl-title">Bots als Unterstützung</div>
-            <div class="tl-text"><strong>Alle 3 Bots sind bereits umgesetzt</strong> (Assistant, Marketing, Support) – wir fokussieren auf saubere Anpassung an Ihren Alltag.</div>
-          </div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-year">Zukunft</div>
-          <div>
-            <div class="tl-title">Mehr Autonomie, mehr Kontrolle</div>
-            <div class="tl-text">Bessere Workflows, bessere Audits, bessere Übergaben – KI wird verlässlicher, nicht nur „clever“.</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="roadmap-future">
-        <h3 style="font-weight:950; font-size:18px;">Zukunft: Updates & neue Module</h3>
-        <p style="color:var(--muted); margin-top:8px;">Wenn Sie informiert werden möchten (neue Integrationen, Templates, Module), tragen Sie sich ein.</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn btn-primary" href="#" aria-label="Newsletter (Platzhalter)">Newsletter (Platzhalter)</a>
-          <a class="btn btn-secondary" href="index.html#contact">Erstgespräch statt Newsletter</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="section section-darker" id="faq">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Häufige Fragen</h2>
-        <p class="section-subtitle">Kurz, ehrlich, praxisnah.</p>
-      </div>
-
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" type="button" onclick="toggleFaq(this)">
-            <span>Wie läuft die Implementierung konkret ab?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Wir starten mit einer kurzen Analyse (Ziele, Datenquellen, „was darf KI tun / was nicht“). Danach setzen wir die Module auf, definieren Freigaben & Eskalationen und binden Ihre Tools an (z.B. E-Mail, Kalender, CRM, Website/Chat, Helpdesk). Zum Schluss gibt es eine kurze Einweisung + 1–2 Iterationen zum Nachschärfen.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" onclick="toggleFaq(this)">
-            <span>Kann ich Module einzeln buchen?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Ja. Viele starten mit einem Modul (z.B. Assistant) und erweitern später. Wichtig ist, dass das Modul zu Ihrem größten Engpass passt – genau das klären wir im Erstgespräch.</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" onclick="toggleFaq(this)">
-            <span>Wie sieht Datensicherheit / DSGVO aus?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Wir arbeiten mit klaren Datenflüssen, rollenbasierter Berechtigung (wer darf was), Verschlüsselung in Transit (TLS) und – je nach Setup – EU-Hosting. Wir definieren außerdem, welche Daten die KI sehen darf und welche nie (z.B. interne Listen, sensible Anhänge).</p>
-          </div>
-        </div>
-
-        <div class="faq-item">
-          <button class="faq-question" type="button" onclick="toggleFaq(this)">
-            <span>Kann ich jederzeit kündigen?</span>
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            <p>Ja, monatlich kündbar (Details auf der Preisseite). Wichtig: Sie behalten Ihre Daten. Wir können außerdem Dokumentation/Workflows so aufsetzen, dass Sie nicht „locked-in“ sind.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact (Conversion) -->
-  <section class="section section-dark" id="contact">
-    <div class="container">
-      <div class="section-header">
-        <h2 class="section-title">Kostenfreies Erstgespräch</h2>
-        <p class="section-subtitle">Schicken Sie uns 2–3 Sätze zu Ihrem aktuellen Engpass. Wir antworten mit einem Vorschlag (Use Case + nächster Schritt).</p>
-      </div>
-
-      <div class="card-soft">
-        <p style="color:var(--muted);">Platzhalter: Hier kommt später ein Kalender/Typeform/Contact-Flow rein.</p>
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn btn-primary" href="terminbuchung.html" aria-label="Termin buchen">Termin buchen</a>
-          <a class="btn btn-secondary" href="#" aria-label="E-Mail (Platzhalter)">E-Mail senden (Platzhalter)</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>roothouse.ai</h4>
-          <p>KI-Automation für KMU – verständlich, integriert, kontrollierbar.</p>
-        </div>
-        <div>
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul>
-            <li><a href="terminbuchung.html">Termin</a></li>
-            <li><a href="index.html#contact">Erstgespräch</a></li>
-            <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer-bottom">© <span id="y"></span> roothouse.ai — Alle Rechte vorbehalten.</div>
-    </div>
-  </footer>
-
-  <!-- Chat Widget -->
-  <div class="chat-fab" aria-label="Chat Widget">
-    <button class="chat-btn" id="chatBtn" type="button" aria-label="Chat öffnen">Chat</button>
   </div>
+</section>
 
-  <div class="chat-window" id="chatWindow" role="dialog" aria-label="KI-Assistent Chat">
+<!-- Problem-Lösung -->
+
+<script>
+  (function() {
+    const nav = document.querySelector('.navbar');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  })();
+</script>
+
+<section class="section section-alt" id="problems">
+  <div class="container">
+    <h2 class="section-title">Wiederholende Aufgaben fressen Ihre Zeit?</h2>
+    <div class="problem-grid">
+      <div class="problem-card">
+        <div class="problem-icon">😫</div>
+        <h3>Überlastetes Sekretariat</h3>
+        <div class="arrow">↓</div>
+        <div class="solution"><strong>AI Assistant Pro</strong><br><span>+85% Produktivität</span></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">📉</div>
+        <h3>Keine Zeit für Marketing</h3>
+        <div class="arrow">↓</div>
+        <div class="solution"><strong>Marketing AI</strong><br><span>10x Content-Output</span></div>
+      </div>
+      <div class="problem-card">
+        <div class="problem-icon">⏰</div>
+        <h3>Support nur zu Bürozeiten</h3>
+        <div class="arrow">↓</div>
+        <div class="solution"><strong>Support Bot 24/7</strong><br><span>Rund-um-Uhr-Service</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Jobs -->
+<section id="jobs" class="section section-alter">
+  <div class="container">
+    <h2 class="section-title">Job-Check: Wo lohnt sich KI für Sie?</h2>
+    <div class="job-grid">
+      <a href="job-sekretariat.html" class="job-card"><div class="job-icon">📋</div><h3>Sekretariat</h3><p>E-Mail, Termine, Dokumente</p><span>→ Details</span></a>
+      <a href="job-buchhaltung.html" class="job-card"><div class="job-icon">📊</div><h3>Buchhaltung</h3><p>Rechnungen, Zahlungen, Mahnen</p><span>→ Details</span></a>
+      <a href="job-kundenservice.html" class="job-card"><div class="job-icon">🎧</div><h3>Kundenservice</h3><p>24/7 Support, Tickets, FAQ</p><span>→ Details</span></a>
+      <a href="job-marketing.html" class="job-card"><div class="job-icon">📢</div><h3>Marketing</h3><p>Social Media, Content, SEO</p><span>→ Details</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- Prozess -->
+<section class="section section-alt" id="process">
+  <div class="container">
+    <h2 class="section-title">So funktioniert die Automatisierung</h2>
+    <div class="process-grid">
+      <div class="process-step"><div class="step-number">1</div><h3>Analyse</h3><p>30 Min – Wir identifizieren Potenziale</p></div>
+      <div class="process-step"><div class="step-number">2</div><h3>Setup</h3><p>24-48h – Module konfigurieren</p></div>
+      <div class="process-step"><div class="step-number">3</div><h3>Integration</h3><p>Nahtlos – Anbindung an Ihre Systeme</p></div>
+      <div class="process-step"><div class="step-number">4</div><h3>Go-Live</h3><p>Sofort – Ihr Team ist produktiver</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- Module -->
+<section id="modules" class="section section-alter">
+  <div class="container">
+    <h2 class="section-title">Unsere 3 KI-Module</h2>
+    <div class="modules-grid">
+      <div class="module-card">
+        <div class="module-icon">🤖</div>
+        <h3>AI Assistant Pro</h3>
+        <p>Sekretariat & Administration</p>
+        <ul><li>✓ E-Mail & Termine</li><li>✓ Dokumente</li><li>✓ Reisebuchungen</li></ul>
+        <div class="module-price"><span class="price">€899</span>/Monat</div>
+        <button class="btn btn-outline">Auswählen</button>
+      </div>
+      <div class="module-card featured">
+        <div class="module-badge">★ EMPFOHLEN ★</div>
+        <div class="module-icon">📈</div>
+        <h3>Marketing AI</h3>
+        <p>Marketing & Content</p>
+        <ul><li>✓ Social Media Posts</li><li>✓ Blog & Newsletter</li><li>✓ SEO & Keywords</li></ul>
+        <div class="module-price"><span class="price">€1.099</span>/Monat</div>
+        <button class="btn btn-primary">Auswählen</button>
+      </div>
+      <div class="module-card">
+        <div class="module-icon">💬</div>
+        <h3>Support Bot 24/7</h3>
+        <p>Kundenservice & Support</p>
+        <ul><li>✓ 24/7 Erreichbarkeit</li><li>✓ Ticket-Klassifizierung</li><li>✓ Mehrsprachig</li></ul>
+        <div class="module-price"><span class="price">€799</span>/Monat</div>
+        <button class="btn btn-outline">Auswählen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Preise -->
+<section id="pricing" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Preismodelle</h2>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Einzelmodul</h3>
+        <div class="pricing-price"><span class="price">€899</span>/Monat</div>
+        <p>Ein Modul nach Wahl</p>
+        <button class="btn btn-outline btn-full">Auswählen</button>
+      </div>
+      <div class="pricing-card popular">
+        <div class="pricing-badge">★ BELIEBT ★</div>
+        <h3>Kombi 2</h3>
+        <div class="pricing-price"><span class="price">€1.499</span>/Monat</div>
+        <p>2 Module kombiniert<br><small>Sparen Sie €299</small></p>
+        <button class="btn btn-primary btn-full">Auswählen</button>
+      </div>
+      <div class="pricing-card">
+        <h3>All-in-One</h3>
+        <div class="pricing-price"><span class="price">€1.999</span>/Monat</div>
+        <p>Alle 3 Module<br><small>Sparen Sie €698</small></p>
+        <button class="btn btn-outline btn-full">Auswählen</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section section-alter" id="testimonials">
+  <div class="container">
+    <h2 class="section-title">Kundenstimmen</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <p>"20 Stunden pro Woche gespart im Sekretariat."</p>
+        <strong>Maria K., Graz</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>"Endlich Zeit für strategische Arbeit dank Marketing AI."</p>
+        <strong>Thomas B., Wien</strong>
+      </div>
+      <div class="testimonial-card">
+        <p>"Der Bot antwortet schneller als wir – 24/7."</p>
+        <strong>Sarah M., München</strong>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Roadmap -->
+<section id="roadmap" class="section section-alt">
+  <div class="container">
+    <h2 class="section-title">Modul-Roadmap</h2>
+    <div class="roadmap-grid">
+      <div class="roadmap-phase phase-complete">
+        <div class="phase-badge">✅ AKTIV</div>
+        <h3>Phase 1: KI Assistenz</h3>
+        <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+        <p>AI Assistant Pro – Bereits verfügbar</p>
+      </div>
+      <div class="roadmap-phase phase-active">
+        <div class="phase-badge">📍 ENTWICKLUNG</div>
+        <h3>Phase 2: Marketing</h3>
+        <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+        <p>Marketing AI – Launch Q2 2026</p>
+      </div>
+      <div class="roadmap-phase phase-planned">
+        <div class="phase-badge">🎯 GEPLANT</div>
+        <h3>Phase 3: Support</h3>
+        <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+        <p>Support Bot 24/7 – Start Q2 2026</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="section section-alter">
+  <div class="container">
+    <h2 class="section-title">Häufige Fragen</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Wie lange dauert die Implementierung? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>24-48 Stunden Standard. Komplexe Integrationen bis zu 1 Woche.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Kann ich einzelne Module buchen? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>Ja! Jedes Modul ab €899/Monat – monatlich kündbar.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Sind meine Daten sicher? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>DSGVO-konform, EU-Server (Frankfurt), TLS 1.3 Verschlüsselung.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+          Kann ich kündigen? <span>+</span>
+        </button>
+        <div class="faq-answer"><p>Jederzeit monatlich kündbar. Keine versteckten Kosten.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><a href="#" class="logo">🌳 roothouse.ai</a><p>KI-Automation für KMU</p></div>
+      <div><h4>Rechtliches</h4><ul><li><a href="impressum.html">Impressum</a></li><li><a href="agb.html">AGB</a></li><li><a href="datenschutz.html">Datenschutz</a></li></ul></div>
+      <div><h4>Kontakt</h4><ul><li>info@roothouse.ai</li><li>+43 660 4055688</li><li>9500 Villach</li></ul></div>
+    </div>
+  </div>
+</footer>
+
+<!-- KI Chat Widget -->
+<div id="chat-widget" class="chat-widget">
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chat-window">
     <div class="chat-header">
-      <div>
-        <div class="chat-title">KI-Assistent</div>
-        <div style="color:var(--muted2); font-size:12px;">Demo-Widget (UI)</div>
-      </div>
-      <button class="chat-close" type="button" aria-label="Schließen" id="chatClose">✕</button>
+      <h4>KI-Assistent</h4>
+      <button onclick="toggleChat()">×</button>
     </div>
-    <div class="chat-body" id="chatBody">
-      <div class="chat-msg">Hallo! Welche Aufgabe soll zuerst entlastet werden: E-Mail/Termine, Marketing-Content oder Support-Anfragen?</div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="message bot">Hallo! Ich beantworte Fragen zu unseren Produkten. Wie kann ich helfen?</div>
     </div>
-    <form class="chat-input" id="chatForm">
-      <input id="chatInput" type="text" placeholder="Nachricht…" autocomplete="off" />
-      <button class="btn btn-primary" type="submit">Senden</button>
-    </form>
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Ihre Frage..." onkeypress="if(event.key==='Enter')sendMessage()">
+      <button onclick="sendMessage()">➤</button>
+    </div>
   </div>
+</div>
 
-  <script>
-    // Footer year
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+function toggleChat() {
+  document.getElementById('chat-window').classList.toggle('active');
+}
 
-    // Mobile nav toggle
-    (function(){
-      const nav = document.getElementById('nav');
-      const toggle = document.getElementById('navToggle');
-      const jobs = document.getElementById('jobsDropdown');
-      const jobsTrigger = document.getElementById('jobsTrigger');
-
-      if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-          nav.classList.toggle('open');
-        });
+function sendMessage() {
+  const input = document.getElementById('chat-input');
+  const msg = input.value.trim();
+  if (!msg) return;
+  
+  const messages = document.getElementById('chat-messages');
+  messages.innerHTML += '<div class="message user">' + msg + '</div>';
+  
+  // Simple product-only response logic
+  const productKeywords = ['preis', 'kosten', 'modul', 'paket', 'marketing', 'support', 'assistant', 'sekretariat', 'termin', 'implementierung', 'dsgvo', 'daten', 'sicherheit'];
+  const isProductQuestion = productKeywords.some(k => msg.toLowerCase().includes(k));
+  
+  setTimeout(() => {
+    let response;
+    if (isProductQuestion) {
+      if (msg.toLowerCase().includes('preis') || msg.toLowerCase().includes('kosten')) {
+        response = 'Unsere Module starten ab €899/Monat. Das Kombi-2 Paket kostet €1.499/Monat. Möchten Sie mehr zu einem bestimmten Modul erfahren?';
+      } else if (msg.toLowerCase().includes('marketing')) {
+        response = 'Marketing AI (€1.099/Monat) automatisiert Social Media, Content-Erstellung und SEO. Interesse an einer Demo?';
+      } else {
+        response = 'Danke für Ihre Frage! Für detaillierte Informationen empfehle ich ein kostenfreies Erstgespräch. Soll ich einen Termin für Sie reservieren?';
       }
-
-      // Mobile dropdown behaviour (desktop uses :hover)
-      if(jobs && jobsTrigger){
-        jobsTrigger.addEventListener('click', (e)=>{
-          // only treat as toggler on small screens / when nav is open
-          if(!nav.classList.contains('open')) return;
-          e.preventDefault();
-          jobs.classList.toggle('open');
-        });
-      }
-    })();
-
-    // FAQ toggle
-    function toggleFaq(btn){
-      const item = btn.closest('.faq-item');
-      const icon = btn.querySelector('.faq-icon');
-      const isOpen = item.classList.contains('open');
-      document.querySelectorAll('.faq-item.open').forEach(el=>{
-        el.classList.remove('open');
-        const ic = el.querySelector('.faq-icon');
-        if(ic) ic.textContent = '+';
-      });
-      if(!isOpen){
-        item.classList.add('open');
-        if(icon) icon.textContent = '−';
-      }
+    } else {
+      response = 'Diese Frage darf ich leider nicht beantworten. Ich kann Ihnen aber gerne bei Fragen zu unseren Produkten helfen oder Sie mit einem Menschen verbinden. Möchten Sie das?';
     }
-
-    // Chat widget (UI only)
-    const chatBtn = document.getElementById('chatBtn');
-    const chatWindow = document.getElementById('chatWindow');
-    const chatClose = document.getElementById('chatClose');
-    const chatForm = document.getElementById('chatForm');
-    const chatInput = document.getElementById('chatInput');
-    const chatBody = document.getElementById('chatBody');
-
-    function openChat(){ chatWindow.classList.add('open'); chatInput.focus(); }
-    function closeChat(){ chatWindow.classList.remove('open'); }
-
-    chatBtn.addEventListener('click', ()=>{
-      chatWindow.classList.contains('open') ? closeChat() : openChat();
-    });
-    chatClose.addEventListener('click', closeChat);
-
-    chatForm.addEventListener('submit', (e)=>{
-      e.preventDefault();
-      const text = (chatInput.value||'').trim();
-      if(!text) return;
-      const m = document.createElement('div');
-      m.className = 'chat-msg me';
-      m.textContent = text;
-      chatBody.appendChild(m);
-      chatBody.scrollTop = chatBody.scrollHeight;
-      chatInput.value = '';
-
-      // simple demo reply
-      const r = document.createElement('div');
-      r.className = 'chat-msg';
-      r.textContent = 'Danke! (Demo) — Wir würden das im Erstgespräch in einen konkreten Workflow übersetzen.';
-      setTimeout(()=>{
-        chatBody.appendChild(r);
-        chatBody.scrollTop = chatBody.scrollHeight;
-      }, 350);
-    });
-  </script>
+    messages.innerHTML += '<div class="message bot">' + response + '</div>';
+    messages.scrollTop = messages.scrollHeight;
+  }, 500);
+  
+  input.value = '';
+}
+</script>
 
 </body>
 </html>
