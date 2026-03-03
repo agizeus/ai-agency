@@ -11,26 +11,39 @@
 <body>
 
   <!-- Navigation -->
-  <nav class="navbar">
+  <nav class="navbar" id="nav">
     <div class="container">
       <a href="index.html" class="logo" aria-label="roothouse.ai">
-        <span class="logo-mark">⚡</span>
+        <span class="logo-mark">🌳</span>
         <span>
           roothouse.ai
           <small>KI-Automation für KMU</small>
         </span>
       </a>
 
-      <ul class="nav-links" aria-label="Navigation">
-        <li><a href="#problems">Problem</a></li>
-        <li><a href="#process">Prozess</a></li>
-        <li><a href="#modules">Module</a></li>
+      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+
+      <ul class="nav-links" aria-label="Navigation" id="navLinks">
+        <li><a href="index.html#problems">Problem</a></li>
+        <li><a href="index.html#process">Prozess</a></li>
+        <li><a href="index.html#modules">Module</a></li>
+
+        <li class="dropdown" id="jobsDropdown">
+          <a href="#" aria-haspopup="true" aria-expanded="false" id="jobsTrigger">Jobs ▾</a>
+          <div class="dropdown-content" role="menu" aria-label="Jobs">
+            <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-kundenservice.html">🎧 Kundenservice</a>
+            <a href="job-marketing.html">📢 Marketing</a>
+          </div>
+        </li>
+
+        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
+        <li><a href="terminbuchung.html">Termin</a></li>
         <li><a href="preise.html">Preise</a></li>
-        <li><a href="#roadmap">Roadmap</a></li>
-        <li><a href="#faq">FAQ</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
       </ul>
 
-      <a href="#contact" class="nav-cta">Erstgespräch buchen</a>
+      <a href="index.html#contact" class="nav-cta">Erstgespräch buchen</a>
     </div>
   </nav>
 
@@ -54,8 +67,8 @@
           </div>
 
           <div class="hero-buttons">
-            <a href="#contact" class="btn btn-primary">Kostenfreies Erstgespräch</a>
-            <a href="#modules" class="btn btn-secondary">Module ansehen</a>
+            <a href="index.html#contact" class="btn btn-primary">Kostenfreies Erstgespräch</a>
+            <a href="index.html#modules" class="btn btn-secondary">Module ansehen</a>
           </div>
 
           <div class="hero-intro">
@@ -197,7 +210,7 @@
             </ul>
             <div class="module-cta">
               <a class="btn btn-outline" href="job-sekretariat.html">Mehr Infos</a>
-              <a class="btn btn-secondary" href="#contact" data-module="Assistant">Im Erstgespräch ansehen</a>
+              <a class="btn btn-secondary" href="index.html#contact" data-module="Assistant">Im Erstgespräch ansehen</a>
             </div>
           </div>
         </div>
@@ -216,7 +229,7 @@
             </ul>
             <div class="module-cta">
               <a class="btn btn-outline" href="job-marketing.html">Mehr Infos</a>
-              <a class="btn btn-secondary" href="#contact" data-module="Marketing">Im Erstgespräch ansehen</a>
+              <a class="btn btn-secondary" href="index.html#contact" data-module="Marketing">Im Erstgespräch ansehen</a>
             </div>
           </div>
         </div>
@@ -235,7 +248,7 @@
             </ul>
             <div class="module-cta">
               <a class="btn btn-outline" href="job-kundenservice.html">Mehr Infos</a>
-              <a class="btn btn-secondary" href="#contact" data-module="Support">Im Erstgespräch ansehen</a>
+              <a class="btn btn-secondary" href="index.html#contact" data-module="Support">Im Erstgespräch ansehen</a>
             </div>
           </div>
         </div>
@@ -298,11 +311,11 @@
       </div>
 
       <div class="roadmap-future">
-        <h3 style="font-weight:900; font-size:18px;">Zukunft: Updates & neue Module</h3>
+        <h3 style="font-weight:950; font-size:18px;">Zukunft: Updates & neue Module</h3>
         <p style="color:var(--muted); margin-top:8px;">Wenn Sie informiert werden möchten (neue Integrationen, Templates, Module), tragen Sie sich ein.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
           <a class="btn btn-primary" href="#" aria-label="Newsletter (Platzhalter)">Newsletter (Platzhalter)</a>
-          <a class="btn btn-secondary" href="#contact">Erstgespräch statt Newsletter</a>
+          <a class="btn btn-secondary" href="index.html#contact">Erstgespräch statt Newsletter</a>
         </div>
       </div>
     </div>
@@ -368,10 +381,10 @@
         <p class="section-subtitle">Schicken Sie uns 2–3 Sätze zu Ihrem aktuellen Engpass. Wir antworten mit einem Vorschlag (Use Case + nächster Schritt).</p>
       </div>
 
-      <div style="border:1px solid rgba(233,247,240,.12); background:rgba(233,247,240,.03); border-radius:22px; padding:16px;">
+      <div class="card-soft">
         <p style="color:var(--muted);">Platzhalter: Hier kommt später ein Kalender/Typeform/Contact-Flow rein.</p>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-          <a class="btn btn-primary" href="#" aria-label="Buchung (Platzhalter)">Termin buchen (Platzhalter)</a>
+          <a class="btn btn-primary" href="terminbuchung.html" aria-label="Termin buchen">Termin buchen</a>
           <a class="btn btn-secondary" href="#" aria-label="E-Mail (Platzhalter)">E-Mail senden (Platzhalter)</a>
         </div>
       </div>
@@ -389,15 +402,16 @@
         <div>
           <h4>Rechtliches</h4>
           <ul>
-            <li><a href="#">Impressum (Platzhalter)</a></li>
-            <li><a href="#">Datenschutz (Platzhalter)</a></li>
-            <li><a href="#">AGB (Platzhalter)</a></li>
+            <li><a href="impressum.html">Impressum</a></li>
+            <li><a href="datenschutz.html">Datenschutz</a></li>
+            <li><a href="agb.html">AGB</a></li>
           </ul>
         </div>
         <div>
           <h4>Kontakt</h4>
           <ul>
-            <li><a href="#contact">Erstgespräch</a></li>
+            <li><a href="terminbuchung.html">Termin</a></li>
+            <li><a href="index.html#contact">Erstgespräch</a></li>
             <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
           </ul>
         </div>
@@ -432,6 +446,30 @@
   <script>
     // Footer year
     document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Mobile nav toggle
+    (function(){
+      const nav = document.getElementById('nav');
+      const toggle = document.getElementById('navToggle');
+      const jobs = document.getElementById('jobsDropdown');
+      const jobsTrigger = document.getElementById('jobsTrigger');
+
+      if(toggle && nav){
+        toggle.addEventListener('click', ()=>{
+          nav.classList.toggle('open');
+        });
+      }
+
+      // Mobile dropdown behaviour (desktop uses :hover)
+      if(jobs && jobsTrigger){
+        jobsTrigger.addEventListener('click', (e)=>{
+          // only treat as toggler on small screens / when nav is open
+          if(!nav.classList.contains('open')) return;
+          e.preventDefault();
+          jobs.classList.toggle('open');
+        });
+      }
+    })();
 
     // FAQ toggle
     function toggleFaq(btn){
