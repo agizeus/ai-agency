@@ -1,115 +1,147 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Terminbuchung | roothouse.ai</title>
-  <meta name="description" content="Terminbuchung (Preview) – roothouse.ai" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Terminbuchung (Preview) – hier folgt später der Kalender-Embed.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
 
-  <nav class="navbar" id="nav">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="roothouse.ai">
-        <span class="logo-mark">⚡</span>
-        <span>roothouse.ai<small>KI-Automation für KMU</small></span>
-      </a>
+<header class="site-header navbar">
+  <div class="container nav">
+    <a href="index.html#hero" class="brand">
+      <span class="brand-mark"></span>
+      <span>roothouse.ai</span>
+    </a>
 
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+    <button class="nav-toggle" aria-label="Menü umschalten">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <ul class="nav-links" aria-label="Navigation">
-        <li><a href="index.html#modules">Module</a></li>
-        <li class="dropdown" id="jobsDropdown">
-          <a href="#" id="jobsTrigger">Jobs ▾</a>
-          <div class="dropdown-content" role="menu" aria-label="Jobs">
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="index.html#modules">Leistungen</a>
+        <a href="index.html#process">Ablauf</a>
+        <a href="preise.html">Preise</a>
+        <a href="terminbuchung.html">Terminbuchung</a>
+        <div class="dropdown">
+          <button>
+            Job-Profile
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
             <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-buchhaltung.html">📊 Buchhaltung</a>
             <a href="job-kundenservice.html">🎧 Kundenservice</a>
             <a href="job-marketing.html">📢 Marketing</a>
           </div>
-        </li>
-        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
-        <li><a href="terminbuchung.html">Termin</a></li>
-        <li><a href="preise.html">Preise</a></li>
-      </ul>
-
-      <a href="terminbuchung.html" class="nav-cta">Erstgespräch buchen</a>
-    </div>
-  </nav>
-
-  <main class="section section-dark">
-    <div class="container">
-      <div class="section-header">
-        <h1 class="section-title">Terminbuchung (Preview)</h1>
-        <p class="section-subtitle">Platzhalter-Seite für Kalender-Integration (z.B. Calendly, Cal.com, Microsoft Bookings).</p>
-      </div>
-
-      <div class="card">
-        <h2 style="font-weight:950; font-size:18px;">So läuft das Erstgespräch</h2>
-        <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
-          <li>• 15–30 Minuten: Use Case & Zielbild</li>
-          <li>• Tool-Stack kurz abklären (E-Mail/Kalender/CRM/Website/Helpdesk)</li>
-          <li>• Nächster Schritt: Mini-Plan + Aufwandsschätzung</li>
-        </ul>
-        <div class="card-soft" style="margin-top:14px;">
-          <div style="font-weight:950;">Kalender (Platzhalter)</div>
-          <div style="color:var(--muted); margin-top:6px;">Hier kommt später ein Embed rein.</div>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:12px;">
-            <a class="btn btn-primary" href="#">Kalender öffnen (Platzhalter)</a>
-            <a class="btn btn-secondary" href="analyse-tool.html">Vorher Analyse-Tool</a>
+        </div>
+        <div class="dropdown">
+          <button>
+            Rechtliches
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
           </div>
         </div>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="index.html#cta" class="btn btn-secondary">Mehr erfahren</a>
+        <a href="terminbuchung.html" class="btn btn-primary">Erstgespräch buchen</a>
       </div>
-
     </div>
-  </main>
+  </div>
+</header>
 
-  <footer class="footer">
+<main>
+  <section class="section section-tight page-section">
     <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>roothouse.ai</h4>
-          <p>KI-Automation für KMU – verständlich, integriert, kontrollierbar.</p>
-        </div>
-        <div>
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul>
-            <li><a href="terminbuchung.html">Termin</a></li>
-            <li><a href="index.html#contact">Erstgespräch</a></li>
-            <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
-          </ul>
-        </div>
+      <div class="page-head">
+        <span class="eyebrow">Termin</span>
+        <h1>Erstgespräch buchen (Preview)</h1>
+        <p>Der finale Kalender-Embed folgt in Iteration 3. Bis dahin sammeln wir Termine händisch und bestätigen per E-Mail.</p>
       </div>
-      <div class="footer-bottom">© <span id="y"></span> roothouse.ai — Alle Rechte vorbehalten.</div>
-    </div>
-  </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){
-      const nav = document.getElementById('nav');
-      const toggle = document.getElementById('navToggle');
-      const jobs = document.getElementById('jobsDropdown');
-      const jobsTrigger = document.getElementById('jobsTrigger');
-      if(toggle && nav){ toggle.addEventListener('click', ()=> nav.classList.toggle('open')); }
-      if(jobs && jobsTrigger){
-        jobsTrigger.addEventListener('click', (e)=>{
-          if(!nav.classList.contains('open')) return;
-          e.preventDefault();
-          jobs.classList.toggle('open');
-        });
-      }
-    })();
-  </script>
+      <div class="detail-grid two">
+        <article class="card detail-card">
+          <h3>So läuft das Gespräch</h3>
+          <ul class="feature-list">
+            <li>15–30 Minuten: Use Case &amp; Zielbild</li>
+            <li>Tool-Stack: E-Mail, Kalender, CRM, Helpdesk</li>
+            <li>Mini-Plan mit Aufwandsschätzung</li>
+            <li>Nächste Schritte &amp; Verantwortlichkeiten</li>
+          </ul>
+          <div class="detail-actions">
+            <a href="mailto:info@roothouse.ai" class="btn btn-secondary">Alternativen anfragen</a>
+          </div>
+        </article>
+        <article class="card detail-card">
+          <h3>Kalender-Widget Platzhalter</h3>
+          <div class="placeholder-panel">
+            <p>Hier binden wir später Cal.com / Calendly ein.<br>Noch kein Live-Embed.</p>
+          </div>
+          <p class="detail-subline">Bis der Embed steht, führt jeder CTA auf diese Seite. Wir bestätigen Slots manuell.</p>
+          <div class="detail-actions">
+            <a href="mailto:info@roothouse.ai" class="btn btn-outline">Termin per E-Mail vorschlagen</a>
+            <a href="analyse-tool.html" class="btn btn-secondary">Analyse-Tool öffnen</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>
+        <a href="index.html#hero" class="brand">
+          <span class="brand-mark"></span>
+          <span>roothouse.ai</span>
+        </a>
+        <p>KI-Automation für KMU</p>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>info@roothouse.ai</li>
+          <li>+43 660 4055688</li>
+          <li>9500 Villach</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function() {
+    const nav = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  })();
+</script>
 
 </body>
 </html>

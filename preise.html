@@ -1,176 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Preise | roothouse.ai</title>
-  <meta name="description" content="Preise für roothouse.ai – Module einzeln oder kombiniert. Monatlich kündbar." />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Preise und Pakete für roothouse.ai – Module einzeln oder kombiniert buchen.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar" id="nav">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="roothouse.ai">
-        <span class="logo-mark">⚡</span>
-        <span>
-          roothouse.ai
-          <small>KI-Automation für KMU</small>
-        </span>
-      </a>
+<header class="site-header navbar">
+  <div class="container nav">
+    <a href="index.html#hero" class="brand">
+      <span class="brand-mark"></span>
+      <span>roothouse.ai</span>
+    </a>
 
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+    <button class="nav-toggle" aria-label="Menü umschalten">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <ul class="nav-links" aria-label="Navigation" id="navLinks">
-        <li><a href="index.html#modules">Module</a></li>
-
-        <li class="dropdown" id="jobsDropdown">
-          <a href="#" aria-haspopup="true" aria-expanded="false" id="jobsTrigger">Jobs ▾</a>
-          <div class="dropdown-content" role="menu" aria-label="Jobs">
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="index.html#modules">Leistungen</a>
+        <a href="index.html#process">Ablauf</a>
+        <a href="preise.html">Preise</a>
+        <a href="terminbuchung.html">Terminbuchung</a>
+        <div class="dropdown">
+          <button>
+            Job-Profile
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
             <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-buchhaltung.html">📊 Buchhaltung</a>
             <a href="job-kundenservice.html">🎧 Kundenservice</a>
             <a href="job-marketing.html">📢 Marketing</a>
           </div>
-        </li>
+        </div>
+        <div class="dropdown">
+          <button>
+            Rechtliches
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+          </div>
+        </div>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
 
-        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
-        <li><a href="terminbuchung.html">Termin</a></li>
-        <li><a href="preise.html">Preise</a></li>
-        <li><a href="index.html#faq">FAQ</a></li>
-      </ul>
-
-      <a href="terminbuchung.html" class="nav-cta">Erstgespräch buchen</a>
+      <div class="nav-actions">
+        <a href="index.html#cta" class="btn btn-secondary">Mehr erfahren</a>
+        <a href="terminbuchung.html" class="btn btn-primary">Erstgespräch buchen</a>
+      </div>
     </div>
-  </nav>
+  </div>
+</header>
 
-  <main class="section section-dark">
+<main>
+  <section class="section section-tight page-section">
     <div class="container">
-      <div class="section-header">
-        <h1 class="section-title">Preise</h1>
-        <p class="section-subtitle">Module einzeln oder kombiniert. Details (Leistungsumfang, Integrationen, Grenzen) klären wir im Erstgespräch. Monatlich kündbar (Platzhalter – vor Go-Live juristisch prüfen).</p>
+      <div class="page-head">
+        <span class="eyebrow">Preise</span>
+        <h1>Module einzeln oder kombiniert</h1>
+        <p>Alle Pakete sind monatlich kündbar. Im Erstgespräch klären wir Leistungsumfang, Integrationen und Limits, bevor Sie starten.</p>
       </div>
 
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; align-items:stretch;">
-
-        <section class="card">
-          <h2 style="font-weight:950; font-size:18px;">Einzelmodul</h2>
-          <p style="color:var(--muted); margin-top:8px;">Perfekt zum Start: ein Modul nach Ihrem größten Engpass.</p>
-          <div style="margin-top:12px; border-top:1px solid var(--border); padding-top:12px;">
-            <div style="font-weight:950; color:var(--accent); font-size:26px;">€899 <span style="color:var(--muted2); font-size:12px; font-weight:850;">/ Monat</span></div>
-            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
-              <li>• 1 Modul: Assistant / Marketing / Support</li>
-              <li>• Setup & Konfiguration</li>
-              <li>• Persönlicher Ansprechpartner</li>
-              <li>• Monatlich kündbar</li>
-            </ul>
-            <div style="margin-top:14px;">
-              <a class="btn btn-outline btn-full" href="terminbuchung.html">Auswählen</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="card card-accent">
-          <div class="badge-accent">BELIEBTESTE Wahl</div>
-          <h2 style="font-weight:950; font-size:18px; margin-top:10px;">Kombi 2</h2>
-          <p style="color:var(--muted); margin-top:8px;">Ideal für KMU: zwei Module kombinieren (z.B. Assistant + Support).</p>
-          <div style="margin-top:12px; border-top:1px solid rgba(29,27,22,.08); padding-top:12px;">
-            <div style="font-weight:950; color:var(--accent); font-size:26px;">€1.499 <span style="color:var(--muted2); font-size:12px; font-weight:850;">/ Monat</span></div>
-            <div style="color:rgba(29,27,22,.56); font-size:12px; font-weight:850; margin-top:4px;">Sparen Sie €299 (Hinweis: Preislogik wie bisher)</div>
-            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
-              <li>• 2 Module nach Wahl</li>
-              <li>• Prioritäts-Support (Platzhalter)</li>
-              <li>• Erweiterte Integrationen (Platzhalter)</li>
-              <li>• Monatlich kündbar</li>
-            </ul>
-            <div style="margin-top:14px;">
-              <a class="btn btn-primary btn-full" href="terminbuchung.html">Auswählen</a>
-            </div>
-          </div>
-        </section>
-
-        <section class="card">
-          <h2 style="font-weight:950; font-size:18px;">All-in-One</h2>
-          <p style="color:var(--muted); margin-top:8px;">Maximale Entlastung: alle 3 Module im Zusammenspiel.</p>
-          <div style="margin-top:12px; border-top:1px solid var(--border); padding-top:12px;">
-            <div style="font-weight:950; color:var(--accent); font-size:26px;">€1.999 <span style="color:var(--muted2); font-size:12px; font-weight:850;">/ Monat</span></div>
-            <div style="color:rgba(29,27,22,.56); font-size:12px; font-weight:850; margin-top:4px;">Sparen Sie €698 (Hinweis: Preislogik wie bisher)</div>
-            <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
-              <li>• Assistant + Marketing + Support</li>
-              <li>• Dedizierter Ansprechpartner (Platzhalter)</li>
-              <li>• Custom Integrationen (Platzhalter)</li>
-              <li>• Monatlich kündbar</li>
-            </ul>
-            <div style="margin-top:14px;">
-              <a class="btn btn-outline btn-full" href="terminbuchung.html">Auswählen</a>
-            </div>
-          </div>
-        </section>
-
-      </div>
-
-      <div style="margin-top:16px; color:rgba(29,27,22,.56); font-size:12px;">
-        Hinweis: Diese Preisseite ist ein Layout-Transfer. Finale Texte/Legal & genaue Feature-Definitionen bitte vor Go-Live prüfen.
-      </div>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>roothouse.ai</h4>
-          <p>KI-Automation für KMU – verständlich, integriert, kontrollierbar.</p>
-        </div>
-        <div>
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
+      <div class="detail-grid three">
+        <article class="card detail-card">
+          <h3>Einzelmodul</h3>
+          <p class="detail-subline">Perfekt zum Einstieg – fokussiert auf den größten Engpass.</p>
+          <div class="detail-price"><span>€899</span>/Monat</div>
+          <ul class="feature-list">
+            <li>1 Modul nach Wahl (Assistant / Marketing / Support)</li>
+            <li>Setup &amp; Konfiguration</li>
+            <li>Persönlicher Ansprechpartner</li>
+            <li>Monatlich kündbar</li>
           </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul>
-            <li><a href="terminbuchung.html">Termin</a></li>
-            <li><a href="index.html#contact">Erstgespräch</a></li>
-            <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
+          <a href="terminbuchung.html" class="btn btn-outline btn-full">Auswählen</a>
+        </article>
+
+        <article class="card detail-card">
+          <div class="detail-badge">Beliebteste Wahl</div>
+          <h3>Kombi 2</h3>
+          <p class="detail-subline">Zwei Module kombiniert – z.B. Assistant + Support.</p>
+          <div class="detail-price"><span>€1.499</span>/Monat</div>
+          <ul class="feature-list">
+            <li>2 Module nach Wahl</li>
+            <li>Erweiterte Integrationen (Preview)</li>
+            <li>Priorisierte Betreuung</li>
+            <li>Monatlich kündbar</li>
           </ul>
-        </div>
+          <a href="terminbuchung.html" class="btn btn-primary btn-full">Auswählen</a>
+        </article>
+
+        <article class="card detail-card">
+          <h3>All-in-One</h3>
+          <p class="detail-subline">Maximale Entlastung mit allen drei Modulen.</p>
+          <div class="detail-price"><span>€1.999</span>/Monat</div>
+          <ul class="feature-list">
+            <li>Assistant + Marketing + Support</li>
+            <li>Dedizierter Ansprechpartner (Preview)</li>
+            <li>Custom Integrationen</li>
+            <li>Monatlich kündbar</li>
+          </ul>
+          <a href="terminbuchung.html" class="btn btn-outline btn-full">Auswählen</a>
+        </article>
       </div>
 
-      <div class="footer-bottom">© <span id="y"></span> roothouse.ai — Alle Rechte vorbehalten.</div>
+      <div class="disclaimer-card">
+        Hinweis: Diese Preisseite ist ein Layout-Transfer. Finale Texte und juristische Details bitte vor Go-Live prüfen.
+      </div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>
+        <a href="index.html#hero" class="brand">
+          <span class="brand-mark"></span>
+          <span>roothouse.ai</span>
+        </a>
+        <p>KI-Automation für KMU</p>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>info@roothouse.ai</li>
+          <li>+43 660 4055688</li>
+          <li>9500 Villach</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
 
-    // Mobile nav toggle
-    (function(){
-      const nav = document.getElementById('nav');
-      const toggle = document.getElementById('navToggle');
-      const jobs = document.getElementById('jobsDropdown');
-      const jobsTrigger = document.getElementById('jobsTrigger');
-
-      if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-          nav.classList.toggle('open');
-        });
-      }
-
-      if(jobs && jobsTrigger){
-        jobsTrigger.addEventListener('click', (e)=>{
-          if(!nav.classList.contains('open')) return;
-          e.preventDefault();
-          jobs.classList.toggle('open');
-        });
-      }
-    })();
-  </script>
+<script>
+  (function() {
+    const nav = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  })();
+</script>
 
 </body>
 </html>

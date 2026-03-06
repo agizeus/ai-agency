@@ -1,118 +1,145 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Job-Check: Kundenservice | roothouse.ai</title>
-  <meta name="description" content="Kundenservice: Wo lohnt sich KI-Automation zuerst? (Preview)" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.85em' x='50%' text-anchor='middle' font-size='75' font-weight='800' fill='%23F97316'>R</text></svg>">
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Support & Kundenservice mit KI entlasten.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="styles-v2.css">
 </head>
 <body>
 
-  <nav class="navbar" id="nav">
-    <div class="container">
-      <a href="index.html" class="logo" aria-label="roothouse.ai">
-        <span class="logo-mark">⚡</span>
-        <span>roothouse.ai<small>KI-Automation für KMU</small></span>
-      </a>
+<header class="site-header navbar">
+  <div class="container nav">
+    <a href="index.html#hero" class="brand">
+      <span class="brand-mark"></span>
+      <span>roothouse.ai</span>
+    </a>
 
-      <button class="nav-toggle" id="navToggle" type="button" aria-label="Menü öffnen/schließen">Menü</button>
+    <button class="nav-toggle" aria-label="Menü umschalten">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
 
-      <ul class="nav-links" aria-label="Navigation">
-        <li><a href="index.html#modules">Module</a></li>
-        <li class="dropdown" id="jobsDropdown">
-          <a href="#" id="jobsTrigger">Jobs ▾</a>
-          <div class="dropdown-content" role="menu" aria-label="Jobs">
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="index.html#modules">Leistungen</a>
+        <a href="index.html#process">Ablauf</a>
+        <a href="preise.html">Preise</a>
+        <a href="terminbuchung.html">Terminbuchung</a>
+        <div class="dropdown">
+          <button>
+            Job-Profile
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
             <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-buchhaltung.html">📊 Buchhaltung</a>
             <a href="job-kundenservice.html">🎧 Kundenservice</a>
             <a href="job-marketing.html">📢 Marketing</a>
           </div>
-        </li>
-        <li><a href="analyse-tool.html">Analyse-Tool</a></li>
-        <li><a href="terminbuchung.html">Termin</a></li>
-        <li><a href="preise.html">Preise</a></li>
-      </ul>
+        </div>
+        <div class="dropdown">
+          <button>
+            Rechtliches
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+          </div>
+        </div>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Kontakt</a>
+      </nav>
 
-      <a href="terminbuchung.html" class="nav-cta">Erstgespräch buchen</a>
+      <div class="nav-actions">
+        <a href="index.html#cta" class="btn btn-secondary">Mehr erfahren</a>
+        <a href="terminbuchung.html" class="btn btn-primary">Erstgespräch buchen</a>
+      </div>
     </div>
-  </nav>
+  </div>
+</header>
 
-  <main class="section section-dark">
+<main>
+  <section class="section section-tight page-section">
     <div class="container">
-      <div class="section-header">
-        <h1 class="section-title">Job-Check: Kundenservice</h1>
-        <p class="section-subtitle">Wenn Standardfragen den ganzen Tag blockieren, kann KI sofort entlasten – mit sauberer Übergabe an Ihr Team.</p>
+      <div class="page-head">
+        <span class="eyebrow">Job-Check</span>
+        <h1>Kundenservice &amp; Support</h1>
+        <p>Sol beantwortet Standardfragen rund um die Uhr, sammelt fehlende Infos ein und erstellt Tickets für Ihr Team.</p>
       </div>
 
-      <div class="card">
-        <h2 style="font-weight:950; font-size:18px;">Typische Aufgaben</h2>
-        <ul style="list-style:none; display:grid; gap:8px; margin-top:12px; color:rgba(29,27,22,.78); font-size:13px;">
-          <li>• FAQ & Standardantworten (freundlich, konsistent)</li>
-          <li>• Vorqualifikation: fehlende Infos einsammeln</li>
-          <li>• Ticket-Erstellung (z.B. Helpdesk/CRM) mit Zusammenfassung</li>
-          <li>• Routing an die richtige Person/Abteilung</li>
+      <div class="detail-grid two">
+        <article class="card detail-card">
+          <h3>Typische Aufgaben</h3>
+          <ul class="feature-list">
+            <li>FAQ &amp; Standardantworten (freundlich, konsistent)</li>
+            <li>Vorqualifikation &amp; Datenerfassung</li>
+            <li>Ticket-Erstellung im Helpdesk/CRM</li>
+            <li>Routing an richtige Personen</li>
+          </ul>
+        </article>
+        <article class="card detail-card">
+          <h3>Direkte Effekte</h3>
+          <ul class="feature-list">
+            <li>24/7 Erreichbarkeit ohne Nachtschichten</li>
+            <li>Saubere Übergabe inklusive Zusammenfassung</li>
+            <li>Schnellere Antwortzeiten &amp; CSAT</li>
+          </ul>
+          <div class="detail-actions">
+            <a href="terminbuchung.html" class="btn btn-primary">Erstgespräch buchen</a>
+            <a href="index.html#jobs" class="btn btn-secondary">Weitere Profile</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>
+        <a href="index.html#hero" class="brand">
+          <span class="brand-mark"></span>
+          <span>roothouse.ai</span>
+        </a>
+        <p>KI-Automation für KMU</p>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
         </ul>
-
-        <div class="card-soft" style="margin-top:14px;">
-          <div style="font-weight:950;">Qualität bleibt kontrollierbar:</div>
-          <div style="color:var(--muted); margin-top:6px;">Klassifizierung + Antwort-Vorlagen + klare Eskalation bei Sonderfällen.</div>
-        </div>
-
-        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:14px;">
-          <a class="btn btn-primary" href="terminbuchung.html">Erstgespräch buchen</a>
-          <a class="btn btn-secondary" href="index.html#modules">Zurück zu den Modulen</a>
-        </div>
       </div>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-grid">
-        <div>
-          <h4>roothouse.ai</h4>
-          <p>KI-Automation für KMU – verständlich, integriert, kontrollierbar.</p>
-        </div>
-        <div>
-          <h4>Rechtliches</h4>
-          <ul>
-            <li><a href="impressum.html">Impressum</a></li>
-            <li><a href="datenschutz.html">Datenschutz</a></li>
-            <li><a href="agb.html">AGB</a></li>
-          </ul>
-        </div>
-        <div>
-          <h4>Kontakt</h4>
-          <ul>
-            <li><a href="terminbuchung.html">Termin</a></li>
-            <li><a href="index.html#contact">Erstgespräch</a></li>
-            <li><a href="#">hello@roothouse.ai (Platzhalter)</a></li>
-          </ul>
-        </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>info@roothouse.ai</li>
+          <li>+43 660 4055688</li>
+          <li>9500 Villach</li>
+        </ul>
       </div>
-      <div class="footer-bottom">© <span id="y"></span> roothouse.ai — Alle Rechte vorbehalten.</div>
     </div>
-  </footer>
+  </div>
+</footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
-    (function(){
-      const nav = document.getElementById('nav');
-      const toggle = document.getElementById('navToggle');
-      const jobs = document.getElementById('jobsDropdown');
-      const jobsTrigger = document.getElementById('jobsTrigger');
-      if(toggle && nav){ toggle.addEventListener('click', ()=> nav.classList.toggle('open')); }
-      if(jobs && jobsTrigger){
-        jobsTrigger.addEventListener('click', (e)=>{
-          if(!nav.classList.contains('open')) return;
-          e.preventDefault();
-          jobs.classList.toggle('open');
-        });
-      }
-    })();
-  </script>
+<script>
+  (function() {
+    const nav = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  })();
+</script>
 
 </body>
 </html>

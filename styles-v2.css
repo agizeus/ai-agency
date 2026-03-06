@@ -491,6 +491,135 @@ img {
 }
 
 .card {
+.page-section {
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.page-head {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 36px;
+}
+
+.page-head h1 {
+  margin: 0;
+  font-size: clamp(2.4rem, 4vw, 3.6rem);
+  letter-spacing: -0.03em;
+}
+
+.page-head p {
+  margin: 0;
+  max-width: 720px;
+  color: var(--text-soft);
+}
+
+.detail-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.detail-grid.two {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.detail-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.detail-card {
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 32px;
+  background: white;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.detail-subline {
+  margin: 0;
+  color: var(--text-soft);
+}
+
+.detail-price {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.detail-price span {
+  font-size: 36px;
+  font-weight: 800;
+  margin-right: 6px;
+}
+
+.detail-badge {
+  align-self: flex-start;
+  padding: 6px 14px;
+  border-radius: 999px;
+  background: rgba(109, 94, 252, 0.12);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.feature-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: var(--text);
+}
+
+.feature-list li {
+  padding-left: 18px;
+  position: relative;
+  color: var(--text-soft);
+}
+
+.feature-list li::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--primary);
+  position: absolute;
+  left: 0;
+  top: 9px;
+}
+
+.detail-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.disclaimer-card {
+  margin-top: 32px;
+  padding: 18px 24px;
+  border-radius: 20px;
+  border: 1px dashed rgba(15, 23, 42, 0.2);
+  background: rgba(15, 23, 42, 0.02);
+  color: var(--text-soft);
+}
+
+.legal-card h3 {
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.legal-card p {
+  margin: 0 0 6px;
+  color: var(--text-soft);
+}
+
+
   border-radius: 26px;
   border: 1px solid rgba(15, 23, 42, 0.08);
   background: rgba(255, 255, 255, 0.9);
@@ -1168,6 +1297,10 @@ img {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .detail-grid.three {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .job-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1232,6 +1365,11 @@ img {
   .faq-list,
   .flow-grid,
   .placeholder-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-grid.two,
+  .detail-grid.three {
     grid-template-columns: 1fr;
   }
 
