@@ -120,6 +120,10 @@ img {
   transform: translateY(-1px);
 }
 
+.btn-full {
+  width: 100%;
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -688,6 +692,50 @@ img {
 }
 
 .pricing-card.popular {
+.flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.flow-card {
+  border-radius: 26px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.flow-step {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  color: white;
+  font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.link-arrow {
+  margin-top: auto;
+  font-weight: 600;
+  color: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.link-arrow::after {
+  content: '92';
+  font-size: 18px;
+}
+
+
   border-color: var(--primary);
   box-shadow: 0 24px 50px rgba(109, 94, 252, 0.2);
 }
@@ -804,6 +852,122 @@ img {
 
 .faq-answer.active {
   max-height: 200px;
+}
+
+.contact-section {
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.contact-shell {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 32px;
+  border-radius: var(--radius-xl);
+  padding: 48px;
+  background: white;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.contact-copy h2 {
+  margin-top: 16px;
+}
+
+.contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 28px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-list li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.contact-list strong {
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-soft);
+}
+
+.contact-list span {
+  font-size: 16px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.contact-card {
+  padding: 32px;
+  border-radius: 28px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: linear-gradient(135deg, rgba(109, 94, 252, 0.04), rgba(40, 199, 183, 0.08));
+  box-shadow: 0 24px 48px rgba(15, 23, 42, 0.08);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.contact-meta div {
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.contact-meta strong {
+  display: block;
+  font-size: 20px;
+}
+
+.contact-meta span {
+  font-size: 13px;
+  color: var(--text-soft);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.contact-form label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.contact-form textarea {
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 14px;
+  min-height: 140px;
+  font-family: inherit;
+  resize: vertical;
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.contact-form textarea:disabled {
+  background: rgba(15, 23, 42, 0.04);
+  color: var(--text-soft);
+}
+
+.contact-card small {
+  font-size: 12px;
+  color: var(--text-soft);
 }
 
 .faq-answer p {
@@ -925,7 +1089,8 @@ img {
   .modules-grid,
   .pricing-grid,
   .testimonials-grid,
-  .roadmap-grid {
+  .roadmap-grid,
+  .flow-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -990,7 +1155,8 @@ img {
   .pricing-grid,
   .testimonials-grid,
   .roadmap-grid,
-  .faq-list {
+  .faq-list,
+  .flow-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1002,6 +1168,15 @@ img {
     flex-direction: column;
     align-items: flex-start;
   }
+  .contact-shell {
+    grid-template-columns: 1fr;
+    padding: 32px;
+  }
+
+  .contact-meta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
 }
 
 @media (max-width: 640px) {
@@ -1022,6 +1197,18 @@ img {
   }
 
   .job-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-shell {
+    padding: 24px;
+  }
+
+  .contact-card {
+    padding: 24px;
+  }
+
+  .contact-meta {
     grid-template-columns: 1fr;
   }
 }
