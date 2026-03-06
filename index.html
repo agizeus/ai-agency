@@ -359,6 +359,52 @@
     </div>
   </section>
 
+  <section id="automation" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Work in Progress</span>
+          <h2>Platzhalter für Dex Gmail, Kalender &amp; Chatbot</h2>
+        </div>
+        <p>In Iteration 3 docken wir zusätzliche Flows an: Dex Gmail Automationen, ein eingebettetes Termin-Widget und der finale Chatbot.</p>
+      </div>
+      <div class="placeholder-grid">
+        <article class="card placeholder-card">
+          <div class="placeholder-tag">Dex Gmail</div>
+          <h3>Dex Gmail Automator</h3>
+          <p>Mapping für eingehende Mails zu Tickets, Deals oder Aufgaben – inklusive automatischer Antworten.</p>
+          <ul class="placeholder-list">
+            <li>E-Mail-Parsing &amp; Tagging</li>
+            <li>Weiterleitung an Ava/Lumo/Sol</li>
+            <li>Sync mit CRM/Helpdesk</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Später mit Dex Gmail verbinden</a>
+        </article>
+        <article class="card placeholder-card">
+          <div class="placeholder-tag">Kalender</div>
+          <h3>Terminbuchungs-Flow</h3>
+          <p>Hier wird ein Cal.com / Calendly Embed platziert. Bis dahin führt jeder CTA zur Terminseite.</p>
+          <div class="placeholder-panel">
+            <p>Kalender-Widget<br>Embed folgt in Iteration 3.</p>
+          </div>
+          <div class="placeholder-actions">
+            <a href="terminbuchung.html" class="btn btn-primary">Terminseite öffnen</a>
+            <a href="analyse-tool.html" class="btn btn-secondary">Analyse-Tool ansehen</a>
+          </div>
+        </article>
+        <article class="card placeholder-card">
+          <div class="placeholder-tag">Chatbot</div>
+          <h3>Chatbot-Integration</h3>
+          <p>Das Widget am Seitenende ist derzeit ein statisches Demo-UI. Später hängt hier der echte Support-Bot.</p>
+          <div class="placeholder-panel">
+            <p>Aktuell: Statischer Demo-Chat<br>Ziel: Live-Widget mit Hand-off.</p>
+          </div>
+          <button class="btn btn-outline" type="button" onclick="toggleChat()">Demo-Widget öffnen</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
   <section id="pricing" class="section section-light">
     <div class="container">
       <div class="section-head">
@@ -596,6 +642,11 @@
     </div>
   </div>
 </footer>
+
+<div class="chat-widget-note">
+  <strong>Chatbot Preview</strong>
+  <p>Das Widget unten ist derzeit nur ein Dummy. In Iteration 3 wird hier die echte Chatbot-Integration mit CRM-Hand-off aktiviert.</p>
+</div>
 
 <div id="chat-widget" class="chat-widget">
   <button class="chat-toggle" onclick="toggleChat()">💬</button>
