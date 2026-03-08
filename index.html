@@ -511,6 +511,40 @@
       background:linear-gradient(135deg, var(--primary), var(--primary-2));
     }
 
+    #jobs{
+      margin-top:36px;
+    }
+
+    .job-link-grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+    }
+
+    .job-link-card{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      color:inherit;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .job-link-card strong{
+      font-size:18px;
+      letter-spacing:-0.02em;
+    }
+
+    .job-link-card span{
+      color:var(--text-soft);
+      font-size:14px;
+    }
+
+    .job-link-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 16px 34px rgba(15,23,42,0.12);
+    }
+
     .spotlight{
       display:grid;
       grid-template-columns:1fr 1fr;
@@ -1120,6 +1154,29 @@
             </p>
           </div>
         </div>
+
+        <div id="jobs">
+          <h3 style="margin:0 0 10px; font-size:22px; letter-spacing:-0.03em;">Detaillierte Job-Profile ansehen</h3>
+          <p style="margin:0 0 22px; color:var(--text-soft); max-width:720px;">Jeder Agent hat eine eigene Seite mit Aufgaben, Verantwortlichkeiten und Effekten aus echten Projekten. Wählen Sie das Profil, das Ihren Bedarf am besten trifft.</p>
+          <div class="job-link-grid">
+            <a class="card job-link-card" href="job-sekretariat.html">
+              <strong>📋 Sekretariat &amp; Assistenz</strong>
+              <span>E-Mail-Routing, Terminlogik, Dokumente &amp; Notizen.</span>
+            </a>
+            <a class="card job-link-card" href="job-kundenservice.html">
+              <strong>🎧 Kundenservice &amp; Support</strong>
+              <span>FAQ, Ticket-Priorisierung und Eskalation mit Sol.</span>
+            </a>
+            <a class="card job-link-card" href="job-marketing.html">
+              <strong>📢 Marketing &amp; Content</strong>
+              <span>Content-Serien, Kampagnen-Recaps und Reporting via Lumo.</span>
+            </a>
+            <a class="card job-link-card" href="job-buchhaltung.html">
+              <strong>📊 Buchhaltung &amp; Finance Ops</strong>
+              <span>Rechnungen, Zahlungsstatus und Mahnwesen mit Freigabe.</span>
+            </a>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1314,5 +1371,6 @@
     </div>
   </footer>
 <script src="scripts/nav.js" defer></script>
+<script src="scripts/roothouse-chatbot.js" defer></script>
 </body>
 </html>
