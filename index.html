@@ -1,754 +1,1344 @@
-<!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>roothouse.ai | KI-Automation für KMU in Österreich & Deutschland</title>
-<meta name="description" content="roothouse.ai – KI-Automation für KMU: Sekretariat, Marketing & Kundenservice entlasten, ohne leere 10x-Versprechen. Fokus auf realistische, nachhaltige Entlastung.">
-<link rel="stylesheet" href="styles-v2.css">
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI-Team für Marketing, Ops & Support</title>
+  <style>
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0b1728;
+      --panel:#0f1c31;
+      --panel-2:#13233d;
+      --card:#ffffff;
+      --card-soft:#f6f8fc;
+      --text:#0f172a;
+      --text-soft:#5b6475;
+      --text-inv:#f8fbff;
+      --text-inv-soft:#aab7cc;
+      --line:#dbe3ef;
+      --line-dark:rgba(255,255,255,0.1);
+      --primary:#6d5efc;
+      --primary-2:#28c7b7;
+      --accent:#8ea3ff;
+      --success:#0ea56b;
+      --shadow:0 20px 60px rgba(7,17,31,0.18);
+      --shadow-dark:0 24px 80px rgba(0,0,0,0.35);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(109,94,252,0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(40,199,183,0.14), transparent 24%),
+        linear-gradient(180deg, #f7faff 0%, #eef3fb 100%);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .section{padding:88px 0}
+    .section-tight{padding:64px 0}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid rgba(109,94,252,0.16);
+      background:rgba(255,255,255,0.72);
+      color:#4d4a8f;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(247,250,255,0.74);
+      border-bottom:1px solid rgba(15,23,42,0.06);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      color:#0b1220;
+      letter-spacing:-0.02em;
+    }
+
+    .brand-mark{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 30%, #ffffff 0%, rgba(255,255,255,0.8) 18%, transparent 19%),
+        linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+      box-shadow:0 12px 28px rgba(109,94,252,0.28);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      color:#4f5b6d;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .nav-toggle{
+      display:none;
+      width:40px;
+      height:40px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,0.14);
+      background:rgba(255,255,255,0.9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+      padding:0;
+      cursor:pointer;
+    }
+
+    .nav-toggle span{
+      display:block;
+      width:18px;
+      height:2px;
+      border-radius:999px;
+      background:#0f172a;
+      transition:transform .18s ease, opacity .18s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1){
+      transform:translateY(4px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2){
+      transform:translateY(-4px) rotate(-45deg);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:15px;
+      border:1px solid transparent;
+      transition:all .2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg, var(--primary) 0%, #7d72ff 45%, var(--primary-2) 100%);
+      box-shadow:0 16px 36px rgba(109,94,252,0.28);
+    }
+
+    .btn-secondary{
+      color:#0f172a;
+      background:rgba(255,255,255,0.8);
+      border-color:rgba(15,23,42,0.08);
+    }
+
+    .btn-dark{
+      color:white;
+      background:rgba(255,255,255,0.08);
+      border-color:rgba(255,255,255,0.12);
+    }
+
+    .hero{
+      padding:0 0 36px;
+    }
+
+    .hero-full .container{
+      width:100%;
+    }
+
+    .hero-full .hero-shell{
+      border-radius:0;
+    }
+
+    .hero-shell{
+      position:relative;
+      overflow:hidden;
+      border-radius:36px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(142,163,255,0.22), transparent 24%),
+        radial-gradient(circle at 90% 0%, rgba(40,199,183,0.18), transparent 22%),
+        linear-gradient(135deg, #08111f 0%, #0d1830 52%, #12213f 100%);
+      color:var(--text-inv);
+      box-shadow:var(--shadow-dark);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      padding:56px;
+      align-items:center;
+    }
+
+    .hero h1{
+      margin:18px 0 16px;
+      font-size:clamp(2.4rem, 5vw, 4.6rem);
+      line-height:1.02;
+      letter-spacing:-0.05em;
+      max-width:760px;
+    }
+
+    .hero p.lead{
+      margin:0 0 24px;
+      max-width:660px;
+      color:var(--text-inv-soft);
+      font-size:18px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.06);
+      color:#dbe7fb;
+    }
+
+    .hero-note{
+      color:var(--text-inv-soft);
+      font-size:14px;
+    }
+
+    .hero-card{
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border:1px solid rgba(255,255,255,0.1);
+      padding:22px;
+    }
+
+    .dashboard{
+      display:grid;
+      gap:16px;
+    }
+
+    .dashboard-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+    }
+
+    .dashboard-title{
+      font-size:14px;
+      color:#d8e3f5;
+      font-weight:700;
+    }
+
+    .dashboard-sub{
+      font-size:13px;
+      color:#9fb0c9;
+    }
+
+    .status{
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(14,165,107,0.14);
+      color:#8ef0c3;
+      border:1px solid rgba(142,240,195,0.18);
+      font-size:12px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .metric-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .metric{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric strong{
+      display:block;
+      font-size:28px;
+      line-height:1;
+      margin-bottom:6px;
+      color:white;
+    }
+
+    .metric span{
+      display:block;
+      font-size:12px;
+      color:#aebbd0;
+    }
+
+    .agent-stack{
+      display:grid;
+      gap:10px;
+    }
+
+    .agent-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#eaf1ff;
+      font-size:14px;
+    }
+
+    .agent-row small{
+      color:#9fb0c9;
+      font-size:12px;
+    }
+
+    .hero-belt{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      padding:0 56px 40px;
+    }
+
+    .belt-card{
+      border-radius:22px;
+      padding:18px 20px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#dce7f8;
+    }
+
+    .belt-title{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#95a7c1;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .belt-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .belt-item{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .stats-strip{
+      margin-top:-24px;
+      position:relative;
+      z-index:2;
+    }
+
+    .stats-panel{
+      background:rgba(255,255,255,0.92);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:var(--shadow);
+      border-radius:24px;
+      padding:22px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .stat-box{
+      padding:10px 8px;
+    }
+
+    .stat-box strong{
+      display:block;
+      font-size:30px;
+      line-height:1;
+      margin-bottom:8px;
+      letter-spacing:-0.04em;
+    }
+
+    .stat-box span{
+      display:block;
+      color:var(--text-soft);
+      font-size:14px;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      margin:12px 0 0;
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      line-height:1.05;
+      letter-spacing:-0.04em;
+    }
+
+    .section-head p{
+      margin:0;
+      max-width:620px;
+      color:var(--text-soft);
+      font-size:17px;
+    }
+
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 34px rgba(15,23,42,0.06);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--text-soft);
+    }
+
+    .icon-badge{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:18px;
+      font-size:20px;
+      background:linear-gradient(135deg, rgba(109,94,252,0.14), rgba(40,199,183,0.14));
+      border:1px solid rgba(109,94,252,0.12);
+    }
+
+    .feature-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .feature-list li{
+      position:relative;
+      padding-left:18px;
+      color:#334155;
+      font-size:14px;
+    }
+
+    .feature-list li:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+    }
+
+    .spotlight{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .spotlight-card{
+      border-radius:28px;
+      overflow:hidden;
+      background:linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:var(--shadow);
+    }
+
+    .spotlight-inner{
+      padding:28px;
+    }
+
+    .mini-kpi{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .mini-kpi span{
+      display:inline-flex;
+      padding:10px 12px;
+      border-radius:12px;
+      background:#f3f6fd;
+      border:1px solid var(--line);
+      font-size:13px;
+      font-weight:700;
+      color:#334155;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .process-card{
+      position:relative;
+      padding:24px;
+      border-radius:22px;
+      background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:0 12px 34px rgba(15,23,42,0.05);
+    }
+
+    .step{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:white;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      margin-bottom:18px;
+      box-shadow:0 10px 24px rgba(109,94,252,0.22);
+    }
+
+    .process-card h3{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:-0.03em;
+    }
+
+    .process-card p{
+      margin:0;
+      color:var(--text-soft);
+      font-size:15px;
+    }
+
+    .usecases{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .quote-card{
+      background:linear-gradient(135deg, #0a1324 0%, #11203a 100%);
+      color:white;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow-dark);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .quote-card p{
+      margin:0 0 18px;
+      font-size:22px;
+      line-height:1.35;
+      letter-spacing:-0.02em;
+    }
+
+    .quote-meta{
+      color:#aebbd0;
+      font-size:14px;
+    }
+
+    .quote-result{
+      margin-top:22px;
+      display:inline-flex;
+      flex-direction:column;
+      gap:4px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .quote-result strong{
+      font-size:28px;
+      color:white;
+      line-height:1;
+    }
+
+    .case-list{
+      display:grid;
+      gap:18px;
+    }
+
+    .case-item{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 12px 34px rgba(15,23,42,0.05);
+    }
+
+    .case-item h3{
+      margin:0 0 8px;
+      font-size:20px;
+      letter-spacing:-0.03em;
+    }
+
+    .case-item p{
+      margin:0;
+      color:var(--text-soft);
+    }
+
+    .case-metric{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .case-metric span{
+      padding:8px 10px;
+      border-radius:999px;
+      background:#f4f7fc;
+      border:1px solid var(--line);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .cta-full .container{
+      width:100%;
+    }
+
+    .cta-full .cta-wrap{
+      border-radius:0;
+    }
+
+    .cta-wrap{
+      border-radius:32px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(109,94,252,0.22), transparent 24%),
+        radial-gradient(circle at 85% 20%, rgba(40,199,183,0.18), transparent 24%),
+        linear-gradient(135deg, #091221 0%, #0f1b32 100%);
+      color:white;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:var(--shadow-dark);
+    }
+
+    .cta-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:26px;
+      padding:42px;
+      align-items:center;
+    }
+
+    .cta-wrap h2{
+      margin:14px 0 12px;
+      font-size:clamp(2rem, 3.5vw, 3.2rem);
+      line-height:1.05;
+      letter-spacing:-0.04em;
+    }
+
+    .cta-wrap p{
+      margin:0;
+      color:#aebbd0;
+      font-size:17px;
+      max-width:620px;
+    }
+
+    .cta-box{
+      border-radius:24px;
+      padding:24px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .cta-points{
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
+      display:grid;
+      gap:10px;
+      color:#dbe7fb;
+      font-size:14px;
+    }
+
+    .cta-points li{
+      padding-left:18px;
+      position:relative;
+    }
+
+    .cta-points li:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#7ef0d4;
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .faq-item{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:20px;
+      padding:22px;
+    }
+
+    .faq-item h3{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-0.02em;
+    }
+
+    .faq-item p{
+      margin:0;
+      color:var(--text-soft);
+      font-size:15px;
+    }
+
+    .footer{
+      padding:28px 0 44px;
+      color:#6b7280;
+      font-size:14px;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(142,163,255,0.22), transparent 24%),
+        radial-gradient(circle at 90% 0%, rgba(40,199,183,0.18), transparent 22%),
+        linear-gradient(135deg, #08111f 0%, #0d1830 52%, #12213f 100%);
+      color:var(--text-inv);
+      z-index:40;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .mobile-menu.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .mobile-menu-inner{
+      width:100%;
+      padding:84px 20px 32px;
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    .mobile-menu-nav{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      font-size:18px;
+      font-weight:600;
+    }
+
+    .mobile-menu-nav a{
+      color:var(--text-inv);
+    }
+
+    .mobile-menu-cta{
+      margin-top:auto;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+      border-top:1px solid rgba(15,23,42,0.08);
+      padding-top:20px;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .hero-belt,
+      .spotlight,
+      .usecases,
+      .cta-grid{
+        grid-template-columns:1fr;
+      }
+      .cards-3{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .stats-panel{grid-template-columns:1fr 1fr}
+      .faq-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 760px){
+      .container{width:min(var(--max), calc(100% - 24px))}
+      .nav{min-height:72px}
+      .nav-links{display:none}
+      .nav-actions{display:none}
+      .nav-toggle{display:flex}
+      .hero-grid{padding:28px}
+      .hero-belt{padding:0 28px 28px}
+      .stats-panel{grid-template-columns:1fr}
+      .cards-3,
+      .process-grid,
+      .metric-grid{grid-template-columns:1fr}
+      .cta-grid{padding:28px}
+      .section{padding:68px 0}
+      .section-head{align-items:flex-start; flex-direction:column}
+      .footer-row{flex-direction:column; align-items:flex-start}
+    }
+  </style>
 </head>
 <body>
-
-<header class="site-header navbar">
-  <div class="container nav">
-    <a href="#hero" class="brand">
-      <span class="brand-mark"></span>
-      <span>roothouse.ai</span>
-    </a>
-
-    <button class="nav-toggle" aria-label="Menü umschalten">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <div class="nav-menu">
+  <header class="site-header">
+    <div class="container nav">
+      <a href="#hero" class="brand">
+        <span class="brand-mark"></span>
+        <span>roothouse.ai</span>
+      </a>
       <nav class="nav-links">
-        <a href="#modules">Leistungen</a>
-        <a href="#process">Ablauf</a>
-        <a href="preise.html">Preise</a>
-        <a href="terminbuchung.html">Terminbuchung</a>
-        <div class="dropdown">
-          <button>
-            Job-Profile
-            <span>▼</span>
-          </button>
-          <div class="dropdown-content">
-            <a href="job-sekretariat.html">📋 Sekretariat</a>
-            <a href="job-buchhaltung.html">📊 Buchhaltung</a>
-            <a href="job-kundenservice.html">🎧 Kundenservice</a>
-            <a href="job-marketing.html">📢 Marketing</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <button>
-            Rechtliches
-            <span>▼</span>
-          </button>
-          <div class="dropdown-content">
-            <a href="impressum.html">Impressum</a>
-            <a href="datenschutz.html">Datenschutz</a>
-            <a href="agb.html">AGB</a>
-          </div>
-        </div>
+        <a href="#agents">Agents</a>
+        <a href="#how">Ablauf</a>
+        <a href="#usecases">Use Cases</a>
         <a href="#faq">FAQ</a>
-        <a href="#contact">Kontakt</a>
       </nav>
-
+      <button class="nav-toggle" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+      </button>
       <div class="nav-actions">
-        <a href="#cta" class="btn btn-secondary">Mehr erfahren</a>
-        <a href="terminbuchung.html" class="btn btn-primary">Erstgespräch buchen</a>
+        <a href="#cta" class="btn btn-primary">Demo anfragen</a>
       </div>
     </div>
-  </div>
-</header>
+  </header>
 
-<main>
-  <section id="hero" class="hero">
-    <div class="container">
-      <div class="hero-shell">
-        <div class="hero-grid">
-          <div class="hero-copy">
-            <span class="eyebrow">AI-Automation für KMU</span>
-            <h1>Dein KI‑Team für Sekretariat, Marketing &amp; Support.</h1>
-            <p class="lead">
-              Ava, Lumo und Sol entlasten dein Büro, erstellen Marketing-Inhalte und beantworten Kundenanfragen –
-              damit du mehr Zeit für das Wesentliche hast.
+  <main>
+    <section id="hero" class="hero hero-full">
+      <div class="container">
+        <div class="hero-shell">
+          <div class="hero-grid">
+            <div>
+              <span class="eyebrow">AI Agency für B2B-Automation</span>
+              <h1>Ihr spezialisiertes AI-Team für Marketing, Sekretariat und Support.</h1>
+              <p class="lead">
+                Wir liefern einsatzbereite AI-Agents, die wiederkehrende Rollen entlasten oder teilweise ersetzen — inklusive zentralem Dashboard für Zeitersparnis, Leads, Service-Qualität und Umsatzwirkung.
+              </p>
+              <div class="hero-actions">
+                <a href="#cta" class="btn btn-primary">Kostenlose Erstberatung buchen</a>
+                <a href="#agents" class="btn btn-dark">Agents ansehen</a>
+              </div>
+              <div class="hero-note">Für Geschäftsführer:innen, Operations-Leads und Produkt-Owner, die Prozesse messbar automatisieren wollen.</div>
+              <div class="hero-proof">
+                <span class="pill">Startfokus: Marketing</span>
+                <span class="pill">Ops-ready Rollout in 14 Tagen</span>
+                <span class="pill">Dashboard mit ROI-Sicht</span>
+                <span class="pill">Security & Audit mitgedacht</span>
+              </div>
+            </div>
+
+            <div class="hero-card">
+              <div class="dashboard">
+                <div class="dashboard-top">
+                  <div>
+                    <div class="dashboard-title">AI-Team Dashboard</div>
+                    <div class="dashboard-sub">Leads, Tickets, Termine, Agent Health</div>
+                  </div>
+                  <div class="status">Live aktiv</div>
+                </div>
+
+                <div class="metric-grid">
+                  <div class="metric">
+                    <strong>+38%</strong>
+                    <span>schnellere Lead-Reaktion</span>
+                  </div>
+                  <div class="metric">
+                    <strong>4.7h</strong>
+                    <span>bis zur ersten Demo</span>
+                  </div>
+                  <div class="metric">
+                    <strong>96%</strong>
+                    <span>Zufriedenheits-Score</span>
+                  </div>
+                </div>
+
+                <div class="agent-stack">
+                  <div class="agent-row">
+                    <div>
+                      <div>Marketing-Agent</div>
+                      <small>Kampagnen, Content, Funnels</small>
+                    </div>
+                    <strong>aktiv</strong>
+                  </div>
+                  <div class="agent-row">
+                    <div>
+                      <div>Sekretariats-Agent</div>
+                      <small>E-Mails, Termine, Notizen</small>
+                    </div>
+                    <strong>aktiv</strong>
+                  </div>
+                  <div class="agent-row">
+                    <div>
+                      <div>Support-Agent</div>
+                      <small>Tickets, Antworten, Eskalation</small>
+                    </div>
+                    <strong>aktiv</strong>
+                  </div>
+                  <div class="agent-row">
+                    <div>
+                      <div>Buchhaltung / WaWi</div>
+                      <small>Prozesse, Reporting, nächste Ausbaustufe</small>
+                    </div>
+                    <strong>coming next</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-belt">
+            <div class="belt-card">
+              <div class="belt-title">Was Unternehmen anfragen</div>
+              <div class="belt-items">
+                <span class="belt-item">Lead-Handling automatisieren</span>
+                <span class="belt-item">Inbox & Termine entlasten</span>
+                <span class="belt-item">Support-Antwortzeiten senken</span>
+                <span class="belt-item">Wertbeitrag sichtbar machen</span>
+              </div>
+            </div>
+            <div class="belt-card">
+              <div class="belt-title">Typische Ergebnisse</div>
+              <div class="belt-items">
+                <span class="belt-item">schnellere Rollouts</span>
+                <span class="belt-item">weniger manuelle Routine</span>
+                <span class="belt-item">klare KPI-Messung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stats-strip">
+          <div class="stats-panel">
+            <div class="stat-box">
+              <strong>14 Tage</strong>
+              <span>bis zum ersten produktiven Pilot-Setup</span>
+            </div>
+            <div class="stat-box">
+              <strong>3 Units</strong>
+              <span>direkt verfügbar: Marketing, Sekretariat, Support</span>
+            </div>
+            <div class="stat-box">
+              <strong>1 Dashboard</strong>
+              <span>für Zeitersparnis, Leads, Umsatz und Service-Wert</span>
+            </div>
+            <div class="stat-box">
+              <strong>später erweiterbar</strong>
+              <span>um Buchhaltung, Reporting und Warenwirtschaft</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Trust & Metriken</span>
+            <h2>Keine Black Box. Klare Wirkung auf echte Geschäftsprozesse.</h2>
+          </div>
+          <p>
+            Statt isolierter AI-Spielereien liefern wir spezialisierte Agenten mit Messpunkten, Governance und sichtbarem Output für operative Teams und Entscheider:innen.
+          </p>
+        </div>
+
+        <div class="spotlight">
+          <div class="spotlight-card">
+            <div class="spotlight-inner">
+              <h3 style="margin:0 0 10px; font-size:26px; letter-spacing:-0.04em;">Mission-Control statt Tool-Chaos</h3>
+              <p style="margin:0; color:var(--text-soft);">
+                Alle relevanten Kennzahlen laufen in einem zentralen Dashboard zusammen: Reaktionszeiten, bearbeitete Anfragen, erzeugte Leads, Eskalationen und geschätzter ROI.
+              </p>
+              <div class="mini-kpi">
+                <span>Lead Velocity</span>
+                <span>Antwortzeiten</span>
+                <span>Agent Health</span>
+                <span>ROI Tracking</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="spotlight-card">
+            <div class="spotlight-inner">
+              <h3 style="margin:0 0 10px; font-size:26px; letter-spacing:-0.04em;">Für B2B-Teams mit echten Prozessen</h3>
+              <p style="margin:0; color:var(--text-soft);">
+                Geeignet für Unternehmen, die bestehende Abläufe nicht neu erfinden wollen, sondern CRM, Ticketsysteme, Kalender, E-Mail und interne Prozesse intelligent erweitern möchten.
+              </p>
+              <div class="mini-kpi">
+                <span>bestehende Tools nutzbar</span>
+                <span>Audit & Review Steps</span>
+                <span>Human-in-the-loop</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="agents" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Kernlösungen / Agents</span>
+            <h2>Ein AI-Team aus spezialisierten Rollen — nicht ein generischer Bot.</h2>
+          </div>
+          <p>
+            Jeder Agent übernimmt einen klaren Verantwortungsbereich und wird auf Prozesse, KPIs und Freigaben Ihres Unternehmens abgestimmt.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <div class="card">
+            <div class="icon-badge">↗</div>
+            <h3>Marketing-Agent</h3>
+            <p>Für Kampagnen, Content-Produktion, Funnel-Logik und schnellere Lead-Bearbeitung.</p>
+            <ul class="feature-list">
+              <li>Kampagnen- und Content-Workflows</li>
+              <li>Lead-Reaktion und Funnel-Orchestrierung</li>
+              <li>Messung von Leads, Pipeline und Umsatzwirkung</li>
+              <li>Startfokus für schnelle erste Ergebnisse</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon-badge">✦</div>
+            <h3>Sekretariats-Agent</h3>
+            <p>Für E-Mails, Terminmanagement, Notizen und administrative Routine im Tagesgeschäft.</p>
+            <ul class="feature-list">
+              <li>Inbox-Vorqualifizierung und Antwortvorschläge</li>
+              <li>Terminabstimmung und Kalenderlogik</li>
+              <li>Zusammenfassungen, Notizen und Follow-ups</li>
+              <li>Entlastung für Assistenz und Führungsebene</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon-badge">◎</div>
+            <h3>Service-/Support-Agent</h3>
+            <p>Für Ticketbearbeitung, standardisierte Antworten und saubere Eskalationspfade.</p>
+            <ul class="feature-list">
+              <li>Erstantworten und Ticket-Kategorisierung</li>
+              <li>SLA-orientierte Priorisierung</li>
+              <li>Eskalation an Menschen bei Sonderfällen</li>
+              <li>Qualitäts- und Zufriedenheitsmetriken im Dashboard</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;" class="cards-3">
+          <div class="card" style="grid-column:span 3; background:linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);">
+            <div class="icon-badge">▣</div>
+            <h3>Roadmap: Buchhaltungs- & WaWi-Agenten</h3>
+            <p>
+              Als nächste Ausbaustufe ergänzen wir Agenten für Prozessautomatisierung, Reporting und operative Datenflüsse in Buchhaltung und Warenwirtschaft — aufbauend auf derselben Steuerungs- und KPI-Logik.
             </p>
-            <div class="hero-actions">
-              <a href="terminbuchung.html" class="btn btn-primary">Kostenfreies Erstgespräch</a>
-              <a href="#modules" class="btn btn-secondary">Einsatzmöglichkeiten ansehen</a>
-            </div>
-            <div class="hero-proof">
-              <span class="pill">⚡ 24/7 Antworten</span>
-              <span class="pill">📈 10x Content-Output</span>
-              <span class="pill">🤝 DSGVO-konform</span>
-            </div>
-            <p class="hero-note">Sekretariat, Marketing &amp; Support werden in 24-48h spürbar entlastet.</p>
           </div>
-          <div class="hero-card">
-            <div class="hero-visual image-placeholder" data-label="Dashboard Mockup" aria-hidden="true" style="--placeholder-url: url('/assets/img/hero-dashboard-placeholder.jpg');"></div>
-            <!-- Platzhalter: Unsplash- oder Pexels-Visual "futuristic dashboard" -->
-            <div class="dashboard">
-              <div class="dashboard-top">
-                <div>
-                  <p class="dashboard-title">Aktiver AI-Stack</p>
-                  <p class="dashboard-sub">Ava • Lumo • Sol</p>
-                </div>
-                <span class="status">bereit</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="how" class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">How it works</span>
+            <h2>Von Use Case zu produktivem Agent in wenigen klaren Schritten.</h2>
+          </div>
+          <p>
+            Unser Ablauf ist auf schnelle Pilot-Ergebnisse ausgelegt: erst Scope und KPI-Definition, dann Implementierung, anschließend Rollout mit Monitoring und Optimierung.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="step">1</div>
+            <h3>Briefing & Priorisierung</h3>
+            <p>Wir analysieren Ihre Workflows, identifizieren den besten Start-Use-Case und definieren Erfolgskriterien, Scope und ROI-Hypothesen.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="step">2</div>
+            <h3>Agent-Design</h3>
+            <p>Wir modellieren Rollen, Freigaben, Datenquellen und Integrationen — inklusive Human-in-the-loop, Audit und Eskalationslogik.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="step">3</div>
+            <h3>Implementierung & Pilot</h3>
+            <p>Der erste Agent wird in Ihre bestehende Umgebung eingebunden und in einem produktionsnahen Pilot mit echten Prozessen getestet.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="step">4</div>
+            <h3>Rollout & Skalierung</h3>
+            <p>Sie erhalten Dashboard, Reporting und Optimierungsschleifen — danach erweitern wir auf weitere Rollen und Unternehmensbereiche.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="usecases" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Testimonials / Use Cases</span>
+            <h2>So wird aus AI ein operativer Hebel statt ein Experiment.</h2>
+          </div>
+          <p>
+            Typische Ergebnisse entstehen dort, wo repetitive Arbeit, Reaktionszeit und Transparenz über mehrere Teams hinweg zusammenkommen.
+          </p>
+        </div>
+
+        <div class="usecases">
+          <div class="quote-card">
+            <p>“Wir sehen unsere Marketing-Automation jetzt wie ein Mission-Control. Jede KPI ist live sichtbar und Routine-Arbeit wird zuverlässig vom Agent übernommen.”</p>
+            <div class="quote-meta">COO · B2B-Unternehmen im industriellen Umfeld</div>
+            <div class="quote-result">
+              <strong>+42%</strong>
+              <span>mehr qualifizierte Marketing-Anfragen</span>
+            </div>
+          </div>
+
+          <div class="case-list">
+            <div class="case-item">
+              <h3>Use Case: Marketing & Funnel</h3>
+              <p>Ein Marketing-Agent reagiert schneller auf Inbound-Leads, strukturiert Content-Prozesse und macht den Einfluss auf Pipeline und Umsatz sichtbar.</p>
+              <div class="case-metric">
+                <span>schnellere Lead-Reaktion</span>
+                <span>mehr Funnel-Transparenz</span>
               </div>
-              <div class="metric-grid">
-                <div class="metric">
-                  <strong>+20h</strong>
-                  <span>pro Woche frei</span>
-                </div>
-                <div class="metric">
-                  <strong>85%</strong>
-                  <span>weniger Routine</span>
-                </div>
-                <div class="metric">
-                  <strong>24/7</strong>
-                  <span>Kundensupport</span>
-                </div>
+            </div>
+
+            <div class="case-item">
+              <h3>Use Case: Assistenz & Operations</h3>
+              <p>Ein Sekretariats-Agent reduziert administrative Last durch E-Mail-Vorsortierung, Terminlogik und automatische Zusammenfassungen.</p>
+              <div class="case-metric">
+                <span>weniger manuelle Routine</span>
+                <span>klarere Tagessteuerung</span>
               </div>
-              <div class="agent-stack">
-                <div class="agent-row">
-                  <div>
-                    <strong>Ava</strong>
-                    <small>Sekretariat</small>
-                  </div>
-                  <span>Live</span>
-                </div>
-                <div class="agent-row">
-                  <div>
-                    <strong>Lumo</strong>
-                    <small>Marketing</small>
-                  </div>
-                  <span>Aktiv</span>
-                </div>
-                <div class="agent-row">
-                  <div>
-                    <strong>Sol</strong>
-                    <small>Support</small>
-                  </div>
-                  <span>Skaliert</span>
-                </div>
+            </div>
+
+            <div class="case-item">
+              <h3>Use Case: Support & Service</h3>
+              <p>Ein Support-Agent übernimmt Standardanfragen, priorisiert Tickets und eskaliert Sonderfälle sauber an das Team.</p>
+              <div class="case-metric">
+                <span>kürzere Antwortzeiten</span>
+                <span>bessere SLA-Steuerung</span>
               </div>
             </div>
           </div>
         </div>
-        <div class="hero-belt">
-          <div class="belt-card">
-            <p class="belt-title">Top Aufgaben</p>
-            <div class="belt-items">
-              <span class="belt-item">E-Mail Routing</span>
-              <span class="belt-item">Terminbuchung</span>
-              <span class="belt-item">Social Media</span>
-              <span class="belt-item">FAQ-Support</span>
-            </div>
-          </div>
-          <div class="belt-card">
-            <p class="belt-title">Integrationen</p>
-            <div class="belt-items">
-              <span class="belt-item">Microsoft 365</span>
-              <span class="belt-item">Google Workspace</span>
-              <span class="belt-item">HubSpot</span>
-              <span class="belt-item">Zendesk</span>
-            </div>
-          </div>
-        </div>
       </div>
-      <div class="stats-strip">
-        <div class="stats-panel">
-          <div class="stat-box">
-            <strong>24-48h</strong>
-            <span>Implementierung</span>
-          </div>
-          <div class="stat-box">
-            <strong>€899</strong>
-            <span>pro Modul / Monat</span>
-          </div>
-          <div class="stat-box">
-            <strong>3 Module</strong>
-            <span>Sekretariat, Marketing, Support</span>
-          </div>
-          <div class="stat-box">
-            <strong>100%</strong>
-            <span>DSGVO-konform</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section id="problems" class="section section-light">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Problem → Lösung</span>
-          <h2>Wiederholende Aufgaben fressen Ihre Zeit?</h2>
-        </div>
-        <p>
-          Unsere Module übernehmen Routinejobs im Sekretariat, Marketing und Support. Sie behalten die Kontrolle,
-          erhalten aber sofort messbare Entlastung.
-        </p>
-      </div>
-      <div class="cards-3">
-        <article class="card problem-card">
-          <div class="icon-badge">😫</div>
-          <h3>Überlastetes Sekretariat</h3>
-          <p class="problem-flow">AI Assistant Pro <span>+85% Produktivität</span></p>
-        </article>
-        <article class="card problem-card">
-          <div class="icon-badge">📉</div>
-          <h3>Keine Zeit für Marketing</h3>
-          <p class="problem-flow">Marketing AI <span>10x Content-Output</span></p>
-        </article>
-        <article class="card problem-card">
-          <div class="icon-badge">⏰</div>
-          <h3>Support nur zu Bürozeiten</h3>
-          <p class="problem-flow">Support Bot 24/7 <span>Rund-um-die-Uhr-Service</span></p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="jobs" class="section section-tight">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Job-Check</span>
-          <h2>Wo lohnt sich KI für Sie?</h2>
-        </div>
-        <p>Wählen Sie den Bereich und sehen Sie, welche Aufgaben Ava, Lumo oder Sol sofort übernehmen.</p>
-      </div>
-      <div class="job-grid">
-        <a href="job-sekretariat.html" class="job-card">
-          <div class="job-visual image-placeholder small" data-label="Sekretariat" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-sekretariat-placeholder.jpg');">
-            <div class="job-icon">📋</div>
-          </div>
-          <!-- Platzhalter: Pexels-Foto "office desk" -->
-          <h3>Sekretariat</h3>
-          <p>E-Mail, Termine, Dokumente</p>
-          <span>→ Details</span>
-        </a>
-        <a href="job-buchhaltung.html" class="job-card">
-          <div class="job-visual image-placeholder small" data-label="Buchhaltung" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-buchhaltung-placeholder.jpg');">
-            <div class="job-icon">📊</div>
-          </div>
-          <!-- Platzhalter: Illustratives Ledger-Icon (Unsplash "finance workspace") -->
-          <h3>Buchhaltung</h3>
-          <p>Rechnungen, Zahlungen, Mahnen</p>
-          <span>→ Details</span>
-        </a>
-        <a href="job-kundenservice.html" class="job-card">
-          <div class="job-visual image-placeholder small" data-label="Support" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-support-placeholder.jpg');">
-            <div class="job-icon">🎧</div>
-          </div>
-          <!-- Platzhalter: Unsplash "support headset" -->
-          <h3>Kundenservice</h3>
-          <p>24/7 Support, Tickets, FAQ</p>
-          <span>→ Details</span>
-        </a>
-        <a href="job-marketing.html" class="job-card">
-          <div class="job-visual image-placeholder small" data-label="Marketing" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-marketing-placeholder.jpg');">
-            <div class="job-icon">📢</div>
-          </div>
-          <!-- Platzhalter: Pexels "creative studio" -->
-          <h3>Marketing</h3>
-          <p>Social Media, Content, SEO</p>
-          <span>→ Details</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <section id="process" class="section section-light">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Ablauf</span>
-          <h2>So funktioniert die Automatisierung</h2>
-        </div>
-        <p>Wir setzen Ihr KI-Team planbar in vier Schritten auf – ohne Risiko und mit klaren Ergebnissen.</p>
-      </div>
-      <div class="process-grid">
-        <div class="process-card">
-          <span class="step">1</span>
-          <h3>Analyse</h3>
-          <p>30 Min – Wir identifizieren Potenziale.</p>
-        </div>
-        <div class="process-card">
-          <span class="step">2</span>
-          <h3>Setup</h3>
-          <p>24-48h – Module konfigurieren.</p>
-        </div>
-        <div class="process-card">
-          <span class="step">3</span>
-          <h3>Integration</h3>
-          <p>Nahtlos – Anbindung an Ihre Systeme.</p>
-        </div>
-        <div class="process-card">
-          <span class="step">4</span>
-          <h3>Go-Live</h3>
-          <p>Sofort – Ihr Team ist produktiver.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="modules" class="section section-tight">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Module</span>
-          <h2>Unsere 3 KI-Module</h2>
-        </div>
-        <p>Stellen Sie Ihr Team passgenau zusammen oder starten Sie mit dem empfohlenen Marketing-Paket.</p>
-      </div>
-      <div class="modules-grid">
-        <div class="module-card">
-          <div class="module-header">
-            <div class="module-icon">🤖</div>
+    <section id="cta" class="section cta-full">
+      <div class="container">
+        <div class="cta-wrap">
+          <div class="cta-grid">
             <div>
-              <h3>AI Assistant Pro</h3>
-              <p>Sekretariat &amp; Administration</p>
+              <span class="eyebrow" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.12); color:#dbe7fb;">Nächster Schritt</span>
+              <h2>Finden wir in 15 Minuten heraus, welcher Agent bei Ihnen zuerst den größten Hebel hat.</h2>
+              <p>
+                Im Erstgespräch klären wir Zielbild, Prozessreife, Aufwand und erwartbaren ROI. Danach wissen Sie, ob ein Pilot sinnvoll ist — und womit Sie starten sollten.
+              </p>
             </div>
-          </div>
-          <div class="module-visual image-placeholder medium" data-label="Assistant" aria-hidden="true" style="--placeholder-url: url('/assets/img/module-assistant-placeholder.jpg');"></div>
-          <!-- Platzhalter: Isometrisches Admin-Dashboard -->
-          <div class="module-content">
-            <ul class="module-features">
-              <li>E-Mail &amp; Termine</li>
-              <li>Dokumente</li>
-              <li>Reisebuchungen</li>
-            </ul>
-            <div class="module-price">
-              <span class="price">€899</span>/Monat
-            </div>
-            <a href="terminbuchung.html" class="btn btn-outline">Auswählen</a>
-          </div>
-        </div>
-        <div class="module-card featured">
-          <div class="module-badge">★ EMPFOHLEN ★</div>
-          <div class="module-header">
-            <div class="module-icon">📈</div>
-            <div>
-              <h3>Marketing AI</h3>
-              <p>Marketing &amp; Content</p>
-            </div>
-          </div>
-          <div class="module-visual image-placeholder medium" data-label="Content Studio" aria-hidden="true" style="--placeholder-url: url('/assets/img/module-marketing-placeholder.jpg');"></div>
-          <!-- Platzhalter: Unsplash "creative team moodboard" -->
-          <div class="module-content">
-            <ul class="module-features">
-              <li>Social Media Posts</li>
-              <li>Blog &amp; Newsletter</li>
-              <li>SEO &amp; Keywords</li>
-            </ul>
-            <div class="module-price">
-              <span class="price">€1.099</span>/Monat
-            </div>
-            <a href="terminbuchung.html" class="btn btn-primary">Auswählen</a>
-          </div>
-        </div>
-        <div class="module-card">
-          <div class="module-header">
-            <div class="module-icon">💬</div>
-            <div>
-              <h3>Support Bot 24/7</h3>
-              <p>Kundenservice &amp; Support</p>
-            </div>
-          </div>
-          <div class="module-visual image-placeholder medium" data-label="Support Desk" aria-hidden="true" style="--placeholder-url: url('/assets/img/module-support-placeholder.jpg');"></div>
-          <!-- Platzhalter: Chat-Interface Illustration -->
-          <div class="module-content">
-            <ul class="module-features">
-              <li>24/7 Erreichbarkeit</li>
-              <li>Ticket-Klassifizierung</li>
-              <li>Mehrsprachig</li>
-            </ul>
-            <div class="module-price">
-              <span class="price">€799</span>/Monat
-            </div>
-            <a href="terminbuchung.html" class="btn btn-outline">Auswählen</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="automation" class="section section-light">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Work in Progress</span>
-          <h2>Platzhalter für Dex Gmail, Kalender &amp; Chatbot</h2>
-        </div>
-        <p>In Iteration 3 docken wir zusätzliche Flows an: Dex Gmail Automationen, ein eingebettetes Termin-Widget und der finale Chatbot.</p>
-      </div>
-      <div class="placeholder-grid">
-        <article class="card placeholder-card">
-          <div class="placeholder-tag">Dex Gmail</div>
-          <h3>Dex Gmail Automator</h3>
-          <p>Mapping für eingehende Mails zu Tickets, Deals oder Aufgaben – inklusive automatischer Antworten.</p>
-          <ul class="placeholder-list">
-            <li>E-Mail-Parsing &amp; Tagging</li>
-            <li>Weiterleitung an Ava/Lumo/Sol</li>
-            <li>Sync mit CRM/Helpdesk</li>
-          </ul>
-          <a href="#contact" class="btn btn-outline">Später mit Dex Gmail verbinden</a>
-        </article>
-        <article class="card placeholder-card">
-          <div class="placeholder-tag">Kalender</div>
-          <h3>Terminbuchungs-Flow</h3>
-          <p>Hier wird ein Cal.com / Calendly Embed platziert. Bis dahin führt jeder CTA zur Terminseite.</p>
-          <div class="placeholder-panel">
-            <p>Kalender-Widget<br>Embed folgt in Iteration 3.</p>
-          </div>
-          <div class="placeholder-actions">
-            <a href="terminbuchung.html" class="btn btn-primary">Terminseite öffnen</a>
-            <a href="analyse-tool.html" class="btn btn-secondary">Analyse-Tool ansehen</a>
-          </div>
-        </article>
-        <article class="card placeholder-card">
-          <div class="placeholder-tag">Chatbot</div>
-          <h3>Chatbot-Integration</h3>
-          <p>Das Widget am Seitenende ist derzeit ein statisches Demo-UI. Später hängt hier der echte Support-Bot.</p>
-          <div class="placeholder-panel">
-            <p>Aktuell: Statischer Demo-Chat<br>Ziel: Live-Widget mit Hand-off.</p>
-          </div>
-          <button class="btn btn-outline" type="button" onclick="toggleChat()">Demo-Widget öffnen</button>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="pricing" class="section section-light">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Preise</span>
-          <h2>Transparente Preismodelle</h2>
-        </div>
-        <p>Modular buchbar oder als Paket kombinierbar – monatlich kündbar.</p>
-      </div>
-      <div class="pricing-grid">
-        <div class="pricing-card">
-          <h3>Einzelmodul</h3>
-          <div class="pricing-price"><span class="price">€899</span>/Monat</div>
-          <p>Ein Modul nach Wahl</p>
-          <a href="terminbuchung.html" class="btn btn-outline btn-full">Auswählen</a>
-        </div>
-        <div class="pricing-card popular">
-          <div class="pricing-badge">★ BELIEBT ★</div>
-          <h3>Kombi 2</h3>
-          <div class="pricing-price"><span class="price">€1.499</span>/Monat</div>
-          <p>2 Module kombiniert<br><small>Sparen Sie €299</small></p>
-          <a href="terminbuchung.html" class="btn btn-primary btn-full">Auswählen</a>
-        </div>
-        <div class="pricing-card">
-          <h3>All-in-One</h3>
-          <div class="pricing-price"><span class="price">€1.999</span>/Monat</div>
-          <p>Alle 3 Module<br><small>Sparen Sie €698</small></p>
-          <a href="terminbuchung.html" class="btn btn-outline btn-full">Auswählen</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="flows" class="section section-tight">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Klickpfade</span>
-          <h2>Klare Wege zu Preisen, Termin &amp; Jobs</h2>
-        </div>
-        <p>Alle Call-to-Actions verlinken jetzt auf echte Unterseiten – so kommt jede Anfrage dorthin, wo sie weiterbearbeitet wird.</p>
-      </div>
-      <div class="flow-grid">
-        <article class="flow-card">
-          <span class="flow-step">1</span>
-          <h3>Hero &rarr; Terminbuchung</h3>
-          <p>Der Haupt-CTA führt direkt auf <strong>terminbuchung.html</strong>. Besucher landen ohne Umwege im Kalender-Placeholder.</p>
-          <a class="link-arrow" href="terminbuchung.html">Termin auswählen</a>
-        </article>
-        <article class="flow-card">
-          <span class="flow-step">2</span>
-          <h3>Navigation &rarr; Preise</h3>
-          <p>Navigation &amp; Pricing-Karten verweisen auf die dedizierte Preisseite mit allen Paketen und Erklärtexten.</p>
-          <a class="link-arrow" href="preise.html">Preise ansehen</a>
-        </article>
-        <article class="flow-card">
-          <span class="flow-step">3</span>
-          <h3>Job-Karten &rarr; Profile</h3>
-          <p>Jedes Job-Icon öffnet die passende Detailseite (Sekretariat, Buchhaltung, Kundenservice, Marketing).</p>
-          <a class="link-arrow" href="#jobs">Zu den Job-Profilen</a>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="section section-tight">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Kundenstimmen</span>
-          <h2>Was KMU über roothouse.ai sagen</h2>
-        </div>
-        <p>Direkte Rückmeldungen aus Sekretariat, Marketing und Support.</p>
-      </div>
-      <div class="testimonials-grid">
-        <div class="testimonial-card">
-          <div class="testimonial-head">
-            <div class="testimonial-avatar" aria-hidden="true">MK</div>
-            <div>
-              <strong>Maria K.</strong>
-              <small>Graz</small>
+            <div class="cta-box">
+              <ul class="cta-points">
+                <li>Klare Einschätzung zu Scope und Priorität</li>
+                <li>Empfehlung für den besten Start-Use-Case</li>
+                <li>Überblick zu Rollout, Messung und Integrationen</li>
+                <li>Antwort innerhalb eines Werktags</li>
+              </ul>
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="#" class="btn btn-primary">Demo anfragen</a>
+                <a href="#faq" class="btn btn-dark">FAQ lesen</a>
+              </div>
             </div>
           </div>
-          <!-- Avatar-Platzhalter: Initialen-Chip, später Foto via Unsplash Portrait -->
-          <p>"20 Stunden pro Woche gespart im Sekretariat."</p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-head">
-            <div class="testimonial-avatar" aria-hidden="true">TB</div>
-            <div>
-              <strong>Thomas B.</strong>
-              <small>Wien</small>
-            </div>
+      </div>
+    </section>
+
+    <section id="faq" class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Häufige Fragen vor dem Start.</h2>
           </div>
-          <p>"Endlich Zeit für strategische Arbeit dank Marketing AI."</p>
+          <p>
+            Die meisten Teams wollen vor allem wissen, wie schnell ein Pilot startet, welche Daten nötig sind und ob bestehende Systeme weiter genutzt werden können.
+          </p>
         </div>
-        <div class="testimonial-card">
-          <div class="testimonial-head">
-            <div class="testimonial-avatar" aria-hidden="true">SM</div>
-            <div>
-              <strong>Sarah M.</strong>
-              <small>München</small>
-            </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Wie schnell können wir starten?</h3>
+            <p>Ein Kickoff ist in der Regel kurzfristig möglich. Der erste produktive Pilot kann innerhalb von etwa 14 Tagen aufgesetzt werden, abhängig von Scope und Zugängen.</p>
           </div>
-          <p>"Der Bot antwortet schneller als wir – 24/7."</p>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <section id="roadmap" class="section section-light">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">Roadmap</span>
-          <h2>Modul-Roadmap</h2>
-        </div>
-        <p>Aktive Module und kommende Releases auf einen Blick.</p>
-      </div>
-      <div class="roadmap-grid">
-        <div class="roadmap-phase phase-complete">
-          <div class="phase-badge">✅ AKTIV</div>
-          <h3>Phase 1: KI Assistenz</h3>
-          <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
-          <p>AI Assistant Pro – Bereits verfügbar</p>
-        </div>
-        <div class="roadmap-phase phase-active">
-          <div class="phase-badge">📍 ENTWICKLUNG</div>
-          <h3>Phase 2: Marketing</h3>
-          <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
-          <p>Marketing AI – Launch Q2 2026</p>
-        </div>
-        <div class="roadmap-phase phase-planned">
-          <div class="phase-badge">🎯 GEPLANT</div>
-          <h3>Phase 3: Support</h3>
-          <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
-          <p>Support Bot 24/7 – Start Q2 2026</p>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="faq-item">
+            <h3>Welche Daten oder Unterlagen braucht ihr?</h3>
+            <p>Für den Start reichen meist Prozessbeschreibungen, Tool-Zugänge sowie einige typische Beispielvorgänge aus Ihrem Alltag.</p>
+          </div>
 
-  <section id="faq" class="section section-tight">
-    <div class="container">
-      <div class="section-head">
-        <div>
-          <span class="eyebrow">FAQ</span>
-          <h2>Häufige Fragen</h2>
-        </div>
-        <p>Alles, was Sie vor dem Start wissen möchten.</p>
-      </div>
-      <div class="faq-list">
-        <div class="faq-item">
-          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
-            Wie lange dauert die Implementierung? <span>+</span>
-          </button>
-          <div class="faq-answer"><p>24-48 Stunden Standard. Komplexe Integrationen bis zu 1 Woche.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
-            Kann ich einzelne Module buchen? <span>+</span>
-          </button>
-          <div class="faq-answer"><p>Ja! Jedes Modul ab €899/Monat – monatlich kündbar.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
-            Sind meine Daten sicher? <span>+</span>
-          </button>
-          <div class="faq-answer"><p>DSGVO-konform, EU-Server (Frankfurt), TLS 1.3 Verschlüsselung.</p></div>
-        </div>
-        <div class="faq-item">
-          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
-            Kann ich kündigen? <span>+</span>
-          </button>
-          <div class="faq-answer"><p>Jederzeit monatlich kündbar. Keine versteckten Kosten.</p></div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <div class="faq-item">
+            <h3>Können wir bestehende Tools weiter nutzen?</h3>
+            <p>Ja. Der Ansatz ist darauf ausgelegt, vorhandene Systeme wie CRM, Ticketsysteme, Kalender oder interne Tools zu ergänzen statt sie zu ersetzen.</p>
+          </div>
 
-  <section id="contact" class="section contact-section">
-    <div class="container">
-      <div class="contact-shell">
-        <div class="contact-copy">
-          <span class="eyebrow">Kontakt</span>
-          <h2>Lieber sprechen statt Slides tauschen?</h2>
-          <p>Sie erreichen uns direkt per E-Mail oder Telefon. Für strukturierte Projekte führen wir ein kostenloses Erstgespräch und liefern eine kurze Aufwandsschätzung.</p>
-          <ul class="contact-list">
-            <li><strong>E-Mail</strong><span>info@roothouse.ai</span></li>
-            <li><strong>Telefon</strong><span>+43 660 4055688</span></li>
-            <li><strong>Standort</strong><span>9500 Villach, Österreich</span></li>
-          </ul>
-          <div class="contact-actions">
-            <a href="terminbuchung.html" class="btn btn-primary">Termin buchen</a>
-            <a href="mailto:info@roothouse.ai" class="btn btn-secondary">E-Mail schreiben</a>
+          <div class="faq-item">
+            <h3>Ersetzt ihr Mitarbeitende komplett?</h3>
+            <p>Je nach Rolle entlasten oder ersetzen die Agents klar definierte Aufgabenbereiche. Kritische Entscheidungen, Freigaben und Sonderfälle können bewusst beim Team bleiben.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Wie wird der Wertbeitrag sichtbar gemacht?</h3>
+            <p>Über ein zentrales Dashboard mit Kennzahlen zu Zeitersparnis, Reaktionszeiten, Leads, Service-Qualität und — je nach Setup — Umsatzwirkung.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Was passiert nach dem ersten Marketing-Use-Case?</h3>
+            <p>Nach einem erfolgreichen Start können weitere Units wie Sekretariat, Support sowie später Buchhaltung oder Warenwirtschaft auf derselben Basis ergänzt werden.</p>
           </div>
         </div>
-        <div class="contact-card" id="cta">
-          <h3>Erstgespräch &amp; Mini-Plan</h3>
-          <p>30 Minuten für Use-Case, Tool-Stack und nächste Schritte. Anschließend erhalten Sie einen kurzen Maßnahmenplan.</p>
-          <div class="contact-meta">
-            <div>
-              <strong>30 Min</strong>
-              <span>Analyse-Call</span>
-            </div>
-            <div>
-              <strong>24–48h</strong>
-              <span>Umsetzung</span>
-            </div>
-            <div>
-              <strong>3 Module</strong>
-              <span>Sekretariat · Marketing · Support</span>
-            </div>
-          </div>
-          <form class="contact-form">
-            <label for="contact-note">Kurze Notiz (Preview)</label>
-            <textarea id="contact-note" placeholder="Hier entsteht in Iteration 3 ein aktives Formular." disabled></textarea>
-          </form>
-          <button type="button" class="btn btn-primary btn-full" onclick="window.location.href='terminbuchung.html'">Weiter zur Terminbuchung</button>
-          <small>Formular ist noch deaktiviert – der Button öffnet terminbuchung.html.</small>
-        </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-</main>
-
-<footer class="footer">
-  <div class="container">
-    <div class="footer-row">
-      <div>
-        <a href="#hero" class="brand">
-          <span class="brand-mark"></span>
-          <span>roothouse.ai</span>
-        </a>
-        <p>KI-Automation für KMU</p>
-      </div>
-      <div>
-        <h4>Rechtliches</h4>
-        <ul>
-          <li><a href="impressum.html">Impressum</a></li>
-          <li><a href="agb.html">AGB</a></li>
-          <li><a href="datenschutz.html">Datenschutz</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Kontakt</h4>
-        <ul>
-          <li>info@roothouse.ai</li>
-          <li>+43 660 4055688</li>
-          <li>9500 Villach</li>
-        </ul>
+  <div class="mobile-menu" id="mobile-menu">
+    <div class="mobile-menu-inner">
+      <nav class="mobile-menu-nav">
+        <a href="#agents">Agents</a>
+        <a href="#how">Ablauf</a>
+        <a href="#usecases">Use Cases</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="mobile-menu-cta">
+        <a href="#cta" class="btn btn-primary" style="width:100%; justify-content:center;">Demo anfragen</a>
       </div>
     </div>
   </div>
-</footer>
 
-<div class="chat-widget-note">
-  <strong>Chatbot Preview</strong>
-  <p>Das Widget unten ist derzeit nur ein Dummy. In Iteration 3 wird hier die echte Chatbot-Integration mit CRM-Hand-off aktiviert.</p>
-</div>
-
-<div id="chat-widget" class="chat-widget">
-  <button class="chat-toggle" onclick="toggleChat()">💬</button>
-  <div class="chat-window" id="chat-window">
-    <div class="chat-header">
-      <h4>KI-Assistent</h4>
-      <button onclick="toggleChat()">×</button>
+  <footer class="footer">
+    <div class="container footer-row">
+      <div>roothouse.ai · Spezialisierte AI-Agents für B2B-Prozesse</div>
+      <div>Marketing · Sekretariat · Support · Dashboard & ROI-Sicht</div>
     </div>
-    <div class="chat-messages" id="chat-messages">
-      <div class="message bot">Hallo! Ich beantworte Fragen zu unseren Produkten. Wie kann ich helfen?</div>
-    </div>
-    <div class="chat-input">
-      <input type="text" id="chat-input" placeholder="Ihre Frage..." onkeypress="if(event.key==='Enter')sendMessage()">
-      <button onclick="sendMessage()">➤</button>
-    </div>
-  </div>
-</div>
+  </footer>
 
-<script>
-  (function() {
-    const nav = document.querySelector('.site-header');
-    const toggle = document.querySelector('.nav-toggle');
-    if (!nav || !toggle) return;
-    toggle.addEventListener('click', function() {
-      nav.classList.toggle('open');
-    });
-  })();
+  <script>
+    (function(){
+      var toggle = document.querySelector('.nav-toggle');
+      var menu = document.getElementById('mobile-menu');
+      var links = menu ? menu.querySelectorAll('a') : [];
+      if(!toggle || !menu) return;
 
-  function toggleChat() {
-    document.getElementById('chat-window').classList.toggle('active');
-  }
-
-  function sendMessage() {
-    const input = document.getElementById('chat-input');
-    const msg = input.value.trim();
-    if (!msg) return;
-
-    const messages = document.getElementById('chat-messages');
-    messages.innerHTML += '<div class="message user">' + msg + '</div>';
-
-    const productKeywords = ['preis', 'kosten', 'modul', 'paket', 'marketing', 'support', 'assistant', 'sekretariat', 'termin', 'implementierung', 'dsgvo', 'daten', 'sicherheit'];
-    const isProductQuestion = productKeywords.some(k => msg.toLowerCase().includes(k));
-
-    setTimeout(() => {
-      let response;
-      if (isProductQuestion) {
-        if (msg.toLowerCase().includes('preis') || msg.toLowerCase().includes('kosten')) {
-          response = 'Unsere Module starten ab €899/Monat. Das Kombi-2 Paket kostet €1.499/Monat. Möchten Sie mehr zu einem bestimmten Modul erfahren?';
-        } else if (msg.toLowerCase().includes('marketing')) {
-          response = 'Marketing AI (€1.099/Monat) automatisiert Social Media, Content-Erstellung und SEO. Interesse an einer Demo?';
-        } else {
-          response = 'Danke für Ihre Frage! Für detaillierte Informationen empfehle ich ein kostenfreies Erstgespräch. Soll ich einen Termin für Sie reservieren?';
-        }
-      } else {
-        response = 'Diese Frage darf ich leider nicht beantworten. Ich kann Ihnen aber gerne bei Fragen zu unseren Produkten helfen oder Sie mit einem Menschen verbinden. Möchten Sie das?';
+      function closeMenu(){
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+        document.body.classList.remove('menu-open');
       }
-      messages.innerHTML += '<div class="message bot">' + response + '</div>';
-      messages.scrollTop = messages.scrollHeight;
-    }, 500);
 
-    input.value = '';
-  }
-</script>
+      toggle.addEventListener('click', function(){
+        var isOpen = menu.classList.toggle('open');
+        toggle.classList.toggle('open', isOpen);
+        document.body.classList.toggle('menu-open', isOpen);
+      });
 
+      links.forEach(function(link){
+        link.addEventListener('click', function(){
+          closeMenu();
+        });
+      });
+    })();
+  </script>
 </body>
 </html>

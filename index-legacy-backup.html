@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>roothouse.ai | KI-Automation für KMU in Österreich & Deutschland</title>
+<meta name="description" content="roothouse.ai – KI-Automation für KMU: Sekretariat, Marketing & Kundenservice entlasten, ohne leere 10x-Versprechen. Fokus auf realistische, nachhaltige Entlastung.">
+<link rel="stylesheet" href="styles-v2.css">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+<header class="site-header navbar">
+  <div class="container nav">
+    <a href="#hero" class="brand">
+      <span class="brand-mark"></span>
+      <span>roothouse.ai</span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Menü umschalten">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="nav-menu">
+      <nav class="nav-links">
+        <a href="#modules">Leistungen</a>
+        <a href="#process">Ablauf</a>
+        <a href="preise.html">Preise</a>
+        <a href="terminbuchung.html">Terminbuchung</a>
+        <div class="dropdown">
+          <button>
+            Job-Profile
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="job-sekretariat.html">📋 Sekretariat</a>
+            <a href="job-buchhaltung.html">📊 Buchhaltung</a>
+            <a href="job-kundenservice.html">🎧 Kundenservice</a>
+            <a href="job-marketing.html">📢 Marketing</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <button>
+            Rechtliches
+            <span>▼</span>
+          </button>
+          <div class="dropdown-content">
+            <a href="impressum.html">Impressum</a>
+            <a href="datenschutz.html">Datenschutz</a>
+            <a href="agb.html">AGB</a>
+          </div>
+        </div>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="#cta" class="btn btn-secondary">Mehr erfahren</a>
+        <a href="terminbuchung.html" class="btn btn-primary">Erstgespräch buchen</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="hero" class="hero">
+    <div class="container">
+      <div class="hero-shell">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <span class="eyebrow">AI-Automation für KMU</span>
+            <h1>Dein KI‑Team für Sekretariat, Marketing &amp; Support.</h1>
+            <p class="lead">
+              Ava, Lumo und Sol entlasten dein Büro, erstellen Marketing-Inhalte und beantworten Kundenanfragen –
+              damit du mehr Zeit für das Wesentliche hast.
+            </p>
+            <div class="hero-actions">
+              <a href="terminbuchung.html" class="btn btn-primary">Kostenfreies Erstgespräch</a>
+              <a href="#modules" class="btn btn-secondary">Einsatzmöglichkeiten ansehen</a>
+            </div>
+            <div class="hero-proof">
+              <span class="pill">⚡ 24/7 Antworten</span>
+              <span class="pill">📈 10x Content-Output</span>
+              <span class="pill">🤝 DSGVO-konform</span>
+            </div>
+            <p class="hero-note">Sekretariat, Marketing &amp; Support werden in 24-48h spürbar entlastet.</p>
+          </div>
+          <div class="hero-card">
+            <div class="hero-visual image-placeholder" data-label="Dashboard Mockup" aria-hidden="true" style="--placeholder-url: url('/assets/img/hero-dashboard-placeholder.jpg');"></div>
+            <!-- Platzhalter: Unsplash- oder Pexels-Visual "futuristic dashboard" -->
+            <div class="dashboard">
+              <div class="dashboard-top">
+                <div>
+                  <p class="dashboard-title">Aktiver AI-Stack</p>
+                  <p class="dashboard-sub">Ava • Lumo • Sol</p>
+                </div>
+                <span class="status">bereit</span>
+              </div>
+              <div class="metric-grid">
+                <div class="metric">
+                  <strong>+20h</strong>
+                  <span>pro Woche frei</span>
+                </div>
+                <div class="metric">
+                  <strong>85%</strong>
+                  <span>weniger Routine</span>
+                </div>
+                <div class="metric">
+                  <strong>24/7</strong>
+                  <span>Kundensupport</span>
+                </div>
+              </div>
+              <div class="agent-stack">
+                <div class="agent-row">
+                  <div>
+                    <strong>Ava</strong>
+                    <small>Sekretariat</small>
+                  </div>
+                  <span>Live</span>
+                </div>
+                <div class="agent-row">
+                  <div>
+                    <strong>Lumo</strong>
+                    <small>Marketing</small>
+                  </div>
+                  <span>Aktiv</span>
+                </div>
+                <div class="agent-row">
+                  <div>
+                    <strong>Sol</strong>
+                    <small>Support</small>
+                  </div>
+                  <span>Skaliert</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-belt">
+          <div class="belt-card">
+            <p class="belt-title">Top Aufgaben</p>
+            <div class="belt-items">
+              <span class="belt-item">E-Mail Routing</span>
+              <span class="belt-item">Terminbuchung</span>
+              <span class="belt-item">Social Media</span>
+              <span class="belt-item">FAQ-Support</span>
+            </div>
+          </div>
+          <div class="belt-card">
+            <p class="belt-title">Integrationen</p>
+            <div class="belt-items">
+              <span class="belt-item">Microsoft 365</span>
+              <span class="belt-item">Google Workspace</span>
+              <span class="belt-item">HubSpot</span>
+              <span class="belt-item">Zendesk</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="stats-strip">
+        <div class="stats-panel">
+          <div class="stat-box">
+            <strong>24-48h</strong>
+            <span>Implementierung</span>
+          </div>
+          <div class="stat-box">
+            <strong>€899</strong>
+            <span>pro Modul / Monat</span>
+          </div>
+          <div class="stat-box">
+            <strong>3 Module</strong>
+            <span>Sekretariat, Marketing, Support</span>
+          </div>
+          <div class="stat-box">
+            <strong>100%</strong>
+            <span>DSGVO-konform</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="problems" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Problem → Lösung</span>
+          <h2>Wiederholende Aufgaben fressen Ihre Zeit?</h2>
+        </div>
+        <p>
+          Unsere Module übernehmen Routinejobs im Sekretariat, Marketing und Support. Sie behalten die Kontrolle,
+          erhalten aber sofort messbare Entlastung.
+        </p>
+      </div>
+      <div class="cards-3">
+        <article class="card problem-card">
+          <div class="icon-badge">😫</div>
+          <h3>Überlastetes Sekretariat</h3>
+          <p class="problem-flow">AI Assistant Pro <span>+85% Produktivität</span></p>
+        </article>
+        <article class="card problem-card">
+          <div class="icon-badge">📉</div>
+          <h3>Keine Zeit für Marketing</h3>
+          <p class="problem-flow">Marketing AI <span>10x Content-Output</span></p>
+        </article>
+        <article class="card problem-card">
+          <div class="icon-badge">⏰</div>
+          <h3>Support nur zu Bürozeiten</h3>
+          <p class="problem-flow">Support Bot 24/7 <span>Rund-um-die-Uhr-Service</span></p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="jobs" class="section section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Job-Check</span>
+          <h2>Wo lohnt sich KI für Sie?</h2>
+        </div>
+        <p>Wählen Sie den Bereich und sehen Sie, welche Aufgaben Ava, Lumo oder Sol sofort übernehmen.</p>
+      </div>
+      <div class="job-grid">
+        <a href="job-sekretariat.html" class="job-card">
+          <div class="job-visual image-placeholder small" data-label="Sekretariat" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-sekretariat-placeholder.jpg');">
+            <div class="job-icon">📋</div>
+          </div>
+          <!-- Platzhalter: Pexels-Foto "office desk" -->
+          <h3>Sekretariat</h3>
+          <p>E-Mail, Termine, Dokumente</p>
+          <span>→ Details</span>
+        </a>
+        <a href="job-buchhaltung.html" class="job-card">
+          <div class="job-visual image-placeholder small" data-label="Buchhaltung" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-buchhaltung-placeholder.jpg');">
+            <div class="job-icon">📊</div>
+          </div>
+          <!-- Platzhalter: Illustratives Ledger-Icon (Unsplash "finance workspace") -->
+          <h3>Buchhaltung</h3>
+          <p>Rechnungen, Zahlungen, Mahnen</p>
+          <span>→ Details</span>
+        </a>
+        <a href="job-kundenservice.html" class="job-card">
+          <div class="job-visual image-placeholder small" data-label="Support" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-support-placeholder.jpg');">
+            <div class="job-icon">🎧</div>
+          </div>
+          <!-- Platzhalter: Unsplash "support headset" -->
+          <h3>Kundenservice</h3>
+          <p>24/7 Support, Tickets, FAQ</p>
+          <span>→ Details</span>
+        </a>
+        <a href="job-marketing.html" class="job-card">
+          <div class="job-visual image-placeholder small" data-label="Marketing" aria-hidden="true" style="--placeholder-url: url('/assets/img/job-marketing-placeholder.jpg');">
+            <div class="job-icon">📢</div>
+          </div>
+          <!-- Platzhalter: Pexels "creative studio" -->
+          <h3>Marketing</h3>
+          <p>Social Media, Content, SEO</p>
+          <span>→ Details</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="process" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Ablauf</span>
+          <h2>So funktioniert die Automatisierung</h2>
+        </div>
+        <p>Wir setzen Ihr KI-Team planbar in vier Schritten auf – ohne Risiko und mit klaren Ergebnissen.</p>
+      </div>
+      <div class="process-grid">
+        <div class="process-card">
+          <span class="step">1</span>
+          <h3>Analyse</h3>
+          <p>30 Min – Wir identifizieren Potenziale.</p>
+        </div>
+        <div class="process-card">
+          <span class="step">2</span>
+          <h3>Setup</h3>
+          <p>24-48h – Module konfigurieren.</p>
+        </div>
+        <div class="process-card">
+          <span class="step">3</span>
+          <h3>Integration</h3>
+          <p>Nahtlos – Anbindung an Ihre Systeme.</p>
+        </div>
+        <div class="process-card">
+          <span class="step">4</span>
+          <h3>Go-Live</h3>
+          <p>Sofort – Ihr Team ist produktiver.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="modules" class="section section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Module</span>
+          <h2>Unsere 3 KI-Module</h2>
+        </div>
+        <p>Stellen Sie Ihr Team passgenau zusammen oder starten Sie mit dem empfohlenen Marketing-Paket.</p>
+      </div>
+      <div class="modules-grid">
+        <div class="module-card">
+          <div class="module-header">
+            <div class="module-icon">🤖</div>
+            <div>
+              <h3>AI Assistant Pro</h3>
+              <p>Sekretariat &amp; Administration</p>
+            </div>
+          </div>
+          <div class="module-visual image-placeholder medium" data-label="Assistant" aria-hidden="true" style="--placeholder-url: url('/assets/img/module-assistant-placeholder.jpg');"></div>
+          <!-- Platzhalter: Isometrisches Admin-Dashboard -->
+          <div class="module-content">
+            <ul class="module-features">
+              <li>E-Mail &amp; Termine</li>
+              <li>Dokumente</li>
+              <li>Reisebuchungen</li>
+            </ul>
+            <div class="module-price">
+              <span class="price">€899</span>/Monat
+            </div>
+            <a href="terminbuchung.html" class="btn btn-outline">Auswählen</a>
+          </div>
+        </div>
+        <div class="module-card featured">
+          <div class="module-badge">★ EMPFOHLEN ★</div>
+          <div class="module-header">
+            <div class="module-icon">📈</div>
+            <div>
+              <h3>Marketing AI</h3>
+              <p>Marketing &amp; Content</p>
+            </div>
+          </div>
+          <div class="module-visual image-placeholder medium" data-label="Content Studio" aria-hidden="true" style="--placeholder-url: url('/assets/img/module-marketing-placeholder.jpg');"></div>
+          <!-- Platzhalter: Unsplash "creative team moodboard" -->
+          <div class="module-content">
+            <ul class="module-features">
+              <li>Social Media Posts</li>
+              <li>Blog &amp; Newsletter</li>
+              <li>SEO &amp; Keywords</li>
+            </ul>
+            <div class="module-price">
+              <span class="price">€1.099</span>/Monat
+            </div>
+            <a href="terminbuchung.html" class="btn btn-primary">Auswählen</a>
+          </div>
+        </div>
+        <div class="module-card">
+          <div class="module-header">
+            <div class="module-icon">💬</div>
+            <div>
+              <h3>Support Bot 24/7</h3>
+              <p>Kundenservice &amp; Support</p>
+            </div>
+          </div>
+          <div class="module-visual image-placeholder medium" data-label="Support Desk" aria-hidden="true" style="--placeholder-url: url('/assets/img/module-support-placeholder.jpg');"></div>
+          <!-- Platzhalter: Chat-Interface Illustration -->
+          <div class="module-content">
+            <ul class="module-features">
+              <li>24/7 Erreichbarkeit</li>
+              <li>Ticket-Klassifizierung</li>
+              <li>Mehrsprachig</li>
+            </ul>
+            <div class="module-price">
+              <span class="price">€799</span>/Monat
+            </div>
+            <a href="terminbuchung.html" class="btn btn-outline">Auswählen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="automation" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Work in Progress</span>
+          <h2>Platzhalter für Dex Gmail, Kalender &amp; Chatbot</h2>
+        </div>
+        <p>In Iteration 3 docken wir zusätzliche Flows an: Dex Gmail Automationen, ein eingebettetes Termin-Widget und der finale Chatbot.</p>
+      </div>
+      <div class="placeholder-grid">
+        <article class="card placeholder-card">
+          <div class="placeholder-tag">Dex Gmail</div>
+          <h3>Dex Gmail Automator</h3>
+          <p>Mapping für eingehende Mails zu Tickets, Deals oder Aufgaben – inklusive automatischer Antworten.</p>
+          <ul class="placeholder-list">
+            <li>E-Mail-Parsing &amp; Tagging</li>
+            <li>Weiterleitung an Ava/Lumo/Sol</li>
+            <li>Sync mit CRM/Helpdesk</li>
+          </ul>
+          <a href="#contact" class="btn btn-outline">Später mit Dex Gmail verbinden</a>
+        </article>
+        <article class="card placeholder-card">
+          <div class="placeholder-tag">Kalender</div>
+          <h3>Terminbuchungs-Flow</h3>
+          <p>Hier wird ein Cal.com / Calendly Embed platziert. Bis dahin führt jeder CTA zur Terminseite.</p>
+          <div class="placeholder-panel">
+            <p>Kalender-Widget<br>Embed folgt in Iteration 3.</p>
+          </div>
+          <div class="placeholder-actions">
+            <a href="terminbuchung.html" class="btn btn-primary">Terminseite öffnen</a>
+            <a href="analyse-tool.html" class="btn btn-secondary">Analyse-Tool ansehen</a>
+          </div>
+        </article>
+        <article class="card placeholder-card">
+          <div class="placeholder-tag">Chatbot</div>
+          <h3>Chatbot-Integration</h3>
+          <p>Das Widget am Seitenende ist derzeit ein statisches Demo-UI. Später hängt hier der echte Support-Bot.</p>
+          <div class="placeholder-panel">
+            <p>Aktuell: Statischer Demo-Chat<br>Ziel: Live-Widget mit Hand-off.</p>
+          </div>
+          <button class="btn btn-outline" type="button" onclick="toggleChat()">Demo-Widget öffnen</button>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Preise</span>
+          <h2>Transparente Preismodelle</h2>
+        </div>
+        <p>Modular buchbar oder als Paket kombinierbar – monatlich kündbar.</p>
+      </div>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Einzelmodul</h3>
+          <div class="pricing-price"><span class="price">€899</span>/Monat</div>
+          <p>Ein Modul nach Wahl</p>
+          <a href="terminbuchung.html" class="btn btn-outline btn-full">Auswählen</a>
+        </div>
+        <div class="pricing-card popular">
+          <div class="pricing-badge">★ BELIEBT ★</div>
+          <h3>Kombi 2</h3>
+          <div class="pricing-price"><span class="price">€1.499</span>/Monat</div>
+          <p>2 Module kombiniert<br><small>Sparen Sie €299</small></p>
+          <a href="terminbuchung.html" class="btn btn-primary btn-full">Auswählen</a>
+        </div>
+        <div class="pricing-card">
+          <h3>All-in-One</h3>
+          <div class="pricing-price"><span class="price">€1.999</span>/Monat</div>
+          <p>Alle 3 Module<br><small>Sparen Sie €698</small></p>
+          <a href="terminbuchung.html" class="btn btn-outline btn-full">Auswählen</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="flows" class="section section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Klickpfade</span>
+          <h2>Klare Wege zu Preisen, Termin &amp; Jobs</h2>
+        </div>
+        <p>Alle Call-to-Actions verlinken jetzt auf echte Unterseiten – so kommt jede Anfrage dorthin, wo sie weiterbearbeitet wird.</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-card">
+          <span class="flow-step">1</span>
+          <h3>Hero &rarr; Terminbuchung</h3>
+          <p>Der Haupt-CTA führt direkt auf <strong>terminbuchung.html</strong>. Besucher landen ohne Umwege im Kalender-Placeholder.</p>
+          <a class="link-arrow" href="terminbuchung.html">Termin auswählen</a>
+        </article>
+        <article class="flow-card">
+          <span class="flow-step">2</span>
+          <h3>Navigation &rarr; Preise</h3>
+          <p>Navigation &amp; Pricing-Karten verweisen auf die dedizierte Preisseite mit allen Paketen und Erklärtexten.</p>
+          <a class="link-arrow" href="preise.html">Preise ansehen</a>
+        </article>
+        <article class="flow-card">
+          <span class="flow-step">3</span>
+          <h3>Job-Karten &rarr; Profile</h3>
+          <p>Jedes Job-Icon öffnet die passende Detailseite (Sekretariat, Buchhaltung, Kundenservice, Marketing).</p>
+          <a class="link-arrow" href="#jobs">Zu den Job-Profilen</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials" class="section section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Kundenstimmen</span>
+          <h2>Was KMU über roothouse.ai sagen</h2>
+        </div>
+        <p>Direkte Rückmeldungen aus Sekretariat, Marketing und Support.</p>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="testimonial-avatar" aria-hidden="true">MK</div>
+            <div>
+              <strong>Maria K.</strong>
+              <small>Graz</small>
+            </div>
+          </div>
+          <!-- Avatar-Platzhalter: Initialen-Chip, später Foto via Unsplash Portrait -->
+          <p>"20 Stunden pro Woche gespart im Sekretariat."</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="testimonial-avatar" aria-hidden="true">TB</div>
+            <div>
+              <strong>Thomas B.</strong>
+              <small>Wien</small>
+            </div>
+          </div>
+          <p>"Endlich Zeit für strategische Arbeit dank Marketing AI."</p>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-head">
+            <div class="testimonial-avatar" aria-hidden="true">SM</div>
+            <div>
+              <strong>Sarah M.</strong>
+              <small>München</small>
+            </div>
+          </div>
+          <p>"Der Bot antwortet schneller als wir – 24/7."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="roadmap" class="section section-light">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Roadmap</span>
+          <h2>Modul-Roadmap</h2>
+        </div>
+        <p>Aktive Module und kommende Releases auf einen Blick.</p>
+      </div>
+      <div class="roadmap-grid">
+        <div class="roadmap-phase phase-complete">
+          <div class="phase-badge">✅ AKTIV</div>
+          <h3>Phase 1: KI Assistenz</h3>
+          <div class="progress-bar"><div class="progress-fill" style="width: 100%"></div></div>
+          <p>AI Assistant Pro – Bereits verfügbar</p>
+        </div>
+        <div class="roadmap-phase phase-active">
+          <div class="phase-badge">📍 ENTWICKLUNG</div>
+          <h3>Phase 2: Marketing</h3>
+          <div class="progress-bar"><div class="progress-fill" style="width: 60%"></div></div>
+          <p>Marketing AI – Launch Q2 2026</p>
+        </div>
+        <div class="roadmap-phase phase-planned">
+          <div class="phase-badge">🎯 GEPLANT</div>
+          <h3>Phase 3: Support</h3>
+          <div class="progress-bar"><div class="progress-fill" style="width: 30%"></div></div>
+          <p>Support Bot 24/7 – Start Q2 2026</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq" class="section section-tight">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">FAQ</span>
+          <h2>Häufige Fragen</h2>
+        </div>
+        <p>Alles, was Sie vor dem Start wissen möchten.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+            Wie lange dauert die Implementierung? <span>+</span>
+          </button>
+          <div class="faq-answer"><p>24-48 Stunden Standard. Komplexe Integrationen bis zu 1 Woche.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+            Kann ich einzelne Module buchen? <span>+</span>
+          </button>
+          <div class="faq-answer"><p>Ja! Jedes Modul ab €899/Monat – monatlich kündbar.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+            Sind meine Daten sicher? <span>+</span>
+          </button>
+          <div class="faq-answer"><p>DSGVO-konform, EU-Server (Frankfurt), TLS 1.3 Verschlüsselung.</p></div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" onclick="this.nextElementSibling.classList.toggle('active');this.classList.toggle('active')">
+            Kann ich kündigen? <span>+</span>
+          </button>
+          <div class="faq-answer"><p>Jederzeit monatlich kündbar. Keine versteckten Kosten.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section">
+    <div class="container">
+      <div class="contact-shell">
+        <div class="contact-copy">
+          <span class="eyebrow">Kontakt</span>
+          <h2>Lieber sprechen statt Slides tauschen?</h2>
+          <p>Sie erreichen uns direkt per E-Mail oder Telefon. Für strukturierte Projekte führen wir ein kostenloses Erstgespräch und liefern eine kurze Aufwandsschätzung.</p>
+          <ul class="contact-list">
+            <li><strong>E-Mail</strong><span>info@roothouse.ai</span></li>
+            <li><strong>Telefon</strong><span>+43 660 4055688</span></li>
+            <li><strong>Standort</strong><span>9500 Villach, Österreich</span></li>
+          </ul>
+          <div class="contact-actions">
+            <a href="terminbuchung.html" class="btn btn-primary">Termin buchen</a>
+            <a href="mailto:info@roothouse.ai" class="btn btn-secondary">E-Mail schreiben</a>
+          </div>
+        </div>
+        <div class="contact-card" id="cta">
+          <h3>Erstgespräch &amp; Mini-Plan</h3>
+          <p>30 Minuten für Use-Case, Tool-Stack und nächste Schritte. Anschließend erhalten Sie einen kurzen Maßnahmenplan.</p>
+          <div class="contact-meta">
+            <div>
+              <strong>30 Min</strong>
+              <span>Analyse-Call</span>
+            </div>
+            <div>
+              <strong>24–48h</strong>
+              <span>Umsetzung</span>
+            </div>
+            <div>
+              <strong>3 Module</strong>
+              <span>Sekretariat · Marketing · Support</span>
+            </div>
+          </div>
+          <form class="contact-form">
+            <label for="contact-note">Kurze Notiz (Preview)</label>
+            <textarea id="contact-note" placeholder="Hier entsteht in Iteration 3 ein aktives Formular." disabled></textarea>
+          </form>
+          <button type="button" class="btn btn-primary btn-full" onclick="window.location.href='terminbuchung.html'">Weiter zur Terminbuchung</button>
+          <small>Formular ist noch deaktiviert – der Button öffnet terminbuchung.html.</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-row">
+      <div>
+        <a href="#hero" class="brand">
+          <span class="brand-mark"></span>
+          <span>roothouse.ai</span>
+        </a>
+        <p>KI-Automation für KMU</p>
+      </div>
+      <div>
+        <h4>Rechtliches</h4>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="agb.html">AGB</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Kontakt</h4>
+        <ul>
+          <li>info@roothouse.ai</li>
+          <li>+43 660 4055688</li>
+          <li>9500 Villach</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="chat-widget-note">
+  <strong>Chatbot Preview</strong>
+  <p>Das Widget unten ist derzeit nur ein Dummy. In Iteration 3 wird hier die echte Chatbot-Integration mit CRM-Hand-off aktiviert.</p>
+</div>
+
+<div id="chat-widget" class="chat-widget">
+  <button class="chat-toggle" onclick="toggleChat()">💬</button>
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <h4>KI-Assistent</h4>
+      <button onclick="toggleChat()">×</button>
+    </div>
+    <div class="chat-messages" id="chat-messages">
+      <div class="message bot">Hallo! Ich beantworte Fragen zu unseren Produkten. Wie kann ich helfen?</div>
+    </div>
+    <div class="chat-input">
+      <input type="text" id="chat-input" placeholder="Ihre Frage..." onkeypress="if(event.key==='Enter')sendMessage()">
+      <button onclick="sendMessage()">➤</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const nav = document.querySelector('.site-header');
+    const toggle = document.querySelector('.nav-toggle');
+    if (!nav || !toggle) return;
+    toggle.addEventListener('click', function() {
+      nav.classList.toggle('open');
+    });
+  })();
+
+  function toggleChat() {
+    document.getElementById('chat-window').classList.toggle('active');
+  }
+
+  function sendMessage() {
+    const input = document.getElementById('chat-input');
+    const msg = input.value.trim();
+    if (!msg) return;
+
+    const messages = document.getElementById('chat-messages');
+    messages.innerHTML += '<div class="message user">' + msg + '</div>';
+
+    const productKeywords = ['preis', 'kosten', 'modul', 'paket', 'marketing', 'support', 'assistant', 'sekretariat', 'termin', 'implementierung', 'dsgvo', 'daten', 'sicherheit'];
+    const isProductQuestion = productKeywords.some(k => msg.toLowerCase().includes(k));
+
+    setTimeout(() => {
+      let response;
+      if (isProductQuestion) {
+        if (msg.toLowerCase().includes('preis') || msg.toLowerCase().includes('kosten')) {
+          response = 'Unsere Module starten ab €899/Monat. Das Kombi-2 Paket kostet €1.499/Monat. Möchten Sie mehr zu einem bestimmten Modul erfahren?';
+        } else if (msg.toLowerCase().includes('marketing')) {
+          response = 'Marketing AI (€1.099/Monat) automatisiert Social Media, Content-Erstellung und SEO. Interesse an einer Demo?';
+        } else {
+          response = 'Danke für Ihre Frage! Für detaillierte Informationen empfehle ich ein kostenfreies Erstgespräch. Soll ich einen Termin für Sie reservieren?';
+        }
+      } else {
+        response = 'Diese Frage darf ich leider nicht beantworten. Ich kann Ihnen aber gerne bei Fragen zu unseren Produkten helfen oder Sie mit einem Menschen verbinden. Möchten Sie das?';
+      }
+      messages.innerHTML += '<div class="message bot">' + response + '</div>';
+      messages.scrollTop = messages.scrollHeight;
+    }, 500);
+
+    input.value = '';
+  }
+</script>
+
+</body>
+</html>
