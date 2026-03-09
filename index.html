@@ -887,6 +887,10 @@
       .nav-links{display:none}
       .nav-actions{display:none}
       .nav-toggle{display:flex}
+      /* Mobile: show nav when header has .open */
+      .site-header.open .nav-links{display:flex;flex-direction:column;gap:18px;padding:18px 0}
+      .site-header.open .nav-actions{display:flex;flex-direction:column;gap:10px;padding:12px 0}
+      .site-header.open .nav-links a{padding:10px 12px}
       .hero-grid{padding:28px}
       .hero-belt{padding:0 28px 28px}
       .stats-panel{grid-template-columns:1fr}
