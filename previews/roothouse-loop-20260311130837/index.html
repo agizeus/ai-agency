@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+
+<style>
+:root{--bg-outer: radial-gradient(circle at 20% 20%, rgba(6,24,45,0.9), rgba(11,29,49,0.9)); --accent-2:#2f6fbf;}
+.hero-shell{
+  background: radial-gradient(circle at top left, rgba(109,94,252,0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(40,199,183,0.14), transparent 24%),
+        linear-gradient(180deg, #f7faff 0%, #eef3fb 100%);
+}
+.cta-primary{background:#fff !important; color:#061022 !important; border-radius:28px !important; box-shadow:0 8px 24px rgba(3,11,22,0.36) !important}
+.cta-ghost{border:1px solid rgba(47,111,191,0.24) !important; color:var(--accent-2) !important}
+.stat{background: rgba(6,12,24,0.6) !important; border-radius:14px !important}
+
+/* roothouse hero css restore */
+
+.hero {
+      display: grid;
+      gap: clamp(1.75rem, 3vw, 3rem);
+    }
+
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+        align-items: start;
+      }
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.82rem;
+      color: var(--accent-2);
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .github-badge {
+      text-decoration: none;
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 8px;
+      background: rgba(62,160,255,0.04);
+      border: 1px solid rgba(62,160,255,0.06);
+    }
+    .github-badge:hover { background: rgba(62,160,255,0.06); }
+
+    h1 {
+      font-size: clamp(2rem, 4vw, 3.1rem);
+      line-height: 1.15;
+      margin: 0.65rem 0 1rem;
+    }
+
+    .lede {
+      font-size: 1.1rem;
+      color: #e4e6ec;
+      margin: 0 0 1rem;
+      max-width: 46ch;
+    }
+
+    .local-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+      align-items: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .local-tags span {
+      border: none;
+      color: var(--muted);
+      padding: 0;
+      border-radius: 0;
+      font-size: 0.95rem;
+    }
+
+    .local-tags .sep::before { content: '·'; margin: 0 0.6rem; color: var(--muted); }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      margin-top: 1.4rem;
+    }
+
+    .buttons a {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 0.95rem 1.55rem;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .buttons a:hover { transform: translateY(-1px); }
+
+    .cta-primary {
+      background: var(--text);
+      color: #05060a;
+      box-shadow: 0 8px 28px rgba(62, 160, 255, 0.25);
+    }
+
+    .cta-ghost {
+      border: 1px solid rgba(62,160,255,0.22);
+      color: var(--accent-2);
+      background: transparent;
+    }
+
+    .cta-note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.35rem;
+    }
+
+    .secondary-column {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .card {
+      border: none; /* removed boxed look */
+      border-radius: 12px;
+      background: transparent;
+      padding: 0.5rem 0; /* lighter spacing */
+    }
+
+    .steps { display: grid; gap: 0.85rem; }
+
+    .step {
+      border-radius: 12px;
+      padding: 0.95rem 0;
+      background: linear-gradient(180deg, rgba(62,160,255,0.02), rgba(62,160,255,0.01));
+      border: 1px solid rgba(62,160,255,0.04);
+    }
+
+    .step span {
+      font-size: 0.82rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .step strong {
+      display: block;
+      margin: 0.3rem 0 0.35rem;
+      font-size: 1.05rem;
+    }
+
+    .step p {
+      margin: 0;
+      color: #d4d8e3;
+      font-size: 0.95rem;
+    }
+
+    .stats {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+    .stat {
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: linear-gradient(180deg, rgba(62,160,255,0.018), rgba(62,160,255,0.008));
+      border: 1px solid rgba(62,160,255,0.03);
+    }
+
+    .stat strong {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+    .hero-note {
+      margin-top: 2.2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.2rem;
+    }</style>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>roothouse.ai · Kärnten Hero</title>
+  <style>
+
+    :root{
+      --bg:#07111f;
+      --bg-soft:#0b1728;
+      --panel:#0f1c31;
+      --panel-2:#13233d;
+      --card:#ffffff;
+      --card-soft:#f6f8fc;
+      --text:#0f172a;
+      --text-soft:#5b6475;
+      --text-inv:#f8fbff;
+      --text-inv-soft:#aab7cc;
+      --line:#dbe3ef;
+      --line-dark:rgba(255,255,255,0.1);
+      --primary:#6d5efc;
+      --primary-2:#28c7b7;
+      --accent:#8ea3ff;
+      --success:#0ea56b;
+      --shadow:0 20px 60px rgba(7,17,31,0.18);
+      --shadow-dark:0 24px 80px rgba(0,0,0,0.35);
+      --radius-xl:28px;
+      --radius-lg:22px;
+      --radius-md:16px;
+      --radius-sm:12px;
+      --max:1180px;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max), calc(100% - 40px)); margin:0 auto}
+    .section{padding:88px 0}
+    .section-tight{padding:64px 0}
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border:1px solid rgba(109,94,252,0.16);
+      background:rgba(255,255,255,0.72);
+      color:#4d4a8f;
+      border-radius:999px;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .site-header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(247,250,255,0.74);
+      border-bottom:1px solid rgba(15,23,42,0.06);
+    }
+
+    .nav{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:800;
+      color:#0b1220;
+      letter-spacing:-0.02em;
+    }
+
+    .brand-mark{
+      width:38px;
+      height:38px;
+      border-radius:12px;
+      background:
+        radial-gradient(circle at 30% 30%, #ffffff 0%, rgba(255,255,255,0.8) 18%, transparent 19%),
+        linear-gradient(135deg, var(--primary) 0%, var(--primary-2) 100%);
+      box-shadow:0 12px 28px rgba(109,94,252,0.28);
+    }
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:24px;
+      color:#4f5b6d;
+      font-size:14px;
+      font-weight:600;
+    }
+
+    .nav-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .nav-toggle{
+      display:none;
+      width:40px;
+      height:40px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,0.14);
+      background:rgba(255,255,255,0.9);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      flex-direction:column;
+      gap:6px;
+      padding:0;
+      cursor:pointer;
+    }
+
+    .nav-toggle span{
+      display:block;
+      width:18px;
+      height:2px;
+      border-radius:999px;
+      background:#0f172a;
+      transition:transform .18s ease, opacity .18s ease;
+    }
+
+    .nav-toggle.open span:nth-child(1){
+      transform:translateY(4px) rotate(45deg);
+    }
+
+    .nav-toggle.open span:nth-child(2){
+      transform:translateY(-4px) rotate(-45deg);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      min-height:48px;
+      padding:0 18px;
+      border-radius:14px;
+      font-weight:700;
+      font-size:15px;
+      border:1px solid transparent;
+      transition:all .2s ease;
+      cursor:pointer;
+    }
+
+    .btn-primary{
+      color:white;
+      background:linear-gradient(135deg, var(--primary) 0%, #7d72ff 45%, var(--primary-2) 100%);
+      box-shadow:0 16px 36px rgba(109,94,252,0.28);
+    }
+
+    .btn-secondary{
+      color:#0f172a;
+      background:rgba(255,255,255,0.8);
+      border-color:rgba(15,23,42,0.08);
+    }
+
+    .btn-dark{
+      color:white;
+      background:rgba(255,255,255,0.08);
+      border-color:rgba(255,255,255,0.12);
+    }
+
+    .hero{
+      padding:0 0 36px;
+    }
+
+    .hero-full .container{
+      width:100%;
+    }
+
+    .hero-full .hero-shell{
+      border-radius:0;
+    }
+
+    .hero-shell{
+      position:relative;
+      overflow:hidden;
+      border-radius:36px;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(142,163,255,0.22), transparent 24%),
+        radial-gradient(circle at 90% 0%, rgba(40,199,183,0.18), transparent 22%),
+        linear-gradient(135deg, #08111f 0%, #0d1830 52%, #12213f 100%);
+      color:var(--text-inv);
+      box-shadow:var(--shadow-dark);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:34px;
+      padding:56px;
+      align-items:center;
+    }
+
+    .hero h1{
+      margin:18px 0 16px;
+      font-size:clamp(2.4rem, 5vw, 4.6rem);
+      line-height:1.02;
+      letter-spacing:-0.05em;
+      max-width:760px;
+    }
+
+    .hero p.lead{
+      margin:0 0 24px;
+      max-width:660px;
+      color:var(--text-inv-soft);
+      font-size:18px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:18px;
+    }
+
+    .hero-proof{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:600;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.06);
+      color:#dbe7fb;
+    }
+
+    .hero-note{
+      color:var(--text-inv-soft);
+      font-size:14px;
+    }
+
+    .hero-card{
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      border:1px solid rgba(255,255,255,0.1);
+      padding:22px;
+    }
+
+    .dashboard{
+      display:grid;
+      gap:16px;
+    }
+
+    .dashboard-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:16px;
+    }
+
+    .dashboard-title{
+      font-size:14px;
+      color:#d8e3f5;
+      font-weight:700;
+    }
+
+    .dashboard-sub{
+      font-size:13px;
+      color:#9fb0c9;
+    }
+
+    .status{
+      padding:8px 10px;
+      border-radius:999px;
+      background:rgba(14,165,107,0.14);
+      color:#8ef0c3;
+      border:1px solid rgba(142,240,195,0.18);
+      font-size:12px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+
+    .metric-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:12px;
+    }
+
+    .metric{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .metric strong{
+      display:block;
+      font-size:28px;
+      line-height:1;
+      margin-bottom:6px;
+      color:white;
+    }
+
+    .metric span{
+      display:block;
+      font-size:12px;
+      color:#aebbd0;
+    }
+
+    .agent-stack{
+      display:grid;
+      gap:10px;
+    }
+
+    .agent-row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.05);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#eaf1ff;
+      font-size:14px;
+    }
+
+    .agent-row small{
+      color:#9fb0c9;
+      font-size:12px;
+    }
+
+    .hero-belt{
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      padding:0 56px 40px;
+    }
+
+    .belt-card{
+      border-radius:22px;
+      padding:18px 20px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      color:#dce7f8;
+    }
+
+    .belt-title{
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:#95a7c1;
+      margin-bottom:10px;
+      font-weight:700;
+    }
+
+    .belt-items{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .belt-item{
+      padding:10px 12px;
+      border-radius:12px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+      font-size:13px;
+      font-weight:600;
+    }
+
+    .stats-strip{
+      margin-top:-24px;
+      position:relative;
+      z-index:2;
+    }
+
+    .stats-panel{
+      background:rgba(255,255,255,0.92);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:var(--shadow);
+      border-radius:24px;
+      padding:22px;
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+    }
+
+    .stat-box{
+      padding:10px 8px;
+    }
+
+    .stat-box strong{
+      display:block;
+      font-size:30px;
+      line-height:1;
+      margin-bottom:8px;
+      letter-spacing:-0.04em;
+    }
+
+    .stat-box span{
+      display:block;
+      color:var(--text-soft);
+      font-size:14px;
+    }
+
+    .section-head{
+      display:flex;
+      justify-content:space-between;
+      align-items:end;
+      gap:20px;
+      margin-bottom:28px;
+    }
+
+    .section-head h2{
+      margin:12px 0 0;
+      font-size:clamp(1.8rem, 3vw, 3rem);
+      line-height:1.05;
+      letter-spacing:-0.04em;
+    }
+
+    .section-head p{
+      margin:0;
+      max-width:620px;
+      color:var(--text-soft);
+      font-size:17px;
+    }
+
+    .cards-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:0 12px 34px rgba(15,23,42,0.06);
+    }
+
+    .card h3{
+      margin:0 0 10px;
+      font-size:22px;
+      letter-spacing:-0.03em;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--text-soft);
+    }
+
+    .icon-badge{
+      width:46px;
+      height:46px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:18px;
+      font-size:20px;
+      background:linear-gradient(135deg, rgba(109,94,252,0.14), rgba(40,199,183,0.14));
+      border:1px solid rgba(109,94,252,0.12);
+    }
+
+    .feature-list{
+      list-style:none;
+      padding:0;
+      margin:18px 0 0;
+      display:grid;
+      gap:10px;
+    }
+
+    .feature-list li{
+      position:relative;
+      padding-left:18px;
+      color:#334155;
+      font-size:14px;
+    }
+
+    .feature-list li:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+    }
+
+    #jobs{
+      margin-top:36px;
+    }
+
+    .job-link-grid{
+      margin-top:18px;
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+      gap:16px;
+    }
+
+    .job-link-card{
+      display:flex;
+      flex-direction:column;
+      gap:6px;
+      color:inherit;
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+
+    .job-link-card strong{
+      font-size:18px;
+      letter-spacing:-0.02em;
+    }
+
+    .job-link-card span{
+      color:var(--text-soft);
+      font-size:14px;
+    }
+
+    .job-link-card:hover{
+      transform:translateY(-3px);
+      box-shadow:0 16px 34px rgba(15,23,42,0.12);
+    }
+
+    .spotlight{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:18px;
+    }
+
+    .spotlight-card{
+      border-radius:28px;
+      overflow:hidden;
+      background:linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:var(--shadow);
+    }
+
+    .spotlight-inner{
+      padding:28px;
+    }
+
+    .mini-kpi{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:18px;
+    }
+
+    .mini-kpi span{
+      display:inline-flex;
+      padding:10px 12px;
+      border-radius:12px;
+      background:#f3f6fd;
+      border:1px solid var(--line);
+      font-size:13px;
+      font-weight:700;
+      color:#334155;
+    }
+
+    .process-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:18px;
+    }
+
+    .process-card{
+      position:relative;
+      padding:24px;
+      border-radius:22px;
+      background:linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      border:1px solid rgba(15,23,42,0.08);
+      box-shadow:0 12px 34px rgba(15,23,42,0.05);
+    }
+
+    .step{
+      width:42px;
+      height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      color:white;
+      background:linear-gradient(135deg, var(--primary), var(--primary-2));
+      margin-bottom:18px;
+      box-shadow:0 10px 24px rgba(109,94,252,0.22);
+    }
+
+    .process-card h3{
+      margin:0 0 10px;
+      font-size:20px;
+      letter-spacing:-0.03em;
+    }
+
+    .process-card p{
+      margin:0;
+      color:var(--text-soft);
+      font-size:15px;
+    }
+
+    .usecases{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:18px;
+    }
+
+    .quote-card{
+      background:linear-gradient(135deg, #0a1324 0%, #11203a 100%);
+      color:white;
+      border-radius:28px;
+      padding:30px;
+      box-shadow:var(--shadow-dark);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .quote-card p{
+      margin:0 0 18px;
+      font-size:22px;
+      line-height:1.35;
+      letter-spacing:-0.02em;
+    }
+
+    .quote-meta{
+      color:#aebbd0;
+      font-size:14px;
+    }
+
+    .quote-result{
+      margin-top:22px;
+      display:inline-flex;
+      flex-direction:column;
+      gap:4px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .quote-result strong{
+      font-size:28px;
+      color:white;
+      line-height:1;
+    }
+
+    .case-list{
+      display:grid;
+      gap:18px;
+    }
+
+    .case-item{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:22px;
+      padding:24px;
+      box-shadow:0 12px 34px rgba(15,23,42,0.05);
+    }
+
+    .case-item h3{
+      margin:0 0 8px;
+      font-size:20px;
+      letter-spacing:-0.03em;
+    }
+
+    .case-item p{
+      margin:0;
+      color:var(--text-soft);
+    }
+
+    .case-metric{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .case-metric span{
+      padding:8px 10px;
+      border-radius:999px;
+      background:#f4f7fc;
+      border:1px solid var(--line);
+      font-size:13px;
+      font-weight:700;
+    }
+
+    .cta-full .container{
+      width:100%;
+    }
+
+    .cta-full .cta-wrap{
+      border-radius:0;
+    }
+
+    .cta-wrap{
+      border-radius:32px;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 15% 20%, rgba(109,94,252,0.22), transparent 24%),
+        radial-gradient(circle at 85% 20%, rgba(40,199,183,0.18), transparent 24%),
+        linear-gradient(135deg, #091221 0%, #0f1b32 100%);
+      color:white;
+      border:1px solid rgba(255,255,255,0.08);
+      box-shadow:var(--shadow-dark);
+    }
+
+    .cta-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:26px;
+      padding:42px;
+      align-items:center;
+    }
+
+    .cta-wrap h2{
+      margin:14px 0 12px;
+      font-size:clamp(2rem, 3.5vw, 3.2rem);
+      line-height:1.05;
+      letter-spacing:-0.04em;
+    }
+
+    .cta-wrap p{
+      margin:0;
+      color:#aebbd0;
+      font-size:17px;
+      max-width:620px;
+    }
+
+    .cta-box{
+      border-radius:24px;
+      padding:24px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.1);
+    }
+
+    .cta-points{
+      list-style:none;
+      padding:0;
+      margin:0 0 20px;
+      display:grid;
+      gap:10px;
+      color:#dbe7fb;
+      font-size:14px;
+    }
+
+    .cta-points li{
+      padding-left:18px;
+      position:relative;
+    }
+
+    .cta-points li:before{
+      content:"";
+      position:absolute;
+      left:0;
+      top:9px;
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#7ef0d4;
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:18px;
+    }
+
+    .faq-item{
+      background:rgba(255,255,255,0.82);
+      border:1px solid rgba(15,23,42,0.08);
+      border-radius:20px;
+      padding:22px;
+    }
+
+    .faq-item h3{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-0.02em;
+    }
+
+    .faq-item p{
+      margin:0;
+      color:var(--text-soft);
+      font-size:15px;
+    }
+
+    .footer{
+      padding:28px 0 44px;
+      color:#6b7280;
+      font-size:14px;
+    }
+
+    .mobile-menu{
+      position:fixed;
+      inset:0;
+      background:
+        radial-gradient(circle at 10% 10%, rgba(142,163,255,0.22), transparent 24%),
+        radial-gradient(circle at 90% 0%, rgba(40,199,183,0.18), transparent 22%),
+        linear-gradient(135deg, #08111f 0%, #0d1830 52%, #12213f 100%);
+      color:var(--text-inv);
+      z-index:40;
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .2s ease;
+      display:flex;
+      justify-content:center;
+      align-items:flex-start;
+    }
+
+    .mobile-menu.open{
+      opacity:1;
+      pointer-events:auto;
+    }
+
+    .mobile-menu-inner{
+      width:100%;
+      padding:84px 20px 32px;
+      display:flex;
+      flex-direction:column;
+      gap:28px;
+    }
+
+    .mobile-menu-nav{
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      font-size:18px;
+      font-weight:600;
+    }
+
+    .mobile-menu-nav a{
+      color:var(--text-inv);
+    }
+
+    .mobile-menu-cta{
+      margin-top:auto;
+    }
+
+    .footer-row{
+      display:flex;
+      justify-content:space-between;
+      gap:16px;
+      align-items:center;
+      border-top:1px solid rgba(15,23,42,0.08);
+      padding-top:20px;
+    }
+
+    @media (max-width: 1080px){
+      .hero-grid,
+      .hero-belt,
+      .spotlight,
+      .usecases,
+      .cta-grid{
+        grid-template-columns:1fr;
+      }
+      .cards-3{grid-template-columns:1fr 1fr}
+      .process-grid{grid-template-columns:1fr 1fr}
+      .stats-panel{grid-template-columns:1fr 1fr}
+      .faq-grid{grid-template-columns:1fr}
+    }
+
+    @media (max-width: 760px){
+      .container{width:min(var(--max), calc(100% - 24px))}
+      .nav{min-height:72px}
+      .nav-links{display:none}
+      .nav-actions{display:none}
+      .nav-toggle{display:flex}
+      /* Mobile: show nav when header has .open */
+      .site-header.open .nav-links{display:flex;flex-direction:column;gap:18px;padding:18px 0}
+      .site-header.open .nav-actions{display:flex;flex-direction:column;gap:10px;padding:12px 0}
+      .site-header.open .nav-links a{padding:10px 12px}
+      .hero-grid{padding:28px}
+      .hero-belt{padding:0 28px 28px}
+      .stats-panel{grid-template-columns:1fr}
+      .cards-3,
+      .process-grid,
+      .metric-grid{grid-template-columns:1fr}
+      .cta-grid{padding:28px}
+      .section{padding:68px 0}
+      .section-head{align-items:flex-start; flex-direction:column}
+      .footer-row{flex-direction:column; align-items:flex-start}
+    }
+  
+/* hero scoped overrides */
+.hero {
+      display: grid;
+      gap: clamp(1.75rem, 3vw, 3rem);
+    }
+
+</style>
+
+
+<style>
+/* apply exact reference palette */
+.hero-shell{background: linear-gradient(180deg,#0b2338 0%, #061826 100%) !important}
+.cta-primary{background:#ffffff !important; color:#061022 !important; border-radius:999px !important; padding:0.9rem 1.6rem !important; box-shadow:0 10px 30px rgba(0,0,0,0.25) !important}
+.cta-ghost{background:transparent !important; border:1px solid rgba(79,140,210,0.16) !important; color:#4faeff !important}
+.stat{background:rgba(5,10,20,0.55) !important; border:1px solid rgba(255,255,255,0.03) !important; border-radius:14px !important}
+</style>
+
+<style>
+/* scoped hero css from roothouse-final */
+
+
+    .hero {
+      display: grid;
+      gap: clamp(1.75rem, 3vw, 3rem);
+    }
+
+
+    @media (min-width: 900px) {
+      .hero {
+        grid-template-columns: minmax(0, 1.1fr) minmax(260px, 0.9fr);
+        align-items: start;
+      }
+
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      font-size: 0.82rem;
+      color: var(--accent-2);
+      display: inline-flex;
+      gap: 0.5rem;
+      align-items: center;
+    }
+
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: currentColor;
+    }
+
+
+    .github-badge {
+      text-decoration: none;
+      color: var(--accent-2);
+      font-weight: 600;
+      font-size: 0.9rem;
+      padding: 0.25rem 0.6rem;
+      border-radius: 8px;
+      background: rgba(62,160,255,0.04);
+      border: 1px solid rgba(62,160,255,0.06);
+    }
+
+    .github-badge:hover { background: rgba(62,160,255,0.06); }
+
+
+    .lede {
+      font-size: 1.1rem;
+      color: #e4e6ec;
+      margin: 0 0 1rem;
+      max-width: 46ch;
+    }
+
+
+    .cta-primary {
+      background: var(--text);
+      color: #05060a;
+      box-shadow: 0 8px 28px rgba(62, 160, 255, 0.25);
+    }
+
+
+    .cta-ghost {
+      border: 1px solid rgba(62,160,255,0.22);
+      color: var(--accent-2);
+      background: transparent;
+    }
+
+
+    .stats {
+      display: grid;
+      gap: 0.85rem;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    }
+
+
+    .stat {
+      border-radius: 12px;
+      padding: 0.9rem;
+      background: linear-gradient(180deg, rgba(62,160,255,0.018), rgba(62,160,255,0.008));
+      border: 1px solid rgba(62,160,255,0.03);
+    }
+
+
+    .stat strong {
+      font-size: 1.8rem;
+      display: block;
+      margin-bottom: 0.35rem;
+    }
+
+
+    .hero-note {
+      margin-top: 2.2rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 1.2rem;
+    }
+
+
+    .hero-note strong { color: var(--text); }
+
+</style>
+
+
+<style>
+.hero-shell{position:relative;overflow:hidden;border-radius:36px;padding:56px;background:linear-gradient(135deg,#061226 0%, #0b2540 60%);color:#f8fbff !important;box-shadow:0 30px 90px rgba(0,0,0,0.6) !important;border:1px solid rgba(255,255,255,0.06) !important}
+</style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <div style="display:flex;align-items:center;gap:0.85rem;">
+          <span class="eyebrow">Lokales Delivery-Team</span>
+          <a class="github-badge" href="https://github.com/agizeus" target="_blank" rel="noopener noreferrer" aria-label="agizeus on GitHub">⚑ agizeus</a>
+        </div>
+        <h1 id="hero-title">KI &amp; Automatisierung aus Kärnten, für Kärntner KMU.</h1>
+        <p class="lede">roothouse begleitet Betriebe in Klagenfurt, Villach &amp; Co. vom Workshop bis zum laufenden Betrieb – mit regionalen Partner:innen und kurzen Entscheidungswegen.</p>
+
+
+        <div class="buttons">
+          <a class="cta-primary" href="#termin">Potenzialgespräch vereinbaren</a>
+          <a class="cta-ghost" href="/roothouse/ablauf.pdf" download>Ablauf (PDF) herunterladen</a>
+        </div>
+        <p class="cta-note">30 Minuten – remote oder vor Ort in Kärnten.</p>
+
+        <div class="stats" aria-label="Proof Stats">
+          <div class="stat">
+            <strong>12</strong>
+            <span>aktive Automationspiloten in Kärnten</span>
+          </div>
+          <div class="stat">
+            <strong>4</strong>
+            <span>Partner-Integrationen (ERP, CRM, Tools)</span>
+          </div>
+          <div class="stat">
+            <strong>11&nbsp;Wochen</strong>
+            <span>Ø ROI bis zur ersten Einsparung</span>
+          </div>
+        </div>
+      </div>
+
+    </section><section id="agents" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Kernlösungen / Agents</span>
+            <h2>Ein AI-Team aus spezialisierten Rollen — nicht ein generischer Bot.</h2>
+          </div>
+          <p>
+            Jeder Agent übernimmt einen klaren Verantwortungsbereich und wird auf Prozesse, KPIs und Freigaben Ihres Unternehmens abgestimmt.
+          </p>
+        </div>
+
+        <div class="cards-3">
+          <div class="card">
+            <div class="icon-badge">↗</div>
+            <h3>Marketing-Agent</h3>
+            <p>Für Kampagnen, Content-Produktion, Funnel-Logik und schnellere Lead-Bearbeitung.</p>
+            <ul class="feature-list">
+              <li>Kampagnen- und Content-Workflows</li>
+              <li>Lead-Reaktion und Funnel-Orchestrierung</li>
+              <li>Messung von Leads, Pipeline und Umsatzwirkung</li>
+              <li>Startfokus für schnelle erste Ergebnisse</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon-badge">✦</div>
+            <h3>Sekretariats-Agent</h3>
+            <p>Für E-Mails, Terminmanagement, Notizen und administrative Routine im Tagesgeschäft.</p>
+            <ul class="feature-list">
+              <li>Inbox-Vorqualifizierung und Antwortvorschläge</li>
+              <li>Terminabstimmung und Kalenderlogik</li>
+              <li>Zusammenfassungen, Notizen und Follow-ups</li>
+              <li>Entlastung für Assistenz und Führungsebene</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <div class="icon-badge">◎</div>
+            <h3>Service-/Support-Agent</h3>
+            <p>Für Ticketbearbeitung, standardisierte Antworten und saubere Eskalationspfade.</p>
+            <ul class="feature-list">
+              <li>Erstantworten und Ticket-Kategorisierung</li>
+              <li>SLA-orientierte Priorisierung</li>
+              <li>Eskalation an Menschen bei Sonderfällen</li>
+              <li>Qualitäts- und Zufriedenheitsmetriken im Dashboard</li>
+            </ul>
+          </div>
+        </div>
+
+        <div style="margin-top:18px;" class="cards-3">
+          <div class="card" style="grid-column:span 3; background:linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);">
+            <div class="icon-badge">▣</div>
+            <h3>Roadmap: Buchhaltungs- & WaWi-Agenten</h3>
+            <p>
+              Als nächste Ausbaustufe ergänzen wir Agenten für Prozessautomatisierung, Reporting und operative Datenflüsse in Buchhaltung und Warenwirtschaft — aufbauend auf derselben Steuerungs- und KPI-Logik.
+            </p>
+          </div>
+        </div>
+
+        <div id="jobs">
+          <h3 style="margin:0 0 10px; font-size:22px; letter-spacing:-0.03em;">Detaillierte Job-Profile ansehen</h3>
+          <p style="margin:0 0 22px; color:var(--text-soft); max-width:720px;">Jeder Agent hat eine eigene Seite mit Aufgaben, Verantwortlichkeiten und Effekten aus echten Projekten. Wählen Sie das Profil, das Ihren Bedarf am besten trifft.</p>
+          <div class="job-link-grid">
+            <a class="card job-link-card" href="job-sekretariat.html">
+              <strong>📋 Sekretariat &amp; Assistenz</strong>
+              <span>E-Mail-Routing, Terminlogik, Dokumente &amp; Notizen.</span>
+            </a>
+            <a class="card job-link-card" href="job-kundenservice.html">
+              <strong>🎧 Kundenservice &amp; Support</strong>
+              <span>FAQ, Ticket-Priorisierung und Eskalation mit Sol.</span>
+            </a>
+            <a class="card job-link-card" href="job-marketing.html">
+              <strong>📢 Marketing &amp; Content</strong>
+              <span>Content-Serien, Kampagnen-Recaps und Reporting via Lumo.</span>
+            </a>
+            <a class="card job-link-card" href="job-buchhaltung.html">
+              <strong>📊 Buchhaltung &amp; Finance Ops</strong>
+              <span>Rechnungen, Zahlungsstatus und Mahnwesen mit Freigabe.</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="how" class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">How it works</span>
+            <h2>Von Use Case zu produktivem Agent in wenigen klaren Schritten.</h2>
+          </div>
+          <p>
+            Unser Ablauf ist auf schnelle Pilot-Ergebnisse ausgelegt: erst Scope und KPI-Definition, dann Implementierung, anschließend Rollout mit Monitoring und Optimierung.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card">
+            <div class="step">1</div>
+            <h3>Briefing & Priorisierung</h3>
+            <p>Wir analysieren Ihre Workflows, identifizieren den besten Start-Use-Case und definieren Erfolgskriterien, Scope und ROI-Hypothesen.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="step">2</div>
+            <h3>Agent-Design</h3>
+            <p>Wir modellieren Rollen, Freigaben, Datenquellen und Integrationen — inklusive Human-in-the-loop, Audit und Eskalationslogik.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="step">3</div>
+            <h3>Implementierung & Pilot</h3>
+            <p>Der erste Agent wird in Ihre bestehende Umgebung eingebunden und in einem produktionsnahen Pilot mit echten Prozessen getestet.</p>
+          </div>
+
+          <div class="process-card">
+            <div class="step">4</div>
+            <h3>Rollout & Skalierung</h3>
+            <p>Sie erhalten Dashboard, Reporting und Optimierungsschleifen — danach erweitern wir auf weitere Rollen und Unternehmensbereiche.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="usecases" class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Testimonials / Use Cases</span>
+            <h2>So wird aus AI ein operativer Hebel statt ein Experiment.</h2>
+          </div>
+          <p>
+            Typische Ergebnisse entstehen dort, wo repetitive Arbeit, Reaktionszeit und Transparenz über mehrere Teams hinweg zusammenkommen.
+          </p>
+        </div>
+
+        <div class="usecases">
+          <div class="quote-card">
+            <p>“Wir sehen unsere Marketing-Automation jetzt wie ein Mission-Control. Jede KPI ist live sichtbar und Routine-Arbeit wird zuverlässig vom Agent übernommen.”</p>
+            <div class="quote-meta">COO · B2B-Unternehmen im industriellen Umfeld</div>
+            <div class="quote-result">
+              <strong>+42%</strong>
+              <span>mehr qualifizierte Marketing-Anfragen</span>
+            </div>
+          </div>
+
+          <div class="case-list">
+            <div class="case-item">
+              <h3>Use Case: Marketing & Funnel</h3>
+              <p>Ein Marketing-Agent reagiert schneller auf Inbound-Leads, strukturiert Content-Prozesse und macht den Einfluss auf Pipeline und Umsatz sichtbar.</p>
+              <div class="case-metric">
+                <span>schnellere Lead-Reaktion</span>
+                <span>mehr Funnel-Transparenz</span>
+              </div>
+            </div>
+
+            <div class="case-item">
+              <h3>Use Case: Assistenz & Operations</h3>
+              <p>Ein Sekretariats-Agent reduziert administrative Last durch E-Mail-Vorsortierung, Terminlogik und automatische Zusammenfassungen.</p>
+              <div class="case-metric">
+                <span>weniger manuelle Routine</span>
+                <span>klarere Tagessteuerung</span>
+              </div>
+            </div>
+
+            <div class="case-item">
+              <h3>Use Case: Support & Service</h3>
+              <p>Ein Support-Agent übernimmt Standardanfragen, priorisiert Tickets und eskaliert Sonderfälle sauber an das Team.</p>
+              <div class="case-metric">
+                <span>kürzere Antwortzeiten</span>
+                <span>bessere SLA-Steuerung</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="cta" class="section cta-full">
+      <div class="container">
+        <div class="cta-wrap">
+          <div class="cta-grid">
+            <div>
+              <span class="eyebrow" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.12); color:#dbe7fb;">Nächster Schritt</span>
+              <h2>Finden wir in 15 Minuten heraus, welcher Agent bei Ihnen zuerst den größten Hebel hat.</h2>
+              <p>
+                Im Erstgespräch klären wir Zielbild, Prozessreife, Aufwand und erwartbaren ROI. Danach wissen Sie, ob ein Pilot sinnvoll ist — und womit Sie starten sollten.
+              </p>
+            </div>
+
+            <div class="cta-box">
+              <ul class="cta-points">
+                <li>Klare Einschätzung zu Scope und Priorität</li>
+                <li>Empfehlung für den besten Start-Use-Case</li>
+                <li>Überblick zu Rollout, Messung und Integrationen</li>
+                <li>Antwort innerhalb eines Werktags</li>
+              </ul>
+              <div style="display:flex; gap:12px; flex-wrap:wrap;">
+                <a href="#" class="btn btn-primary">Demo anfragen</a>
+                <a href="#faq" class="btn btn-dark">FAQ lesen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+<section id="faq" class="section section-tight">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">FAQ</span>
+            <h2>Häufige Fragen vor dem Start.</h2>
+          </div>
+          <p>
+            Die meisten Teams wollen vor allem wissen, wie schnell ein Pilot startet, welche Daten nötig sind und ob bestehende Systeme weiter genutzt werden können.
+          </p>
+        </div>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <h3>Wie schnell können wir starten?</h3>
+            <p>Ein Kickoff ist in der Regel kurzfristig möglich. Der erste produktive Pilot kann innerhalb von etwa 14 Tagen aufgesetzt werden, abhängig von Scope und Zugängen.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Welche Daten oder Unterlagen braucht ihr?</h3>
+            <p>Für den Start reichen meist Prozessbeschreibungen, Tool-Zugänge sowie einige typische Beispielvorgänge aus Ihrem Alltag.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Können wir bestehende Tools weiter nutzen?</h3>
+            <p>Ja. Der Ansatz ist darauf ausgelegt, vorhandene Systeme wie CRM, Ticketsysteme, Kalender oder interne Tools zu ergänzen statt sie zu ersetzen.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Wie läuft das mit Freigaben & Qualität?</h3>
+            <p>Wir setzen bewusst auf Human-in-the-loop: Entwürfe/Antworten gehen über definierte Freigaben, Sonderfälle werden eskaliert. So bleibt die Verantwortung dort, wo sie hingehört.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Wie viel interne Zeit braucht unser Team?</h3>
+            <p>Für den Pilot reichen meist 1–2 kurze Termine pro Woche (Scope, Freigaben, Feedback). Wir reduzieren den Aufwand, indem wir Prozesse und Templates mitbringen.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>DSGVO / Daten: Wie geht ihr damit um?</h3>
+            <p>Wir planen Datenflüsse, Zugriffe und Auftragsverarbeitung von Anfang an mit. Wo nötig, arbeiten wir mit EU-Hosting, minimalen Daten und klaren Rollenrechten.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>
